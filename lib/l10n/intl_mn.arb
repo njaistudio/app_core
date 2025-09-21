@@ -1,0 +1,10 @@
+{
+  "@@locale": "mn",
+  "needsReview": "Дахин давтах хэрэгтэй",
+  "mastered": "Мэдсэн",
+  "alreadyKnown": "Аль хэдийн мэддэг",
+  "nextReviewIn": "{time} дараа давтах",
+  "@nextReviewIn": {
+    "description": "Цагийн утгыг холбох"
+  }
+}

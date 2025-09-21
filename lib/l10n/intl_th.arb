@@ -1,0 +1,10 @@
+{
+  "@@locale": "th",
+  "needsReview": "ต้องทบทวน",
+  "mastered": "ชำนาญแล้ว",
+  "alreadyKnown": "รู้จักแล้ว",
+  "nextReviewIn": "ทบทวนอีกครั้งใน {time}",
+  "@nextReviewIn": {
+    "description": "ต่อค่าระยะเวลา"
+  }
+}

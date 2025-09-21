@@ -1,0 +1,10 @@
+{
+  "@@locale": "my",
+  "needsReview": "Needs Review",
+  "mastered": "Mastered",
+  "alreadyKnown": "Already Known",
+  "nextReviewIn": "Next Review in {time}",
+  "@nextReviewIn": {
+    "description": "Append time value"
+  }
+}

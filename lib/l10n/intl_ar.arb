@@ -1,0 +1,10 @@
+{
+  "@@locale": "ar",
+  "needsReview": "يحتاج إلى مراجعة",
+  "mastered": "تم إتقانه",
+  "alreadyKnown": "معلوم بالفعل",
+  "nextReviewIn": "مراجعة بعد {time}",
+  "@nextReviewIn": {
+    "description": "إلحاق قيمة الوقت"
+  }
+}

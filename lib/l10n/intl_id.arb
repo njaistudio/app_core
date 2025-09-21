@@ -1,0 +1,10 @@
+{
+  "@@locale": "id",
+  "needsReview": "Perlu Review",
+  "mastered": "Menguasai",
+  "alreadyKnown": "Sudah Dikenal",
+  "nextReviewIn": "Review berikutnya dalam {time}",
+  "@nextReviewIn": {
+    "description": "Tambahkan nilai waktu"
+  }
+}

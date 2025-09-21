@@ -1,0 +1,10 @@
+{
+  "@@locale": "pl",
+  "needsReview": "Wymaga powtórki",
+  "mastered": "Opanowane",
+  "alreadyKnown": "Już znane",
+  "nextReviewIn": "Powtórka za {time}",
+  "@nextReviewIn": {
+    "description": "Dołącz wartość czasu"
+  }
+}

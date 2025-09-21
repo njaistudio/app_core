@@ -1,0 +1,10 @@
+{
+  "@@locale": "hi",
+  "needsReview": "पुनरावृत्ति आवश्यक",
+  "mastered": "मास्टर किया हुआ",
+  "alreadyKnown": "पहले से जाना हुआ",
+  "nextReviewIn": "{time} में अगला पुनरावलोकन",
+  "@nextReviewIn": {
+    "description": "समय मूल्य जोड़ें"
+  }
+}

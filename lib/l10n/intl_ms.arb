@@ -1,0 +1,10 @@
+{
+  "@@locale": "ms",
+  "needsReview": "Perlu ulangkaji",
+  "mastered": "Menguasai",
+  "alreadyKnown": "Sudah diketahui",
+  "nextReviewIn": "Ulangkaji seterusnya dalam {time}",
+  "@nextReviewIn": {
+    "description": "Tambahkan nilai masa"
+  }
+}

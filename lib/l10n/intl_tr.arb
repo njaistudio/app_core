@@ -1,0 +1,10 @@
+{
+  "@@locale": "tr",
+  "needsReview": "Tekrar gözden geçirilmeli",
+  "mastered": "Tam öğrenildi",
+  "alreadyKnown": "Zaten biliniyor",
+  "nextReviewIn": "{time} sonra tekrar",
+  "@nextReviewIn": {
+    "description": "Zaman değerini ekle"
+  }
+}

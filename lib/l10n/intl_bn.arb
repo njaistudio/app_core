@@ -1,0 +1,10 @@
+{
+  "@@locale": "bn",
+  "needsReview": "পুনরায় পড়া প্রয়োজন",
+  "mastered": "আয়ত্ত হয়েছে",
+  "alreadyKnown": "ইতিমধ্যেই জানা",
+  "nextReviewIn": "{time} পর পুনরায় পড়া",
+  "@nextReviewIn": {
+    "description": "সময়ের মান যুক্ত করুন"
+  }
+}

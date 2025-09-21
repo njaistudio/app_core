@@ -1,0 +1,10 @@
+{
+  "@@locale": "fr",
+  "needsReview": "Besoin de révision",
+  "mastered": "Maîtrisé",
+  "alreadyKnown": "Déjà connu",
+  "nextReviewIn": "Révision dans {time}",
+  "@nextReviewIn": {
+    "description": "Ajouter la valeur du temps"
+  }
+}

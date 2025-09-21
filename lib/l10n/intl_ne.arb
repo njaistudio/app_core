@@ -1,0 +1,10 @@
+{
+  "@@locale": "ne",
+  "needsReview": "पुनरावलोकन आवश्यक",
+  "mastered": "निपुण",
+  "alreadyKnown": "पहिले देखि जान्ने",
+  "nextReviewIn": "{time} पछि पुनरावलोकन",
+  "@nextReviewIn": {
+    "description": "समय मान थप्नुहोस्"
+  }
+}

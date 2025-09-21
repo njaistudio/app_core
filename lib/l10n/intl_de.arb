@@ -1,0 +1,10 @@
+{
+  "@@locale": "de",
+  "needsReview": "Überprüfung erforderlich",
+  "mastered": "Beherrscht",
+  "alreadyKnown": "Bereits bekannt",
+  "nextReviewIn": "Nächste Überprüfung in {time}",
+  "@nextReviewIn": {
+    "description": "Zeitwert anhängen"
+  }
+}

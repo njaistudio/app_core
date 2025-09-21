@@ -1,0 +1,10 @@
+{
+  "@@locale": "si",
+  "needsReview": "නැවත සමාලෝචනය අවශ්‍යයි",
+  "mastered": "මනස්කරුට ගත්තා",
+  "alreadyKnown": "දැනටමත් දන්නවා",
+  "nextReviewIn": "{time} කට පසු නැවත සමාලෝචනය",
+  "@nextReviewIn": {
+    "description": "කාලය අමුණන්න"
+  }
+}

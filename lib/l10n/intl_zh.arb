@@ -1,0 +1,10 @@
+{
+  "@@locale": "zh",
+  "needsReview": "需要复习",
+  "mastered": "已掌握",
+  "alreadyKnown": "已知",
+  "nextReviewIn": "{time} 后复习",
+  "@nextReviewIn": {
+    "description": "附加时间值"
+  }
+}

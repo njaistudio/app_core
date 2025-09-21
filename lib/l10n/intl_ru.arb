@@ -1,0 +1,10 @@
+{
+  "@@locale": "ru",
+  "needsReview": "Требуется повторение",
+  "mastered": "Освоено",
+  "alreadyKnown": "Уже известно",
+  "nextReviewIn": "Следующее повторение через {time}",
+  "@nextReviewIn": {
+    "description": "Добавить значение времени"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "@@locale": "vi",
+  "needsReview": "Cần ôn tập",
+  "mastered": "Đã thuộc",
+  "alreadyKnown": "Đã biết",
+  "nextReviewIn": "Ôn tập sau {time}",
+  "@nextReviewIn": {
+    "description": "Nối giá trị thời gian"
+  }
+}

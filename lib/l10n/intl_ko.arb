@@ -1,0 +1,10 @@
+{
+  "@@locale": "ko",
+  "needsReview": "복습 필요",
+  "mastered": "완전히 숙달됨",
+  "alreadyKnown": "이미 알고 있음",
+  "nextReviewIn": "{time} 후 복습",
+  "@nextReviewIn": {
+    "description": "시간 값을 덧붙임"
+  }
+}
