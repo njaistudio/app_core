@@ -13,6 +13,8 @@ class LearnProgress {
   int correctTimes;
   int timeStamp;
 
+  static const skipMark = 10000;
+
   bool enableForLearn(RememberTime rememberTime) {
     switch (rememberTime) {
       case RememberTime.never:
@@ -93,13 +95,15 @@ class LearnProgress {
 
   bool get learned => learnStatus != LearnStatus.notLearned && learnStatus != LearnStatus.skipped;
 
+  bool get needLearn => learnStatus == LearnStatus.notLearned;
+
   DateTime get learnedTime => DateTime.fromMillisecondsSinceEpoch(timeStamp);
 
   LearnStatus get learnStatus {
     if(correctTimes == 0) {
       return LearnStatus.notLearned;
     }
-    if(correctTimes >= 10000) {
+    if(correctTimes >= skipMark) {
       return LearnStatus.skipped;
     }
     if(correctTimes >= 5) {
