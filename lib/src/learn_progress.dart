@@ -120,15 +120,15 @@ class LearnProgress {
     return learnStatus.color;
   }
 
-  String get learnStatusString {
+  String getLearnStatusString(BuildContext context) {
     switch(learnStatus) {
       case LearnStatus.learnAndWaitingReview:
-        return CoreS.current.nextReviewIn(nextReviewDurationString);
+        return CoreS.of(context).nextReviewIn(nextReviewDurationString);
       case LearnStatus.notLearned:
       case LearnStatus.needReviewNow:
       case LearnStatus.master:
       case LearnStatus.skipped:
-        return learnStatus.name;
+        return learnStatus.getName(context);
     }
   }
 }
@@ -142,17 +142,17 @@ enum LearnStatus {
 }
 
 extension LearnStatusExtension on LearnStatus {
-  String get name {
+  String getName(BuildContext context) {
     switch(this) {
       case LearnStatus.notLearned:
       case LearnStatus.learnAndWaitingReview:
         return "";
       case LearnStatus.needReviewNow:
-        return CoreS.current.needsReview;
+        return CoreS.of(context).needsReview;
       case LearnStatus.master:
-        return CoreS.current.mastered;
+        return CoreS.of(context).mastered;
       case LearnStatus.skipped:
-        return CoreS.current.alreadyKnown;
+        return CoreS.of(context).alreadyKnown;
     }
   }
 
