@@ -65,7 +65,7 @@ Map<String, LibraryLoader> _deferredLibraries = {
   'zh': () => new SynchronousFuture(null),
 };
 
-MessageLookupByLibrary? _findExact(String localeName) {
+MessageLookupByLibrary? findCoreSExact(String localeName) {
   switch (localeName) {
     case 'ar':
       return messages_ar.messages;
@@ -135,7 +135,7 @@ Future<bool> initializeMessages(String localeName) {
 
 bool _messagesExistFor(String locale) {
   try {
-    return _findExact(locale) != null;
+    return findCoreSExact(locale) != null;
   } catch (e) {
     return false;
   }
@@ -148,5 +148,5 @@ MessageLookupByLibrary? _findGeneratedMessagesFor(String locale) {
     onFailure: (_) => null,
   );
   if (actualLocale == null) return null;
-  return _findExact(actualLocale);
+  return findCoreSExact(actualLocale);
 }
