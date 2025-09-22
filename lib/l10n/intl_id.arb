@@ -1,5 +1,8 @@
 {
   "@@locale": "id",
+  "hardWord": "Kata sulit",
+  "continueLearning": "Lanjutkan belajar",
+  "markAsKnown": "Tandai sebagai sudah diketahui",
   "needsReview": "Perlu Review",
   "mastered": "Menguasai",
   "alreadyKnown": "Sudah Dikenal",

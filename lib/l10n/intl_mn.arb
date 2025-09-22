@@ -1,5 +1,8 @@
 {
   "@@locale": "mn",
+  "hardWord": "Хүнд үг",
+  "continueLearning": "Сурч хэвээр байх",
+  "markAsKnown": "Мэддэг гэж тэмдэглэх",
   "needsReview": "Дахин давтах хэрэгтэй",
   "mastered": "Мэдсэн",
   "alreadyKnown": "Аль хэдийн мэддэг",

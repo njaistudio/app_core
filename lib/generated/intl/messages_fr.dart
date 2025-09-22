@@ -25,6 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "alreadyKnown": MessageLookupByLibrary.simpleMessage("Déjà connu"),
+    "continueLearning": MessageLookupByLibrary.simpleMessage(
+      "Continuer à apprendre",
+    ),
+    "hardWord": MessageLookupByLibrary.simpleMessage("Mot difficile"),
+    "markAsKnown": MessageLookupByLibrary.simpleMessage("Marquer comme connu"),
     "mastered": MessageLookupByLibrary.simpleMessage("Maîtrisé"),
     "needsReview": MessageLookupByLibrary.simpleMessage("Besoin de révision"),
     "nextReviewIn": m0,

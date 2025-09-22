@@ -1,5 +1,8 @@
 {
   "@@locale": "ko",
+  "hardWord": "어려운 단어",
+  "continueLearning": "학습 계속하기",
+  "markAsKnown": "알고 있는 것으로 표시",
   "needsReview": "복습 필요",
   "mastered": "완전히 숙달됨",
   "alreadyKnown": "이미 알고 있음",

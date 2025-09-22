@@ -54,6 +54,31 @@ class CoreS {
     return Localizations.of<CoreS>(context, CoreS);
   }
 
+  /// `Hard word`
+  String get hardWord {
+    return Intl.message('Hard word', name: 'hardWord', desc: '', args: []);
+  }
+
+  /// `Continue learning`
+  String get continueLearning {
+    return Intl.message(
+      'Continue learning',
+      name: 'continueLearning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as known`
+  String get markAsKnown {
+    return Intl.message(
+      'Mark as known',
+      name: 'markAsKnown',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Needs Review`
   String get needsReview {
     return Intl.message(

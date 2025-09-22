@@ -1,5 +1,8 @@
 {
   "@@locale": "hi",
+  "hardWord": "कठिन शब्द",
+  "continueLearning": "सीखना जारी रखें",
+  "markAsKnown": "ज्ञात के रूप में चिह्नित करें",
   "needsReview": "पुनरावृत्ति आवश्यक",
   "mastered": "मास्टर किया हुआ",
   "alreadyKnown": "पहले से जाना हुआ",

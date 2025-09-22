@@ -1,5 +1,8 @@
 {
   "@@locale": "zh",
+  "hardWord": "困难的词",
+  "continueLearning": "继续学习",
+  "markAsKnown": "标记为已知",
   "needsReview": "需要复习",
   "mastered": "已掌握",
   "alreadyKnown": "已知",

@@ -1,5 +1,8 @@
 {
   "@@locale": "ar",
+  "hardWord": "كلمة صعبة",
+  "continueLearning": "استمرار في التعلم",
+  "markAsKnown": "تمييز كمعروف",
   "needsReview": "يحتاج إلى مراجعة",
   "mastered": "تم إتقانه",
   "alreadyKnown": "معلوم بالفعل",

@@ -1,5 +1,8 @@
 {
   "@@locale": "ms",
+  "hardWord": "Perkataan sukar",
+  "continueLearning": "Sambung belajar",
+  "markAsKnown": "Tandakan sebagai diketahui",
   "needsReview": "Perlu ulangkaji",
   "mastered": "Menguasai",
   "alreadyKnown": "Sudah diketahui",

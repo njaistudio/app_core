@@ -1,5 +1,8 @@
 {
   "@@locale": "ru",
+  "hardWord": "Сложное слово",
+  "continueLearning": "Продолжить обучение",
+  "markAsKnown": "Отметить как известное",
   "needsReview": "Требуется повторение",
   "mastered": "Освоено",
   "alreadyKnown": "Уже известно",

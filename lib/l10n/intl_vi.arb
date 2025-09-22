@@ -1,5 +1,8 @@
 {
   "@@locale": "vi",
+  "hardWord": "Từ khó",
+  "continueLearning": "Tiếp tục học",
+  "markAsKnown": "Đánh dấu là đã biết",
   "needsReview": "Cần ôn tập",
   "mastered": "Đã thuộc",
   "alreadyKnown": "Đã biết",

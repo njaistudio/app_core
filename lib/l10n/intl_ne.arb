@@ -1,5 +1,8 @@
 {
   "@@locale": "ne",
+  "hardWord": "गाह्रो शब्द",
+  "continueLearning": "अध्ययन जारी राख्नुहोस्",
+  "markAsKnown": "चिनिएका रूपमा चिन्ह लगाउनुहोस्",
   "needsReview": "पुनरावलोकन आवश्यक",
   "mastered": "निपुण",
   "alreadyKnown": "पहिले देखि जान्ने",

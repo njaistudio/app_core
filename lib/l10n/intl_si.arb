@@ -1,5 +1,8 @@
 {
   "@@locale": "si",
+  "hardWord": "දූෂ්කර ශබ්දය",
+  "continueLearning": "ඉගෙනීම දිගටම කරන්න",
+  "markAsKnown": "දැන සිටින ලෙස සලකන්න",
   "needsReview": "නැවත සමාලෝචනය අවශ්‍යයි",
   "mastered": "මනස්කරුට ගත්තා",
   "alreadyKnown": "දැනටමත් දන්නවා",

@@ -1,5 +1,8 @@
 {
   "@@locale": "my",
+  "hardWord": "ခက်ခဲသော စကားလုံး",
+  "continueLearning": "သင်ယူမှု ဆက်လုပ်ပါ",
+  "markAsKnown": "လက်ခံထားသည်ဟု မှတ်အပ်ပါ",
   "needsReview": "Needs Review",
   "mastered": "Mastered",
   "alreadyKnown": "Already Known",

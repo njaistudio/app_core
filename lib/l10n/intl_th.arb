@@ -1,5 +1,8 @@
 {
   "@@locale": "th",
+  "hardWord": "คำที่ยาก",
+  "continueLearning": "เรียนต่อ",
+  "markAsKnown": "ทำเครื่องหมายว่าเป็นที่รู้จัก",
   "needsReview": "ต้องทบทวน",
   "mastered": "ชำนาญแล้ว",
   "alreadyKnown": "รู้จักแล้ว",

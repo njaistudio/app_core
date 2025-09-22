@@ -1,5 +1,8 @@
 {
   "@@locale": "bn",
+  "hardWord": "কঠিন শব্দ",
+  "continueLearning": "শেখা চালিয়ে যাও",
+  "markAsKnown": "জানা হিসেবে চিহ্নিত কর",
   "needsReview": "পুনরায় পড়া প্রয়োজন",
   "mastered": "আয়ত্ত হয়েছে",
   "alreadyKnown": "ইতিমধ্যেই জানা",

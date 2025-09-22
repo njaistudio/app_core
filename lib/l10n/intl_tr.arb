@@ -1,5 +1,8 @@
 {
   "@@locale": "tr",
+  "hardWord": "Zor kelime",
+  "continueLearning": "Öğrenmeye devam et",
+  "markAsKnown": "Bilinen olarak işaretle",
   "needsReview": "Tekrar gözden geçirilmeli",
   "mastered": "Tam öğrenildi",
   "alreadyKnown": "Zaten biliniyor",

@@ -1,5 +1,8 @@
 {
   "@@locale": "pl",
+  "hardWord": "Trudne słowo",
+  "continueLearning": "Kontynuuj naukę",
+  "markAsKnown": "Oznacz jako znane",
   "needsReview": "Wymaga powtórki",
   "mastered": "Opanowane",
   "alreadyKnown": "Już znane",

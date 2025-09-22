@@ -1,5 +1,8 @@
 {
   "@@locale": "es",
+  "hardWord": "Palabra difícil",
+  "continueLearning": "Continuar aprendiendo",
+  "markAsKnown": "Marcar como conocida",
   "needsReview": "Necesita repasar",
   "mastered": "Dominado",
   "alreadyKnown": "Ya conocido",

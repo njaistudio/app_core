@@ -1,5 +1,8 @@
 {
   "@@locale": "en",
+  "hardWord": "Hard word",
+  "continueLearning": "Continue learning",
+  "markAsKnown": "Mark as known",
   "needsReview": "Needs Review",
   "mastered": "Mastered",
   "alreadyKnown": "Already Known",
