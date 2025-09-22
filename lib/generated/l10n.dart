@@ -20,7 +20,7 @@ class CoreS {
   static CoreS get current {
     assert(
       _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+      'No instance of CoreS was loaded. Try to initialize the CoreS delegate before accessing CoreS.current.',
     );
     return _current!;
   }
@@ -45,7 +45,7 @@ class CoreS {
     final instance = CoreS.maybeOf(context);
     assert(
       instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+      'No instance of CoreS present in the widget tree. Did you add CoreS.delegate in localizationsDelegates?',
     );
     return instance!;
   }
