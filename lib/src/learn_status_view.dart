@@ -45,7 +45,7 @@ class LearnStatusView extends StatelessWidget {
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
-            learnProgress.getLearnStatusString(context),
+            learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
                 color: context.colorScheme.onSecondary,
                 fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class LearnStatusView extends StatelessWidget {
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
-            learnProgress.getLearnStatusString(context),
+            learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
                 color: context.colorScheme.onSecondary,
                 fontWeight: FontWeight.bold,
@@ -107,7 +107,7 @@ class LearnStatusView extends StatelessWidget {
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
-            learnProgress.getLearnStatusString(context),
+            learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
               color: context.colorScheme.onSecondary,
               fontWeight: FontWeight.bold,
@@ -138,7 +138,7 @@ class LearnStatusView extends StatelessWidget {
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
-            learnProgress.getLearnStatusString(context),
+            learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
               color: context.colorScheme.onSecondary,
               fontWeight: FontWeight.bold,
