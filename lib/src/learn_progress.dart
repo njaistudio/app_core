@@ -44,12 +44,12 @@ class LearnProgress {
 
   int get lastCorrectDuration {
     final now = DateTime.now();
-    final lastCheckDate = DateTime.fromMillisecondsSinceEpoch(correctTimes);
-    final duration = correctTimes == 0 ? 0 : now.difference(lastCheckDate).inDays;
+    final lastCheckDate = DateTime.fromMillisecondsSinceEpoch(timeStamp);
+    final duration = timeStamp == 0 ? 0 : now.difference(lastCheckDate).inDays;
     return duration;
   }
 
-  DateTime? get lastCheckDate => correctTimes == 0 ? null : DateTime.fromMillisecondsSinceEpoch(correctTimes);
+  DateTime? get lastCheckDate => timeStamp == 0 ? null : DateTime.fromMillisecondsSinceEpoch(timeStamp);
 
   Duration get nextReviewDuration {
     return learnedTime.subtract(Duration(days: -inReviewDay)).difference(DateTime.now());
