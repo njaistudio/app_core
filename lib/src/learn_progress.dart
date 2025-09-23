@@ -29,27 +29,14 @@ class LearnProgress {
   }
 
   bool get needPractice {
-    switch (correctTimes) {
-      case 0:
-        return false;
-      case 1:
-        return lastCorrectDuration > 1;
-      case 2:
-        return lastCorrectDuration > 2;
-      case 3:
-        return lastCorrectDuration > 7;
-    }
-    return false;
+    return learnStatus == LearnStatus.needReviewNow;
   }
 
   int get lastCorrectDuration {
     final now = DateTime.now();
-    final lastCheckDate = DateTime.fromMillisecondsSinceEpoch(timeStamp);
-    final duration = timeStamp == 0 ? 0 : now.difference(lastCheckDate).inDays;
+    final duration = timeStamp == 0 ? 0 : now.difference(learnedTime).inDays;
     return duration;
   }
-
-  DateTime? get lastCheckDate => timeStamp == 0 ? null : DateTime.fromMillisecondsSinceEpoch(timeStamp);
 
   Duration get nextReviewDuration {
     return learnedTime.subtract(Duration(days: -inReviewDay)).difference(DateTime.now());

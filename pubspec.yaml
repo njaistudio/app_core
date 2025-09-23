@@ -1,6 +1,6 @@
 name: app_core
 description: "A new Flutter project."
-version: 0.0.1
+version: 0.0.2
 homepage:
 
 environment:
@@ -57,5 +57,5 @@ flutter:
   # For details regarding fonts in packages, see
   # https://flutter.dev/to/font-from-package
 flutter_intl:
-  enabled: true
+  enabled: false
   class_name: CoreS
