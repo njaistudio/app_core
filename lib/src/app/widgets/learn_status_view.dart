@@ -1,6 +1,4 @@
-import 'package:app_core/src/cupertino_rounded_corners.dart';
-import 'package:app_core/src/exts.dart';
-import 'package:app_core/src/learn_progress.dart';
+import 'package:app_core/app_core.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
