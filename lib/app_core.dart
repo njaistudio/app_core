@@ -1,10 +1,14 @@
 library;
 
 export 'src/app/widgets/cupertino_rounded_corners.dart';
-export 'src/app/widgets/animated_button.dart';
+export 'src/app/widgets/3d_button/base/animated_button.dart';
 export 'src/app/widgets/learn_status_view.dart';
-export 'src/app/widgets/primary_button.dart';
-export 'src/app/widgets/question_button.dart';
+export 'src/app/widgets/3d_button/base/primary_button.dart';
+export 'src/app/widgets/3d_button/base/secondary_button.dart';
+export 'src/app/widgets/3d_button/base/selectable_button.dart';
+export 'src/app/widgets/3d_button/secondary_text_icon_button.dart';
+export 'src/app/widgets/3d_button/secondary_animate_icon_button.dart';
+export 'src/app/widgets/3d_button/question_button.dart';
 export 'src/app/widgets/result_background.dart';
 export 'src/app/base_screen.dart';
 export 'src/app/base_view_model.dart';

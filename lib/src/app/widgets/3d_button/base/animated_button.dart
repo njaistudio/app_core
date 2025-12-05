@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'cupertino_rounded_corners.dart';
+import '../../cupertino_rounded_corners.dart';
 
 /// Using [ShadowDegree] with values [ShadowDegree.dark] or [ShadowDegree.light]
 /// to get a darker version of the used color.
@@ -15,6 +15,7 @@ class AnimatedButton extends StatefulWidget {
   final bool enabled;
   final int duration;
   final double height;
+  final double shadowHeight;
   final double borderWidth;
   final VoidCallback onPressed;
 
@@ -26,6 +27,7 @@ class AnimatedButton extends StatefulWidget {
     this.duration = 70,
     this.enabled = true,
     this.borderWidth = 0,
+    this.shadowHeight = 6,
     required this.color,
     required this.shadowColor,
     required this.disabledColor,
@@ -38,12 +40,24 @@ class AnimatedButton extends StatefulWidget {
 
 class _AnimatedButtonState extends State<AnimatedButton> {
   static const Curve _curve = Curves.easeIn;
-  static const double _shadowHeight = 6;
-  double _position = _shadowHeight;
+  double _shadowHeight = 0;
+  double _position = 0;
+
+  @override
+  void initState() {
+    _shadowHeight = widget.shadowHeight;
+    _position = _shadowHeight;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final double _height = widget.height - _shadowHeight;
+    if(_shadowHeight != widget.shadowHeight) {
+      _shadowHeight = widget.shadowHeight;
+      _position = _shadowHeight;
+    }
+
+    final double height = widget.height - _shadowHeight;
 
     return LayoutBuilder(
       builder: (context, size) {
@@ -53,7 +67,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
           onTapCancel: widget.enabled ? _unPressed : null,
           child: SizedBox(
             width: size.maxWidth,
-            height: _height + _shadowHeight,
+            height: height + _shadowHeight,
             child: Stack(
               children: <Widget>[
                 // background shadow serves as drop shadow
@@ -61,7 +75,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                 Positioned(
                   bottom: 0,
                   child: Container(
-                    height: _height,
+                    height: height,
                     width: size.maxWidth,
                     decoration: ShapeDecoration(
                       color: widget.enabled ? widget.shadowColor : widget.disabledShadowColor,
@@ -75,14 +89,14 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                   bottom: _position,
                   child: Container(
                     padding: EdgeInsets.all(widget.borderWidth),
-                    height: _height,
+                    height: height,
                     width: size.maxWidth,
                     decoration: ShapeDecoration(
                       color:widget.enabled ? widget.shadowColor : widget.disabledShadowColor,
                       shape: _getBorderRadius(),
                     ),
                     child: Container(
-                      height: _height,
+                      height: height,
                       width: size.maxWidth,
                       decoration: ShapeDecoration(
                         color: widget.enabled ? widget.color : widget.disabledColor,

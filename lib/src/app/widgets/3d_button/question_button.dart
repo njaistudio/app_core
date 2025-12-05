@@ -34,14 +34,15 @@ enum _QuestionButtonStatus {
 }
 
 class QuestionButton extends StatefulWidget {
-  QuestionButton({Key? key, this.height = 70, required this.isCorrectAnswer, required this.onPress, this.onAnimationEnd}) : super(key: key);
+  const QuestionButton({super.key, this.height = 70, required this.isCorrectAnswer, required this.onPress, this.onAnimationEnd, required this.child});
   final double height;
   final bool isCorrectAnswer;
   final VoidCallback onPress;
   final VoidCallback? onAnimationEnd;
+  final Widget child;
 
   @override
-  _QuestionButtonState createState() {
+  State<QuestionButton> createState() {
     return _QuestionButtonState();
   }
 }
@@ -140,7 +141,7 @@ class _QuestionButtonState extends State<QuestionButton> {
                   styles: BlobStyles(
                     color: Colors.green.shade300,
                   ),
-                  child: Icon(Icons.check_rounded, size: widget.height / 6, color: Colors.white, fontWeight: FontWeight.bold,),
+                  child: Icon(Icons.check_rounded, size: widget.height / 8, color: Colors.white, fontWeight: FontWeight.bold,),
                 ),
               ),
             );
@@ -183,7 +184,7 @@ class _QuestionButtonState extends State<QuestionButton> {
                   styles: BlobStyles(
                     color: Colors.red.shade300,
                   ),
-                  child: Icon(Icons.clear_rounded, size: widget.height / 6, color: Colors.white, fontWeight: FontWeight.bold,),
+                  child: Icon(Icons.clear_rounded, size: widget.height / 8, color: Colors.white, fontWeight: FontWeight.bold,),
                 ),
               ),
             );
@@ -213,11 +214,12 @@ class _QuestionButtonState extends State<QuestionButton> {
           color: _colorScheme.surface,
           shadowColor: _shadowColor,
           height: widget.height,
-          borderWidth: 1,
+          borderWidth: _state == _QuestionButtonStatus.none ? 1 : 1.2,
+          shadowHeight: _state == _QuestionButtonStatus.none ? 3 : 1.2,
           enabled: _state == _QuestionButtonStatus.none,
           disabledColor: _colorScheme.surface,
           disabledShadowColor: _shadowColor,
-          child: Text("data", style: TextTheme.of(context).titleSmall?.copyWith(color: Colors.white70),),
+          child: widget.child,
           onPressed: () {
             widget.onPress.call();
             _trigger();
