@@ -7,7 +7,7 @@ class SelectableButton extends StatefulWidget {
   const SelectableButton({
     super.key,
     required this.onPressed,
-    this.height = 50,
+    this.height,
     required this.child,
     this.selected = false,
     this.selectedColor,
@@ -17,7 +17,7 @@ class SelectableButton extends StatefulWidget {
   });
 
   final VoidCallback onPressed;
-  final double height;
+  final double? height;
   final Widget child;
   final bool selected;
   final Color? color;
@@ -37,7 +37,7 @@ class _SelectableButtonState extends State<SelectableButton> {
   @override
   Widget build(BuildContext context) {
     return AnimatedButton(
-      height: widget.height,
+      height: widget.height ?? 56.r,
       borderWidth: 1,
       shadowHeight: widget.selected ? 1 : 3,
       enabled: !widget.selected,

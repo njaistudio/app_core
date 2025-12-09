@@ -5,13 +5,13 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SecondaryAnimateIconButton extends StatefulWidget {
-  const SecondaryAnimateIconButton({super.key, required this.onPressed, required this.text, this.textStyle, this.maxLines = 1, this.height = 50, required this.iconData});
+  const SecondaryAnimateIconButton({super.key, required this.onPressed, required this.text, this.textStyle, this.maxLines = 1, this.height, required this.iconData});
   final VoidCallback onPressed;
   final String text;
   final TextStyle? textStyle;
   final IconData iconData;
   final int maxLines;
-  final double height;
+  final double? height;
 
   @override
   State<SecondaryAnimateIconButton> createState() {
@@ -25,8 +25,9 @@ class _SecondaryAnimateIconButtonState extends State<SecondaryAnimateIconButton>
 
   @override
   Widget build(BuildContext context) {
+    final height = widget.height ?? 56.r;
     return SecondaryButton(
-      height: widget.height,
+      height: height,
       onPressed: widget.onPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -40,12 +41,12 @@ class _SecondaryAnimateIconButtonState extends State<SecondaryAnimateIconButton>
                 style: widget.textStyle ?? _textTheme.titleLarge?.copyWith(
                   color: _colorScheme.onSurface,
                   fontWeight: FontWeight.bold,
-                  fontSize: widget.height / 2.5,
+                  fontSize: height / 2.5,
                 ),
               ),
             ),
           ),
-          Icon(widget.iconData, size: widget.height - 8.r, color: _colorScheme.onSurface,).animate().scale().then(duration: 500.ms).shake().then(duration: 500.ms).shake(),
+          Icon(widget.iconData, size: height - 8.r, color: _colorScheme.onSurface,).animate().scale().then(duration: 500.ms).shake().then(duration: 500.ms).shake(),
         ],
       ),
     );

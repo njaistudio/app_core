@@ -1,4 +1,6 @@
+import 'package:app_core/src/extensions/exts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../cupertino_rounded_corners.dart';
 
@@ -18,6 +20,8 @@ class AnimatedButton extends StatefulWidget {
   final double shadowHeight;
   final double borderWidth;
   final VoidCallback onPressed;
+  final int badge;
+  final Color badgeColor;
 
   const AnimatedButton({
     super.key,
@@ -32,6 +36,8 @@ class AnimatedButton extends StatefulWidget {
     required this.shadowColor,
     required this.disabledColor,
     required this.disabledShadowColor,
+    this.badge = 0,
+    this.badgeColor = Colors.red,
   });
 
   @override
@@ -106,6 +112,30 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                     ),
                   ),
                 ),
+                if(widget.badge > 0) Positioned(
+                  right: 4.r,
+                  top: 4.r,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: 24.r,
+                      maxHeight: 24.r,
+                      minWidth: 24.r,
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: widget.badgeColor,
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 4.r),
+                      child: Center(
+                        child: Text(
+                          widget.badge.toString(),
+                          style: context.textTheme.titleSmall?.copyWith(color: context.colorScheme.onError, fontWeight: FontWeight.bold,),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -126,7 +156,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
     setState(() {
       _position = _shadowHeight;
     });
-    await Future.delayed(Duration(milliseconds: widget.duration));
+    await Future.delayed(Duration(milliseconds: (widget.duration * 1.5).toInt()));
     widget.onPressed();
   }
 

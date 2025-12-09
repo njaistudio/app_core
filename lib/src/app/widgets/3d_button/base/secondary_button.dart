@@ -7,7 +7,7 @@ class SecondaryButton extends StatefulWidget {
   const SecondaryButton({
     super.key,
     required this.onPressed,
-    this.height = 50,
+    this.height,
     required this.child,
     this.enabled = true,
     this.disableColor,
@@ -17,7 +17,7 @@ class SecondaryButton extends StatefulWidget {
   });
 
   final VoidCallback onPressed;
-  final double height;
+  final double? height;
   final Widget child;
   final bool enabled;
   final Color? disableColor;
@@ -37,7 +37,7 @@ class _SecondaryButtonState extends State<SecondaryButton> {
   @override
   Widget build(BuildContext context) {
     return AnimatedButton(
-      height: widget.height,
+      height: widget.height ?? 56.r,
       borderWidth: 1,
       shadowHeight: 4,
       enabled: widget.enabled,

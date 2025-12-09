@@ -9,14 +9,14 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
-abstract class BaseScreen<T extends BaseViewModel> extends StatefulWidget {
-  const BaseScreen({super.key});
+abstract class CoreBaseScreen<T extends CoreBaseViewModel> extends StatefulWidget {
+  const CoreBaseScreen({super.key});
 
   @override
-  State<BaseScreen<T>> createState() => BaseScreenState<T>();
+  CoreBaseScreenState<CoreBaseScreen<T>, T> createState();
 }
 
-class BaseScreenState<T extends BaseViewModel> extends State<BaseScreen<T>> {
+class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewModel> extends State<W> {
   late BuildContext providerContext;
   StreamSubscription? _eventSubscription;
   bool _isLoadingDialogShowing = false;

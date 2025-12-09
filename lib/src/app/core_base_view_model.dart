@@ -23,7 +23,7 @@ class ShowMessageEvent extends BaseUiEvent {
   ShowMessageEvent({required this.message, this.type = MessageType.notice, this.iconData, this.description});
 }
 
-class BaseViewModel extends ChangeNotifier {
+class CoreBaseViewModel extends ChangeNotifier {
   final _eventController = StreamController<BaseUiEvent>.broadcast();
   Stream<BaseUiEvent> get eventStream => _eventController.stream;
 

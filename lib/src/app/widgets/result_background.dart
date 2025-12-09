@@ -12,9 +12,9 @@ class ResultBackgroundController {
 }
 
 class ResultBackground extends StatefulWidget {
-  const ResultBackground({super.key, required  this.controller, required this.child});
-  final ResultBackgroundController controller;
-  final Widget child;
+  const ResultBackground({super.key, this.controller, this.child});
+  final ResultBackgroundController? controller;
+  final Widget? child;
 
   @override
   State<ResultBackground> createState() {
@@ -29,7 +29,7 @@ class _ResultBackgroundState extends State<ResultBackground> with AnimationMixin
   @override
   void initState() {
     _opacity = Tween<double>(begin: 1.0, end: 0.0).animate(controller);
-    widget.controller.start = (status) {
+    widget.controller?.start = (status) {
       setState(() {
         _status = status;
       });
@@ -74,7 +74,7 @@ class _ResultBackgroundState extends State<ResultBackground> with AnimationMixin
             ),
           ),
         ),
-        widget.child,
+        widget.child ?? Container(),
       ],
     );
   }
