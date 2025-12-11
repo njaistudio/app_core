@@ -11,6 +11,7 @@ export 'src/app/widgets/3d_button/secondary_animate_icon_button.dart';
 export 'src/app/widgets/3d_button/question_button.dart';
 export 'src/app/widgets/3d_button/primary_icon_button.dart';
 export 'src/app/widgets/3d_button/primary_text_icon_button.dart';
+export 'src/app/widgets/tree_growth_view.dart';
 export 'src/app/widgets/result_background.dart';
 export 'src/app/core_base_screen.dart';
 export 'src/app/core_base_view_model.dart';
