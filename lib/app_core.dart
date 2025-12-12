@@ -31,5 +31,6 @@ export 'src/extensions/exts.dart';
 export 'src/clean/error/exceptions.dart';
 export 'src/clean/error/failures.dart';
 export 'src/clean/use_case/use_case.dart';
+export 'src/di/cose_service_locator.dart';
 export 'generated/l10n.dart';
 export 'package:google_fonts/google_fonts.dart';

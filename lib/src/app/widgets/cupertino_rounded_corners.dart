@@ -221,11 +221,13 @@ class CupertinoCardBorder extends StatelessWidget {
     );
 
     return DottedBorder(
-      color: color,
-      padding: padding,
-      strokeWidth: strokeWidth,
-      dashPattern: dashPattern,
-      strokeCap: StrokeCap.round,
+      options: RectDottedBorderOptions(
+        color: color,
+        padding: padding,
+        strokeWidth: strokeWidth,
+        dashPattern: dashPattern,
+        strokeCap: StrokeCap.round,
+      ),
       child: Material(
         color: Colors.transparent,
         child: Ink(

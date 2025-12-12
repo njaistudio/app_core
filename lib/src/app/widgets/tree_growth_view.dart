@@ -34,7 +34,7 @@ class TreeGrowthView extends StatefulWidget {
   final double? size;
 
   const TreeGrowthView({
-    Key? key,
+    super.key,
     required this.petalCount,
     this.stageImages = const {
       TreeStage.withered: AssetImage('assets/images/tree_1_dry.png', package: "app_core"),
@@ -44,7 +44,7 @@ class TreeGrowthView extends StatefulWidget {
     },
     this.petalImage = const AssetImage('assets/images/sakura_petal.png', package: "app_core"),
     this.size,
-  }) : super(key: key);
+  });
 
   @override
   State<TreeGrowthView> createState() => _TreeGrowthViewState();
