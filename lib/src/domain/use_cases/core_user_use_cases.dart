@@ -1,6 +1,6 @@
 import 'package:app_core/app_core.dart';
 
-class UserUseCases {
+class CoreUserUseCases {
   final LoginUseCase loginUseCase;
   final LogoutUseCase logoutUseCase;
   final LinkAccountUseCase linkAccountUseCase;
@@ -9,7 +9,7 @@ class UserUseCases {
   final IsLoggedInUseCase isLoggedInUseCase;
   final IsAnonymousUseCase isAnonymousUseCase;
 
-  UserUseCases({
+  CoreUserUseCases({
     required this.loginUseCase,
     required this.logoutUseCase,
     required this.linkAccountUseCase,
