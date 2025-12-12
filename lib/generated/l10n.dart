@@ -113,6 +113,386 @@ class CoreS {
       args: [time],
     );
   }
+
+  /// `Lifetime`
+  String get lifetime {
+    return Intl.message('Lifetime', name: 'lifetime', desc: '', args: []);
+  }
+
+  /// `Mon`
+  String get t2 {
+    return Intl.message('Mon', name: 't2', desc: '', args: []);
+  }
+
+  /// `Tue`
+  String get t3 {
+    return Intl.message('Tue', name: 't3', desc: '', args: []);
+  }
+
+  /// `Wed`
+  String get t4 {
+    return Intl.message('Wed', name: 't4', desc: '', args: []);
+  }
+
+  /// `Thu`
+  String get t5 {
+    return Intl.message('Thu', name: 't5', desc: '', args: []);
+  }
+
+  /// `Fri`
+  String get t6 {
+    return Intl.message('Fri', name: 't6', desc: '', args: []);
+  }
+
+  /// `Sat`
+  String get t7 {
+    return Intl.message('Sat', name: 't7', desc: '', args: []);
+  }
+
+  /// `Sun`
+  String get cn {
+    return Intl.message('Sun', name: 'cn', desc: '', args: []);
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
+
+  /// `Delete Account`
+  String get deleteAccount {
+    return Intl.message(
+      'Delete Account',
+      name: 'deleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Continue`
+  String get ok {
+    return Intl.message('Continue', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Do you want to delete all data?`
+  String get deleteAccountQuestion {
+    return Intl.message(
+      'Do you want to delete all data?',
+      name: 'deleteAccountQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You need login again to do that!`
+  String get deleteAccountDescription {
+    return Intl.message(
+      'You need login again to do that!',
+      name: 'deleteAccountDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or`
+  String get or {
+    return Intl.message('or', name: 'or', desc: '', args: []);
+  }
+
+  /// `Please select your language!`
+  String get selectLanguageTitle {
+    return Intl.message(
+      'Please select your language!',
+      name: 'selectLanguageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please wait a second!`
+  String get pleaseWaitASecond {
+    return Intl.message(
+      'Please wait a second!',
+      name: 'pleaseWaitASecond',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initializing data`
+  String get initializingData {
+    return Intl.message(
+      'Initializing data',
+      name: 'initializingData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update data`
+  String get updateData {
+    return Intl.message('Update data', name: 'updateData', desc: '', args: []);
+  }
+
+  /// `Updating data`
+  String get updatingData {
+    return Intl.message(
+      'Updating data',
+      name: 'updatingData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message('Done', name: 'done', desc: '', args: []);
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Tiếng Việt`
+  String get vietnamese {
+    return Intl.message('Tiếng Việt', name: 'vietnamese', desc: '', args: []);
+  }
+
+  /// `नेपाली`
+  String get nepali {
+    return Intl.message('नेपाली', name: 'nepali', desc: '', args: []);
+  }
+
+  /// `မြန်မာစာ`
+  String get burmese {
+    return Intl.message('မြန်မာစာ', name: 'burmese', desc: '', args: []);
+  }
+
+  /// `Bahasa Indonesia`
+  String get indonesian {
+    return Intl.message(
+      'Bahasa Indonesia',
+      name: 'indonesian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ไทย`
+  String get thai {
+    return Intl.message('ไทย', name: 'thai', desc: '', args: []);
+  }
+
+  /// `한국어`
+  String get korean {
+    return Intl.message('한국어', name: 'korean', desc: '', args: []);
+  }
+
+  /// `Français`
+  String get french {
+    return Intl.message('Français', name: 'french', desc: '', args: []);
+  }
+
+  /// `Italiano`
+  String get italian {
+    return Intl.message('Italiano', name: 'italian', desc: '', args: []);
+  }
+
+  /// `Deutsch`
+  String get german {
+    return Intl.message('Deutsch', name: 'german', desc: '', args: []);
+  }
+
+  /// `Русский`
+  String get russian {
+    return Intl.message('Русский', name: 'russian', desc: '', args: []);
+  }
+
+  /// `中文`
+  String get chinese {
+    return Intl.message('中文', name: 'chinese', desc: '', args: []);
+  }
+
+  /// `Bahasa Melayu`
+  String get malay {
+    return Intl.message('Bahasa Melayu', name: 'malay', desc: '', args: []);
+  }
+
+  /// `Português`
+  String get portuguese {
+    return Intl.message('Português', name: 'portuguese', desc: '', args: []);
+  }
+
+  /// `Монгол`
+  String get mongolian {
+    return Intl.message('Монгол', name: 'mongolian', desc: '', args: []);
+  }
+
+  /// `Español`
+  String get spanish {
+    return Intl.message('Español', name: 'spanish', desc: '', args: []);
+  }
+
+  /// `සිංහල`
+  String get sinhala {
+    return Intl.message('සිංහල', name: 'sinhala', desc: '', args: []);
+  }
+
+  /// `Türkçe`
+  String get turkish {
+    return Intl.message('Türkçe', name: 'turkish', desc: '', args: []);
+  }
+
+  /// `Polski`
+  String get polish {
+    return Intl.message('Polski', name: 'polish', desc: '', args: []);
+  }
+
+  /// `العربية`
+  String get arabic {
+    return Intl.message('العربية', name: 'arabic', desc: '', args: []);
+  }
+
+  /// `हिन्दी`
+  String get hindi {
+    return Intl.message('हिन्दी', name: 'hindi', desc: '', args: []);
+  }
+
+  /// `বাংলা`
+  String get bengali {
+    return Intl.message('বাংলা', name: 'bengali', desc: '', args: []);
+  }
+
+  /// `Hello!`
+  String get hello {
+    return Intl.message('Hello!', name: 'hello', desc: '', args: []);
+  }
+
+  /// `Login or link your account to buy premium package!`
+  String get linkAccountToGetMore {
+    return Intl.message(
+      'Login or link your account to buy premium package!',
+      name: 'linkAccountToGetMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upgrade to Premium to skip all ads`
+  String get removeAds {
+    return Intl.message(
+      'Upgrade to Premium to skip all ads',
+      name: 'removeAds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get adsOr {
+    return Intl.message('Or', name: 'adsOr', desc: '', args: []);
+  }
+
+  /// `Link accounts`
+  String get linkAccount {
+    return Intl.message(
+      'Link accounts',
+      name: 'linkAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Year`
+  String get perYear {
+    return Intl.message('Year', name: 'perYear', desc: '', args: []);
+  }
+
+  /// `The app requires microphone permission to function.`
+  String get microphone_permission_required {
+    return Intl.message(
+      'The app requires microphone permission to function.',
+      name: 'microphone_permission_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Microphone permission granted.`
+  String get microphone_permission_granted {
+    return Intl.message(
+      'Microphone permission granted.',
+      name: 'microphone_permission_granted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please tap here to open settings and grant microphone permission.`
+  String get microphone_open_settings {
+    return Intl.message(
+      'Please tap here to open settings and grant microphone permission.',
+      name: 'microphone_open_settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The app uses Speech Services by Google to convert text to speech.`
+  String get tts_service_required {
+    return Intl.message(
+      'The app uses Speech Services by Google to convert text to speech.',
+      name: 'tts_service_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Speech Services by Google permission granted.`
+  String get tts_service_granted {
+    return Intl.message(
+      'Speech Services by Google permission granted.',
+      name: 'tts_service_granted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please tap here to open Speech Services by Google settings.`
+  String get tts_open_settings {
+    return Intl.message(
+      'Please tap here to open Speech Services by Google settings.',
+      name: 'tts_open_settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done, please check again.`
+  String get check_done {
+    return Intl.message(
+      'Done, please check again.',
+      name: 'check_done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Microphone error?`
+  String get microphone_error {
+    return Intl.message(
+      'Microphone error?',
+      name: 'microphone_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<CoreS> {
