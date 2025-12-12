@@ -38,6 +38,12 @@ dependencies:
   http: ^1.6.0
   shared_preferences: ^2.5.4
   purchases_flutter: ^9.6.2
+  percent_indicator: ^4.2.5
+  isoweek: ^1.1.4
+  flutter_bounceable:
+    git:
+      url: https://github.com/njaistudio/flutter_bounceable.git
+      ref: main
 
 dev_dependencies:
   flutter_test:
@@ -83,5 +89,5 @@ flutter:
   # For details regarding fonts in packages, see
   # https://flutter.dev/to/font-from-package
 flutter_intl:
-  enabled: true
+  enabled: false
   class_name: CoreS

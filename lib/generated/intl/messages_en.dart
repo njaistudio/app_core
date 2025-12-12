@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueLearning": MessageLookupByLibrary.simpleMessage(
       "Continue learning",
     ),
+    "currentStreak": MessageLookupByLibrary.simpleMessage("Current streak"),
+    "dailyGoals": MessageLookupByLibrary.simpleMessage("Daily goals"),
     "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
     "deleteAccountDescription": MessageLookupByLibrary.simpleMessage(
       "You need login again to do that!",
@@ -64,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Login or link your account to buy premium package!",
     ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "longestStreak": MessageLookupByLibrary.simpleMessage("Longest streak"),
     "malay": MessageLookupByLibrary.simpleMessage("Bahasa Melayu"),
     "markAsKnown": MessageLookupByLibrary.simpleMessage("Mark as known"),
     "mastered": MessageLookupByLibrary.simpleMessage("Mastered"),
@@ -120,5 +123,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "updateData": MessageLookupByLibrary.simpleMessage("Update data"),
     "updatingData": MessageLookupByLibrary.simpleMessage("Updating data"),
     "vietnamese": MessageLookupByLibrary.simpleMessage("Tiếng Việt"),
+    "wordsPerDay": MessageLookupByLibrary.simpleMessage("words/day"),
   };
 }

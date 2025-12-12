@@ -66,5 +66,9 @@
   "tts_service_granted": "Speech Services by Google permission granted.",
   "tts_open_settings": "Please tap here to open Speech Services by Google settings.",
   "check_done": "Done, please check again.",
-  "microphone_error": "Microphone error?"
+  "microphone_error": "Microphone error?",
+  "currentStreak": "Current streak",
+  "longestStreak": "Longest streak",
+  "dailyGoals": "Daily goals",
+  "wordsPerDay": "words/day"
 }

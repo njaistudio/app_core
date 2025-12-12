@@ -493,6 +493,36 @@ class CoreS {
       args: [],
     );
   }
+
+  /// `Current streak`
+  String get currentStreak {
+    return Intl.message(
+      'Current streak',
+      name: 'currentStreak',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Longest streak`
+  String get longestStreak {
+    return Intl.message(
+      'Longest streak',
+      name: 'longestStreak',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily goals`
+  String get dailyGoals {
+    return Intl.message('Daily goals', name: 'dailyGoals', desc: '', args: []);
+  }
+
+  /// `words/day`
+  String get wordsPerDay {
+    return Intl.message('words/day', name: 'wordsPerDay', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<CoreS> {

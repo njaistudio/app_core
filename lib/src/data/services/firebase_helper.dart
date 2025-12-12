@@ -16,4 +16,5 @@ class FirebaseHelper {
   }
 
   Future<void> setDatabaseValue(String path, dynamic value) async => getDatabaseReference(path).set(value);
+  Future<void> updateDatabaseValue(String path, dynamic value) async => getDatabaseReference(path).update(value);
 }
