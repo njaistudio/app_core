@@ -32,6 +32,8 @@ class TreeGrowthView extends StatefulWidget {
   final Map<TreeStage, ImageProvider> stageImages;
   final ImageProvider petalImage;
   final double? size;
+  final bool showNumber;
+  final Color? progressBackgroundColor;
 
   const TreeGrowthView({
     super.key,
@@ -44,6 +46,8 @@ class TreeGrowthView extends StatefulWidget {
     },
     this.petalImage = const AssetImage('assets/images/sakura_petal.png', package: "app_core"),
     this.size,
+    this.showNumber = true,
+    this.progressBackgroundColor,
   });
 
   @override
@@ -179,7 +183,7 @@ class _TreeGrowthViewState extends State<TreeGrowthView> with TickerProviderStat
                 size: Size(_size, _size),
                 painter: _SegmentedProgressPainter(
                   currentPetals: animatedPetalCount,
-                  progressBackgroundColor: context.colorScheme.surfaceContainerHigh,
+                  progressBackgroundColor: widget.progressBackgroundColor ?? context.colorScheme.surfaceContainerHigh,
                 ),
               );
             },
@@ -199,6 +203,8 @@ class _TreeGrowthViewState extends State<TreeGrowthView> with TickerProviderStat
                   key: ValueKey<TreeStage>(_currentStage),
                   image: widget.stageImages[_currentStage]!,
                   fit: BoxFit.contain,
+                  width: _size / 2,
+                  height: _size / 2,
                 ),
               ),
             ),
@@ -246,7 +252,7 @@ class _TreeGrowthViewState extends State<TreeGrowthView> with TickerProviderStat
           ),
 
           // LAYER 3: [MỚI] COUNT BADGE (HIỂN THỊ SỐ HOA)
-          Positioned(
+          if(widget.showNumber) Positioned(
             top: - _size / 10, // Cách đáy widget một chút
             right: - _size / 5, // Cách đáy widget một chút
             child: ScaleTransition(
@@ -311,7 +317,7 @@ class _SegmentedProgressPainter extends CustomPainter {
     });
 
     double startAngle = -pi / 2;
-    final double gapAngle = strokeWidth / 25;
+    final double gapAngle = strokeWidth / (size.width < 50 ? 10 : 25);
     final totalGapAngle = gapAngle * segments.length;
     final availableAngle = 2 * pi - totalGapAngle;
 

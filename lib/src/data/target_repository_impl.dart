@@ -67,6 +67,7 @@ class TargetRepositoryImpl implements TargetRepository {
     firebaseHelper.updateDatabaseValue("users/${currentUser?.uid}", {
       "target": json.encode(target.toJson()),
     });
+    sharedPreferencesHelper.setTarget(target);
     return Either.right(unit);
   }
 }

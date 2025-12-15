@@ -11,13 +11,11 @@ class TargetView extends StatelessWidget {
   const TargetView({
     super.key,
     required this.targetItems,
-    required this.currentTarget,
     required this.onMenuTap,
     required this.currentStreak,
   });
 
   final List<TargetItem> targetItems;
-  final int currentTarget;
   final int currentStreak;
   final GestureTapCallback onMenuTap;
 
@@ -35,35 +33,14 @@ class TargetView extends StatelessWidget {
                 elevation: 0,
                 radius: BorderRadius.circular(10).r,
                 margin: EdgeInsets.zero,
-                color: context.colorScheme.primaryFixed,
+                color: context.colorScheme.surfaceContainerHigh,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 4, right: 4, top: 2, bottom: 2).r,
                   child: Text(
                     "${CoreS.current.currentStreak}: $currentStreak",
                     style: context.textTheme.labelSmall?.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: context.colorScheme.surfaceTint,
-                      fontSize: 10.sp,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(child: Container()),
-            Bounceable(
-              onTap: onMenuTap,
-              child: CupertinoCard(
-                elevation: 0,
-                radius: BorderRadius.circular(10).r,
-                margin: EdgeInsets.zero,
-                color: context.colorScheme.primaryFixed,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 4, right: 4, top: 2, bottom: 2).r,
-                  child: Text(
-                    "$currentTarget ${CoreS.of(context).wordsPerDay}",
-                    style: context.textTheme.labelSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: context.colorScheme.surfaceTint,
+                      color: context.colorScheme.onSurface,
                       fontSize: 10.sp,
                     ),
                   ),
@@ -97,93 +74,22 @@ class TargetView extends StatelessWidget {
 
   Widget _buildTargetItem(BuildContext context, TargetItem targetItem) {
     ColorScheme colorScheme = context.colorScheme;
-    final text = targetItem.score == 0 ? "-" : targetItem.score.toString();
-    if(!targetItem.isHighlight) {
-      return CupertinoCard(
-        color: colorScheme.surface,
-        radius: BorderRadius.circular(24).r,
-        padding: const EdgeInsets.only(top: 4, bottom: 4).r,
-        margin: const EdgeInsets.only(top: 8, right: 4, left: 4, bottom: 0).r,
-        elevation: 0,
-        child: Column(
-          children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: LayoutBuilder(builder: (context, constraints) {
-                return targetItem.completedPercent == 1 ? Icon(
-                  CupertinoIcons.flame_fill,
-                  color: colorScheme.tertiary.withAlpha(150),
-                  size: constraints.maxHeight / 1.5,
-                ) : CircularPercentIndicator(
-                  radius: constraints.maxWidth / 3,
-                  lineWidth: constraints.maxWidth / 13,
-                  animation: true,
-                  percent: targetItem.completedPercent,
-                  center: Padding(
-                    padding: const EdgeInsets.all(4.0).r,
-                    child: AutoSizeText(
-                      text,
-                      style: context.textTheme.labelLarge?.copyWith(
-                        color: colorScheme.onSurface,
-                        fontSize: constraints.maxWidth / 4,
-                      ),
-                      maxLines: 1,
-                      minFontSize: 5,
-                    ),
-                  ),
-                  circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: colorScheme.onSecondary,
-                  backgroundColor: colorScheme.onSecondary.withAlpha(50),
-                );
-              }),
-            ),
-            Text(
-              targetItem.dayName,
-              style: context.textTheme.labelSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                fontSize: 10.sp,
-                color: colorScheme.onSurface,
-              ),
-            ),
-          ],
-        ),
-      );
-    }
     return CupertinoCard(
-      color: colorScheme.primaryFixed,
+      color: targetItem.isHighlight ? colorScheme.primary : colorScheme.surfaceContainerHighest,
       radius: BorderRadius.circular(24).r,
       padding: const EdgeInsets.only(top: 4, bottom: 4).r,
-      margin: const EdgeInsets.only(top: 0, right: 4, left: 4, bottom: 0).r,
-      elevation: 0.5,
+      margin: EdgeInsets.only(top: targetItem.isHighlight ? 0 : 8, right: 4, left: 4, bottom: 0).r,
+      elevation: targetItem.isHighlight ? 0.5 : 0,
       child: Column(
         children: [
           AspectRatio(
             aspectRatio: 1,
             child: LayoutBuilder(builder: (context, constraints) {
-              return targetItem.completedPercent == 1 ? Icon(
-                CupertinoIcons.flame_fill,
-                color: colorScheme.surfaceTint,
-                size: constraints.maxHeight / 1.5,
-              ) : CircularPercentIndicator(
-                radius: constraints.maxWidth / 3,
-                lineWidth: constraints.maxWidth / 13,
-                animation: true,
-                percent: targetItem.completedPercent,
-                center: Padding(
-                  padding: const EdgeInsets.all(4.0).r,
-                  child: AutoSizeText(
-                    text,
-                    style: context.textTheme.labelLarge?.copyWith(
-                      color: colorScheme.surfaceTint,
-                      fontSize: constraints.maxWidth / 4,
-                    ),
-                    maxLines: 1,
-                    minFontSize: 5,
-                  ),
-                ),
-                circularStrokeCap: CircularStrokeCap.round,
-                progressColor: colorScheme.surfaceTint,
-                backgroundColor: colorScheme.surfaceTint.withAlpha(100),
+              return TreeGrowthView(
+                petalCount: targetItem.score,
+                showNumber: false,
+                size: constraints.maxHeight / 1.2,
+                progressBackgroundColor: targetItem.isHighlight ? colorScheme.onPrimary.withAlpha(50) : colorScheme.surfaceContainerHigh,
               );
             }),
           ),
@@ -192,7 +98,7 @@ class TargetView extends StatelessWidget {
             style: context.textTheme.labelSmall?.copyWith(
               fontWeight: FontWeight.bold,
               fontSize: 10.sp,
-              color: Colors.white,
+              color: colorScheme.onSurface.withAlpha(200),
             ),
           ),
         ],

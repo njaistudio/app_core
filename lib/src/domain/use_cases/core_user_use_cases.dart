@@ -1,4 +1,10 @@
-import 'package:app_core/app_core.dart';
+import 'package:app_core/src/domain/use_cases/user/delete_user_use_case.dart';
+import 'package:app_core/src/domain/use_cases/user/get_user_use_case.dart';
+import 'package:app_core/src/domain/use_cases/user/is_anonymous_use_case.dart';
+import 'package:app_core/src/domain/use_cases/user/is_logged_in_use_case.dart';
+import 'package:app_core/src/domain/use_cases/user/link_account_use_case.dart';
+import 'package:app_core/src/domain/use_cases/user/login_use_case.dart';
+import 'package:app_core/src/domain/use_cases/user/logout_use_case.dart';
 
 class CoreUserUseCases {
   final LoginUseCase loginUseCase;
