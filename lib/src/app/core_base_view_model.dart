@@ -37,26 +37,26 @@ class CoreBaseViewModel extends ChangeNotifier {
     _eventController.add(event);
   }
 
-  void requiredNetworkRun(Function() run) async {
-    final isOffline = await DeviceHelper.isOffline();
-    if(isOffline) {
-      sendEvent(ShowMessageEvent(
-        message: "No internet connection",
-        description: "Please check your internet connection",
-        type: MessageType.error,
-        iconData: Icons.signal_wifi_connected_no_internet_4_rounded,
-      ));
-      return;
-    }
-    run.call();
-  }
-
   Future<void> runTask<T>(
       Future<Either<Failure, T>> Function() function, {
         required Function(T data) onSuccess,
         Function(Failure failure)? onError,
         bool useLoading = true,
+        bool needCheckNetWork = false,
       }) async {
+    if(needCheckNetWork) {
+      final isOffline = await DeviceHelper.isOffline();
+      if(isOffline) {
+        sendEvent(ShowMessageEvent(
+          message: "No internet connection",
+          description: "Please check your internet connection",
+          type: MessageType.error,
+          iconData: Icons.signal_wifi_connected_no_internet_4_rounded,
+        ));
+        onError?.call(NetWorkError());
+        return;
+      }
+    }
     if (useLoading) {
       sendEvent(ShowLoadingEvent());
     }

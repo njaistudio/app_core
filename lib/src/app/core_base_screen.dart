@@ -72,29 +72,24 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
   void _showLoading() {
     if (!_isLoadingDialogShowing) {
       _isLoadingDialogShowing = true;
-      showMaterialModalBottomSheet(
-        context: context,
-        backgroundColor: Colors.transparent,
-        builder: (context) {
-          return _buildBottomDialogContainer(
-            child: SizedBox(
-              height: 50.r,
-              child: Center(
-                child: LoadingAnimationWidget.staggeredDotsWave(
-                  color: colorScheme.onSurface,
-                  size: 48.r,
-                ),
-              ),
+      showCoreBottomSheet(
+        isDismissible: false,
+        widgetBuilder: (context) => SizedBox(
+          height: 50.r,
+          child: Center(
+            child: LoadingAnimationWidget.staggeredDotsWave(
+              color: colorScheme.onSurface,
+              size: 48.r,
             ),
-          );
-        },
+          ),
+        ),
       ).then((_) {
         _isLoadingDialogShowing = false;
       });
     }
   }
 
-  _buildBottomDialogContainer({required Widget child, Color? backgroundColor}) {
+  Widget _buildBottomDialogContainer({required Widget child, Color? backgroundColor}) {
     return CupertinoCard(
       elevation: 0,
       padding: EdgeInsets.only(
@@ -112,6 +107,20 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
         bottomRight: Radius.circular(0),
       ),
       child: child,
+    );
+  }
+
+  Future<dynamic> showCoreBottomSheet({required WidgetBuilder widgetBuilder, bool isDismissible = true}) async {
+    return showMaterialModalBottomSheet(
+      context: context,
+      isDismissible: isDismissible,
+      enableDrag: isDismissible,
+      backgroundColor: Colors.transparent,
+      builder: (dlContext) {
+        return _buildBottomDialogContainer(
+          child: widgetBuilder(dlContext),
+        );
+      },
     );
   }
 
@@ -149,7 +158,7 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
         break;
     }
 
-    showBarModalBottomSheet(
+    showMaterialModalBottomSheet(
       backgroundColor: Colors.transparent,
       barrierColor: Colors.black54,
       context: context,

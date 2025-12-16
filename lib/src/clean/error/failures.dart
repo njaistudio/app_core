@@ -10,9 +10,9 @@ abstract class Failure extends Equatable {
 }
 
 class UnknownError extends Failure {
-  const UnknownError(String message) : super("Something went wrong.");
+  const UnknownError() : super("Something went wrong.");
 }
 
 class NetWorkError extends Failure {
-  const NetWorkError(String message) : super("NetWork Error.");
+  const NetWorkError() : super("NetWork Error.");
 }
