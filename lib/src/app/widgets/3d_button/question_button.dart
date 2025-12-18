@@ -34,8 +34,8 @@ enum _QuestionButtonStatus {
 }
 
 class QuestionButton extends StatefulWidget {
-  const QuestionButton({super.key, this.height = 70, required this.isCorrectAnswer, required this.onPress, this.onAnimationEnd, required this.child});
-  final double height;
+  const QuestionButton({super.key, this.height, required this.isCorrectAnswer, required this.onPress, this.onAnimationEnd, required this.child});
+  final double? height;
   final bool isCorrectAnswer;
   final VoidCallback onPress;
   final VoidCallback? onAnimationEnd;
@@ -118,35 +118,39 @@ class _QuestionButtonState extends State<QuestionButton> {
     ];
 
     return positions.map((pos) {
-      return Positioned(
-        top: pos['top'],
-        bottom: pos['bottom'],
-        left: pos['left'],
-        right: pos['right'],
-        child: CustomAnimationBuilder<Movie>(
-          control: currentControl,
-          tween: _correctShakeTween,
-          duration: _correctShakeTween.duration,
-          builder: (context, value, child) {
-            return Transform.scale(
-              scale: value.get('scale'),
-              alignment: Alignment.center,
-              child: Transform.rotate(
-                angle: value.get('rotation') ?? 0.0,
-                alignment: Alignment.center,
-                child: Blob.random(
-                  size: widget.height / 4,
-                  edgesCount: 5,
-                  minGrowth: 9,
-                  styles: BlobStyles(
-                    color: Colors.green.shade300,
+      return LayoutBuilder(
+        builder: (context, size) {
+          return Positioned(
+            top: pos['top'],
+            bottom: pos['bottom'],
+            left: pos['left'],
+            right: pos['right'],
+            child: CustomAnimationBuilder<Movie>(
+              control: currentControl,
+              tween: _correctShakeTween,
+              duration: _correctShakeTween.duration,
+              builder: (context, value, child) {
+                return Transform.scale(
+                  scale: value.get('scale'),
+                  alignment: Alignment.center,
+                  child: Transform.rotate(
+                    angle: value.get('rotation') ?? 0.0,
+                    alignment: Alignment.center,
+                    child: Blob.random(
+                      size: size.maxHeight / 4,
+                      edgesCount: 5,
+                      minGrowth: 9,
+                      styles: BlobStyles(
+                        color: Colors.green.shade300,
+                      ),
+                      child: Icon(Icons.check_rounded, size: size.maxHeight / 8, color: Colors.white, fontWeight: FontWeight.bold,),
+                    ),
                   ),
-                  child: Icon(Icons.check_rounded, size: widget.height / 8, color: Colors.white, fontWeight: FontWeight.bold,),
-                ),
-              ),
-            );
-          },
-        ),
+                );
+              },
+            ),
+          );
+        }
       );
     }).toList();
   }
@@ -160,36 +164,40 @@ class _QuestionButtonState extends State<QuestionButton> {
     ];
 
     return positions.map((pos) {
-      return Positioned(
-        top: pos['top'],
-        bottom: pos['bottom'],
-        left: pos['left'],
-        right: pos['right'],
-        child: CustomAnimationBuilder<Movie>(
-          key: ValueKey(currentControl),
-          control: currentControl,
-          tween: _wrongShakeTween,
-          duration: _wrongShakeTween.duration,
-          builder: (context, value, child) {
-            final double scale = value.get('scale');
-            final double translateX = value.get('translateX') ?? 0.0;
-            return Transform.scale(
-              scale: scale,
-              child: Transform.translate(
-                offset: Offset(translateX, 0.0),
-                child: Blob.random(
-                  size: widget.height / 4,
-                  edgesCount: 5,
-                  minGrowth: 9,
-                  styles: BlobStyles(
-                    color: Colors.red.shade300,
+      return LayoutBuilder(
+        builder: (context, size) {
+          return Positioned(
+            top: pos['top'],
+            bottom: pos['bottom'],
+            left: pos['left'],
+            right: pos['right'],
+            child: CustomAnimationBuilder<Movie>(
+              key: ValueKey(currentControl),
+              control: currentControl,
+              tween: _wrongShakeTween,
+              duration: _wrongShakeTween.duration,
+              builder: (context, value, child) {
+                final double scale = value.get('scale');
+                final double translateX = value.get('translateX') ?? 0.0;
+                return Transform.scale(
+                  scale: scale,
+                  child: Transform.translate(
+                    offset: Offset(translateX, 0.0),
+                    child: Blob.random(
+                      size: size.maxHeight / 4,
+                      edgesCount: 5,
+                      minGrowth: 9,
+                      styles: BlobStyles(
+                        color: Colors.red.shade300,
+                      ),
+                      child: Icon(Icons.clear_rounded, size: size.maxHeight / 8, color: Colors.white, fontWeight: FontWeight.bold,),
+                    ),
                   ),
-                  child: Icon(Icons.clear_rounded, size: widget.height / 8, color: Colors.white, fontWeight: FontWeight.bold,),
-                ),
-              ),
-            );
-          },
-        ),
+                );
+              },
+            ),
+          );
+        }
       );
     }).toList();
   }
@@ -207,26 +215,30 @@ class _QuestionButtonState extends State<QuestionButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        AnimatedButton(
-          color: _colorScheme.surface,
-          shadowColor: _shadowColor,
-          height: widget.height,
-          borderWidth: _state == _QuestionButtonStatus.none ? 1 : 1.2,
-          shadowHeight: _state == _QuestionButtonStatus.none ? 3 : 1.2,
-          enabled: _state == _QuestionButtonStatus.none,
-          disabledColor: _colorScheme.surface,
-          disabledShadowColor: _shadowColor,
-          child: widget.child,
-          onPressed: () {
-            widget.onPress.call();
-            _trigger();
-          },
-        ),
-        ... _state == _QuestionButtonStatus.correct ? _buildCorrectCorners(_animationControl) : _buildWrongCorners(_animationControl),
-      ],
+    return LayoutBuilder(
+      builder: (context, size) {
+        return Stack(
+          clipBehavior: Clip.none,
+          children: [
+            AnimatedButton(
+              color: _colorScheme.surface,
+              shadowColor: _shadowColor,
+              height: size.maxHeight,
+              borderWidth: _state == _QuestionButtonStatus.none ? 1 : 1.2,
+              shadowHeight: _state == _QuestionButtonStatus.none ? 3 : 1.2,
+              enabled: _state == _QuestionButtonStatus.none,
+              disabledColor: _colorScheme.surface,
+              disabledShadowColor: _shadowColor,
+              child: widget.child,
+              onPressed: () {
+                widget.onPress.call();
+                _trigger();
+              },
+            ),
+            ... _state == _QuestionButtonStatus.correct ? _buildCorrectCorners(_animationControl) : _buildWrongCorners(_animationControl),
+          ],
+        );
+      }
     );
   }
 }

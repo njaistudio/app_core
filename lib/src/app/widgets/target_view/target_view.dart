@@ -75,7 +75,7 @@ class TargetView extends StatelessWidget {
   Widget _buildTargetItem(BuildContext context, TargetItem targetItem) {
     ColorScheme colorScheme = context.colorScheme;
     return CupertinoCard(
-      color: targetItem.isHighlight ? colorScheme.primary : colorScheme.surfaceContainerHighest,
+      color: targetItem.isHighlight ? colorScheme.surfaceContainerHighest : colorScheme.surfaceContainer,
       radius: BorderRadius.circular(24).r,
       padding: const EdgeInsets.only(top: 4, bottom: 4).r,
       margin: EdgeInsets.only(top: targetItem.isHighlight ? 0 : 8, right: 4, left: 4, bottom: 0).r,

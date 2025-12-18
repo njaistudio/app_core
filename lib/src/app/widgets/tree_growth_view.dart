@@ -203,8 +203,9 @@ class _TreeGrowthViewState extends State<TreeGrowthView> with TickerProviderStat
                   key: ValueKey<TreeStage>(_currentStage),
                   image: widget.stageImages[_currentStage]!,
                   fit: BoxFit.contain,
-                  width: _size / 2,
-                  height: _size / 2,
+                  width: _size / 1.7,
+                  height: _size / 1.7,
+                  color: widget.petalCount == 0 ? ( widget.progressBackgroundColor ?? context.colorScheme.surfaceContainerHigh) : null,
                 ),
               ),
             ),
@@ -317,7 +318,7 @@ class _SegmentedProgressPainter extends CustomPainter {
     });
 
     double startAngle = -pi / 2;
-    final double gapAngle = strokeWidth / (size.width < 50 ? 10 : 25);
+    final double gapAngle = strokeWidth / (size.width < 50 ? 10 : 20);
     final totalGapAngle = gapAngle * segments.length;
     final availableAngle = 2 * pi - totalGapAngle;
 
