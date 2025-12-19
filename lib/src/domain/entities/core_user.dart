@@ -1,16 +1,16 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
 
-part 'user.g.dart';
+part 'core_user.g.dart';
 
 @CopyWith()
-class User extends Equatable {
+class CoreUser extends Equatable {
   final String id;
   final String? email;
   final String? name;
   final String? avatar;
 
-  User({
+  CoreUser({
     required this.id,
     this.email,
     this.name,

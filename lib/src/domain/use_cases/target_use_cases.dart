@@ -6,6 +6,7 @@ import 'package:app_core/src/domain/use_cases/target/get_week_target_data.dart';
 import 'package:app_core/src/domain/use_cases/target/increase_target_score.dart';
 import 'package:app_core/src/domain/use_cases/target/set_current_target.dart';
 import 'package:app_core/src/domain/use_cases/target/set_target_completed.dart';
+import 'package:app_core/src/domain/use_cases/target/sync_targets.dart';
 
 class TargetUseCases {
   final GetAvailableTargets getAvailableTargets;
@@ -16,6 +17,7 @@ class TargetUseCases {
   final SetTargetCompleted setTargetCompleted;
   final GetLongestStreakNumber getLongestStreakNumber;
   final SetCurrentTarget setCurrentTarget;
+  final SyncTargets syncTargets;
 
   TargetUseCases({
     required this.getAvailableTargets,
@@ -26,5 +28,6 @@ class TargetUseCases {
     required this.setTargetCompleted,
     required this.getLongestStreakNumber,
     required this.setCurrentTarget,
+    required this.syncTargets,
   });
 }

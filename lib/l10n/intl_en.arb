@@ -70,5 +70,10 @@
   "currentStreak": "Current streak",
   "longestStreak": "Longest streak",
   "dailyGoals": "Daily goals",
-  "wordsPerDay": "words/day"
+  "wordsPerDay": "words/day",
+  "oneDay": "One day (24h)",
+  "watchVideo": "Watch a ads video",
+  "oneYear": "Yearly subscription",
+  "mostPopular": "Most popular",
+  "bestValue": "Best value"
 }

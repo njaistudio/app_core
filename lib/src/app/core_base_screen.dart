@@ -1,11 +1,11 @@
 import 'dart:async';
+
 import 'package:app_core/app_core.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_it/get_it.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -96,7 +96,7 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
         left: 16.r,
         right: 16.r,
         top: 16.r,
-        bottom: DeviceHelper.safeAreaPaddingBottom(context),
+        bottom: 16.r + DeviceHelper.safeAreaPaddingBottom(context),
       ),
       margin: EdgeInsets.zero,
       color: backgroundColor ?? colorScheme.surfaceContainer,
@@ -116,11 +116,94 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
       isDismissible: isDismissible,
       enableDrag: isDismissible,
       backgroundColor: Colors.transparent,
+      barrierColor: Colors.black87,
       builder: (dlContext) {
         return _buildBottomDialogContainer(
           child: widgetBuilder(dlContext),
         );
       },
+    );
+  }
+
+  Future<dynamic> showConfirmBottomSheet(String title, {String? description, IconData? iconData, Color? color, VoidCallback? onAgree,}) async {
+    return showCoreBottomSheet(
+      widgetBuilder: (context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 56.r,
+                  width: 56.r,
+                  child: CupertinoCard(
+                    elevation: 0,
+                    color: color ?? Colors.white,
+                    radius: BorderRadius.circular(24.r),
+                    child: Icon(iconData, size: 36.r, color: Colors.white,),
+                  ),
+                ),
+                SizedBox(width: 8.r,),
+                Expanded(
+                  child: AutoSizeText(
+                    title,
+                    maxLines: 2,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.colorScheme.onSurface,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if(description != null) Padding(
+              padding: const EdgeInsets.all(8.0).r,
+              child: Text(
+                description,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: context.colorScheme.onSurface,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0).r,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: PrimaryTextIconButton(
+                      color: Colors.grey.shade600,
+                      shadowColor: Colors.grey.shade700,
+                      onPressed: () {
+                        _hideLoading();
+                      },
+                      height: 36.r,
+                      iconData: Icons.close_rounded,
+                      text: CoreS.current.cancel,
+                    ),
+                  ),
+                  SizedBox(width: 8.r,),
+                  Expanded(
+                    child: PrimaryTextIconButton(
+                      color: Colors.green.shade300,
+                      shadowColor: Colors.green.shade300,
+                      onPressed: () async {
+                        _hideLoading();
+                        await Future.delayed(Duration(milliseconds: 100),);
+                        onAgree?.call();
+                      },
+                      height: 36.r,
+                      iconData: Icons.check_rounded,
+                      text: CoreS.current.ok,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      }
     );
   }
 
@@ -160,7 +243,7 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
 
     showMaterialModalBottomSheet(
       backgroundColor: Colors.transparent,
-      barrierColor: Colors.black54,
+      barrierColor: Colors.black87,
       context: context,
       elevation: 0,
       shape: const RoundedRectangleBorder(

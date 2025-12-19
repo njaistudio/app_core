@@ -1,8 +1,7 @@
 import 'package:app_core/app_core.dart';
-import 'package:app_core/src/data/services/firebase_helper.dart';
-import 'package:firebase_auth/firebase_auth.dart' as FA;
-import 'package:app_core/src/domain/entities/errors.dart';
 import 'package:app_core/src/data/services/auth_service.dart';
+import 'package:app_core/src/domain/entities/errors.dart';
+import 'package:firebase_auth/firebase_auth.dart' as FA;
 import 'package:fpdart/fpdart.dart';
 
 class UserRepositoryImpl implements UserRepository {
@@ -21,12 +20,12 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<Either<Failure, User>> getUser() async {
+  Future<Either<Failure, CoreUser>> getUser() async {
     final firebaseUser = _firebaseHelper.currentUser;
     if(firebaseUser == null) {
       return Left(NoUserError());
     }
-    return Either.right(User(id: firebaseUser.uid, email: firebaseUser.email, name: firebaseUser.displayName, avatar: firebaseUser.photoURL));
+    return Either.right(CoreUser(id: firebaseUser.uid, email: firebaseUser.email, name: firebaseUser.displayName, avatar: firebaseUser.photoURL));
   }
 
   @override
@@ -67,7 +66,7 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<Either<Failure, User>> login(AuthType authType) async {
+  Future<Either<Failure, CoreUser>> login(AuthType authType) async {
     bool isLoginSuccess = false;
     switch (authType) {
       case AuthType.google:

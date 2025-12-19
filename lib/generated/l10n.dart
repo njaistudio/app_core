@@ -523,6 +523,46 @@ class CoreS {
   String get wordsPerDay {
     return Intl.message('words/day', name: 'wordsPerDay', desc: '', args: []);
   }
+
+  /// `One day (24h)`
+  String get oneDay {
+    return Intl.message('One day (24h)', name: 'oneDay', desc: '', args: []);
+  }
+
+  /// `Watch a ads video`
+  String get watchVideo {
+    return Intl.message(
+      'Watch a ads video',
+      name: 'watchVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yearly subscription`
+  String get oneYear {
+    return Intl.message(
+      'Yearly subscription',
+      name: 'oneYear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most popular`
+  String get mostPopular {
+    return Intl.message(
+      'Most popular',
+      name: 'mostPopular',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best value`
+  String get bestValue {
+    return Intl.message('Best value', name: 'bestValue', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<CoreS> {

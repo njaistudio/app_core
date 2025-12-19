@@ -1,11 +1,7 @@
 import 'package:app_core/app_core.dart';
-import 'package:app_core/src/domain/entities/target_item.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class TargetView extends StatelessWidget {
   const TargetView({

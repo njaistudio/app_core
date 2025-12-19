@@ -1,7 +1,6 @@
 import 'package:app_core/app_core.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrimaryTextIconButton extends StatefulWidget {
   const PrimaryTextIconButton({super.key, required this.onPressed, required this.text, this.textStyle, this.maxLines = 1, this.height, required this.iconData, this.color, this.shadowColor, this.badge, this.badgeColor, this.enabled = true});

@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyKnown": MessageLookupByLibrary.simpleMessage("Already Known"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "bengali": MessageLookupByLibrary.simpleMessage("বাংলা"),
+    "bestValue": MessageLookupByLibrary.simpleMessage("Best value"),
     "burmese": MessageLookupByLibrary.simpleMessage("မြန်မာစာ"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "check_done": MessageLookupByLibrary.simpleMessage(
@@ -83,10 +84,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "The app requires microphone permission to function.",
     ),
     "mongolian": MessageLookupByLibrary.simpleMessage("Монгол"),
+    "mostPopular": MessageLookupByLibrary.simpleMessage("Most popular"),
     "needsReview": MessageLookupByLibrary.simpleMessage("Needs Review"),
     "nepali": MessageLookupByLibrary.simpleMessage("नेपाली"),
     "nextReviewIn": m0,
     "ok": MessageLookupByLibrary.simpleMessage("Continue"),
+    "oneDay": MessageLookupByLibrary.simpleMessage("One day (24h)"),
+    "oneYear": MessageLookupByLibrary.simpleMessage("Yearly subscription"),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "perYear": MessageLookupByLibrary.simpleMessage("Year"),
     "pleaseWaitASecond": MessageLookupByLibrary.simpleMessage(
@@ -123,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "updateData": MessageLookupByLibrary.simpleMessage("Update data"),
     "updatingData": MessageLookupByLibrary.simpleMessage("Updating data"),
     "vietnamese": MessageLookupByLibrary.simpleMessage("Tiếng Việt"),
+    "watchVideo": MessageLookupByLibrary.simpleMessage("Watch a ads video"),
     "wordsPerDay": MessageLookupByLibrary.simpleMessage("words/day"),
   };
 }

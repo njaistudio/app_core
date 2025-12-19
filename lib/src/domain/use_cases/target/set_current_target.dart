@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:app_core/src/domain/repositories/target_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
 class SetCurrentTarget implements UseCase<Unit, int> {

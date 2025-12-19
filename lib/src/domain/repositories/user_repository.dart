@@ -8,8 +8,8 @@ enum AuthType {
 }
 
 abstract class UserRepository {
-  Future<Either<Failure, User>> login(AuthType authType);
-  Future<Either<Failure, User>> getUser();
+  Future<Either<Failure, CoreUser>> login(AuthType authType);
+  Future<Either<Failure, CoreUser>> getUser();
   Future<Either<Failure, Unit>> linkAccount(AuthType authType);
   Future<Either<Failure, Unit>> logout();
   Future<Either<Failure, Unit>> deleteUser();

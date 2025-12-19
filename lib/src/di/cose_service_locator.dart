@@ -1,12 +1,6 @@
 import 'package:app_core/app_core.dart';
-import 'package:app_core/src/admob/ad_interstitial.dart';
-import 'package:app_core/src/admob/ad_rewarded.dart';
-import 'package:app_core/src/data/services/firebase_helper.dart';
-import 'package:app_core/src/data/storage/core_shared_preferences_helper.dart';
-import 'package:app_core/src/data/target_repository_impl.dart';
-import 'package:app_core/src/data/user_repository_impl.dart';
 import 'package:app_core/src/data/services/auth_service.dart';
-import 'package:app_core/src/domain/repositories/target_repository.dart';
+import 'package:app_core/src/data/user_repository_impl.dart';
 import 'package:app_core/src/domain/use_cases/target/get_available_targets.dart';
 import 'package:app_core/src/domain/use_cases/target/get_current_target.dart';
 import 'package:app_core/src/domain/use_cases/target/get_longest_streak_number.dart';
@@ -15,6 +9,7 @@ import 'package:app_core/src/domain/use_cases/target/get_week_target_data.dart';
 import 'package:app_core/src/domain/use_cases/target/increase_target_score.dart';
 import 'package:app_core/src/domain/use_cases/target/set_current_target.dart';
 import 'package:app_core/src/domain/use_cases/target/set_target_completed.dart';
+import 'package:app_core/src/domain/use_cases/target/sync_targets.dart';
 import 'package:app_core/src/domain/use_cases/user/delete_user_use_case.dart';
 import 'package:app_core/src/domain/use_cases/user/get_user_use_case.dart';
 import 'package:app_core/src/domain/use_cases/user/is_anonymous_use_case.dart';
@@ -87,6 +82,7 @@ class CoreServiceLocator {
     coreGetIt.registerLazySingleton<SetTargetCompleted>(() => SetTargetCompleted(targetRepository: coreGetIt()));
     coreGetIt.registerLazySingleton<GetLongestStreakNumber>(() => GetLongestStreakNumber(targetRepository: coreGetIt()));
     coreGetIt.registerLazySingleton<SetCurrentTarget>(() => SetCurrentTarget(targetRepository: coreGetIt()));
+    coreGetIt.registerLazySingleton<SyncTargets>(() => SyncTargets(targetRepository: coreGetIt()));
 
     coreGetIt.registerLazySingleton<TargetUseCases>(() => TargetUseCases(
       getAvailableTargets: coreGetIt(),
@@ -97,6 +93,7 @@ class CoreServiceLocator {
       setTargetCompleted: coreGetIt(),
       getLongestStreakNumber: coreGetIt(),
       setCurrentTarget: coreGetIt(),
+      syncTargets: coreGetIt(),
     ));
   }
 }

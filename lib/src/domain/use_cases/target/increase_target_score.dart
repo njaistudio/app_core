@@ -1,6 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:app_core/src/data/storage/storage_target.dart';
-import 'package:app_core/src/domain/repositories/target_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';
 
