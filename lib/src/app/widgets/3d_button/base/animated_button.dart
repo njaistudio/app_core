@@ -130,7 +130,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                       child: Center(
                         child: Text(
                           widget.badge.toString(),
-                          style: context.textTheme.titleSmall?.copyWith(color: context.colorScheme.onError, fontWeight: FontWeight.bold,),
+                          style: context.textTheme.titleSmall?.copyWith(color: context.colorScheme.onPrimary, fontWeight: FontWeight.bold,),
                         ),
                       ),
                     ),

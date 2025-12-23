@@ -111,10 +111,10 @@ class _QuestionButtonState extends State<QuestionButton> {
 
   List<Widget> _buildCorrectCorners(Control currentControl, BoxConstraints parentSize) {
     final positions = [
-      {'top': - _randomOffset, 'left': - _randomOffset},
-      {'top': - _randomOffset, 'right': - _randomOffset},
-      {'bottom': - _randomOffset, 'left': - _randomOffset},
-      {'bottom': - _randomOffset, 'right': - _randomOffset},
+      {'top': - _randomOffset, 'left': - _randomOffset * 2},
+      {'top': - _randomOffset, 'right': - _randomOffset * 2},
+      {'bottom': - _randomOffset, 'left': - _randomOffset * 2},
+      {'bottom': - _randomOffset, 'right': - _randomOffset * 2},
     ];
 
     return positions.map((pos) {

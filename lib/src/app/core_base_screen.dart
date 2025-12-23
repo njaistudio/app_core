@@ -29,11 +29,13 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
 
   bool get needSafeArea => false;
 
+  Color get backgroundColor => colorScheme.surface;
+
   AppBar? get appBar => AppBar(
     automaticallyImplyLeading: false,
     elevation: 0,
     toolbarHeight: 0,
-    backgroundColor: colorScheme.surface,
+    backgroundColor: backgroundColor,
     scrolledUnderElevation: 0.0,
   );
 

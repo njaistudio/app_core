@@ -48,6 +48,7 @@ export 'src/domain/repositories/user_repository.dart';
 export 'src/domain/use_cases/core_user_use_cases.dart';
 export 'src/domain/use_cases/target_use_cases.dart';
 export 'src/domain/use_cases/target/sync_targets.dart';
+export 'src/domain/use_cases/admob_use_cases.dart';
 export 'src/store/purchase_helper.dart';
 export 'src/store/remove_ads_view.dart';
 export 'src/extensions/exts.dart';

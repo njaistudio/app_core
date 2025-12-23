@@ -1,6 +1,7 @@
 import 'package:app_core/app_core.dart';
 import 'package:app_core/src/data/services/auth_service.dart';
 import 'package:app_core/src/data/user_repository_impl.dart';
+import 'package:app_core/src/domain/use_cases/admob/sync_show_ads_limit.dart';
 import 'package:app_core/src/domain/use_cases/target/get_longest_streak_number.dart';
 import 'package:app_core/src/domain/use_cases/target/get_streak_number.dart';
 import 'package:app_core/src/domain/use_cases/target/get_week_target_data.dart';
@@ -67,6 +68,12 @@ class CoreServiceLocator {
       deleteUserUseCase: coreGetIt(),
       isLoggedInUseCase: coreGetIt(),
       isAnonymousUseCase: coreGetIt(),
+    ));
+
+    coreGetIt.registerLazySingleton<SyncShowAdsLimit>(() => SyncShowAdsLimit(sharedPreferencesHelper: coreGetIt(), firebaseHelper: coreGetIt()));
+
+    coreGetIt.registerLazySingleton<AdmobUseCases>(() => AdmobUseCases(
+      syncShowAdsLimit: coreGetIt(),
     ));
 
 

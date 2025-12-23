@@ -4,13 +4,10 @@ import 'package:app_core/src/data/storage/storage_target.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CoreSharedPreferencesHelper {
-  static const currentLanguageKey = "currentLanguageKey";
-  static const mutedKey = "mutedKey";
-  static const adsCount = "adsCount";
-  static const versionKey = "versionKey";
-  static const targetKey = "targetKey";
-  static const removeAdStartTimeKey = "removeAdStartTimeKey";
-  static const showAdsLimitKey = "showAdsLimitKey";
+  static const adsCount = "adsCount_v1";
+  static const targetKey = "targetKey_v1";
+  static const removeAdStartTimeKey = "removeAdStartTimeKey_v1";
+  static const showAdsLimitKey = "showAdsLimitKey_v1";
 
   Future<int> getShowAdsLimit() async {
     final prefs = await SharedPreferences.getInstance();
@@ -20,30 +17,6 @@ class CoreSharedPreferencesHelper {
   Future saveShowAdsLimit(int number) async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.setInt(showAdsLimitKey, number);
-  }
-
-  Future<String> currentLanguage({bool removeFromAs = true}) async {
-    final prefs = await SharedPreferences.getInstance();
-    String language = prefs.getString(currentLanguageKey) ?? "";
-    if(removeFromAs) {
-      language = language.split('_from_').first;
-    }
-    return language;
-  }
-
-  Future setCurrentLanguage(String value) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setString(currentLanguageKey, value);
-  }
-
-  Future<bool> muted() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(mutedKey) ?? false;
-  }
-
-  Future setMuted(bool value) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setBool(mutedKey, value);
   }
 
   Future<int> currentAdsCount() async {
@@ -60,15 +33,6 @@ class CoreSharedPreferencesHelper {
     final prefs = await SharedPreferences.getInstance();
     var current = prefs.getInt(adsCount) ?? 0;
     prefs.setInt(adsCount, current + number);
-  }
-  Future setCurrentVersion(int version) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setInt(versionKey, version);
-  }
-
-  Future<int> currentVersion() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(versionKey) ?? 0;
   }
 
   Future<int> removeAdStartTime() async {
@@ -97,10 +61,7 @@ class CoreSharedPreferencesHelper {
 
   Future clearData() async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.remove(currentLanguageKey);
     prefs.remove(adsCount);
-    prefs.remove(mutedKey);
-    prefs.remove(versionKey);
     prefs.remove(targetKey);
   }
 }

@@ -153,7 +153,7 @@ extension LearnStatusExtension on LearnStatus {
       case LearnStatus.master:
         return Colors.indigo;
       case LearnStatus.skipped:
-        return Colors.black.materialColor;
+        return Colors.red;
     }
   }
 }
