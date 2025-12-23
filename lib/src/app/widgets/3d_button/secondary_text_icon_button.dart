@@ -3,7 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryTextIconButton extends StatefulWidget {
-  const SecondaryTextIconButton({super.key, required this.onPressed, required this.text, this.textStyle, this.maxLines = 1, this.height, required this.iconData, this.contentColor});
+  const SecondaryTextIconButton({super.key, required this.onPressed, required this.text, this.textStyle, this.maxLines = 1, this.height, required this.iconData, this.contentColor, this.mainAxisAlignment});
   final VoidCallback onPressed;
   final String text;
   final TextStyle? textStyle;
@@ -11,6 +11,7 @@ class SecondaryTextIconButton extends StatefulWidget {
   final int maxLines;
   final double? height;
   final Color? contentColor;
+  final MainAxisAlignment? mainAxisAlignment;
 
   @override
   State<SecondaryTextIconButton> createState() {
@@ -30,7 +31,7 @@ class _SecondaryTextIconButtonState extends State<SecondaryTextIconButton> {
       child: LayoutBuilder(
         builder: (context, size) {
           return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: widget.mainAxisAlignment ?? MainAxisAlignment.center,
             children: [
               AspectRatio(
                 aspectRatio: 1,

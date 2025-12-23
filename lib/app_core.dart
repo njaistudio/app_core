@@ -10,6 +10,7 @@ export 'package:google_fonts/google_fonts.dart';
 export 'package:google_mobile_ads/google_mobile_ads.dart';
 export 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 export 'package:shared_preferences/shared_preferences.dart';
+export 'package:equatable/equatable.dart';
 
 export 'generated/l10n.dart';
 export 'src/admob/ad_interstitial.dart';

@@ -88,8 +88,8 @@ class _RemoveAdsViewState extends State<RemoveAdsView> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(CoreS.current.oneDay, style: context.textTheme.bodyLarge?.copyWith(color: _colorScheme.onPrimary, fontWeight: FontWeight.bold),),
-                  Text(CoreS.current.watchVideo, style: context.textTheme.bodySmall?.copyWith(color: _colorScheme.onPrimary),),
+                  Text(CoreS.current.oneDay, style: context.textTheme.bodyLarge?.copyWith(color: _colorScheme.onSurface, fontWeight: FontWeight.bold),),
+                  Text(CoreS.current.watchVideo, style: context.textTheme.bodySmall?.copyWith(color: _colorScheme.onSurface),),
                 ],
               ),
             ),
@@ -99,10 +99,10 @@ class _RemoveAdsViewState extends State<RemoveAdsView> {
               child: Stack(
                 alignment: Alignment.centerLeft,
                 children: [
-                  Icon(CupertinoIcons.ticket_fill, size: 40.sp, color: _colorScheme.onPrimary),
+                  Icon(CupertinoIcons.ticket_fill, size: 40.sp, color: _colorScheme.onSurface),
                   Padding(
                     padding: const EdgeInsets.only(left: 6).r,
-                    child: Icon(Icons.videocam_rounded, size: 20.sp, color: _colorScheme.surfaceTint),
+                    child: Icon(Icons.videocam_rounded, size: 20.sp, color: _colorScheme.surface),
                   ),
                 ],
               ),
@@ -162,13 +162,13 @@ class _RemoveAdsViewState extends State<RemoveAdsView> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(CoreS.current.oneYear, style: context.textTheme.bodyLarge?.copyWith(color: _colorScheme.onPrimary, fontWeight: FontWeight.bold),),
-                    Text(CoreS.current.mostPopular, style: context.textTheme.bodySmall?.copyWith(color: _colorScheme.onPrimary),),
+                    Text(CoreS.current.oneYear, style: context.textTheme.bodyLarge?.copyWith(color: _colorScheme.onSurface, fontWeight: FontWeight.bold),),
+                    Text(CoreS.current.mostPopular, style: context.textTheme.bodySmall?.copyWith(color: _colorScheme.onSurface),),
                   ],
                 ),
               ),
               SizedBox(width: 4.r,),
-              Text("${productDetails.priceString}/${CoreS.current.perYear}", style: context.textTheme.bodyLarge?.copyWith(color: _colorScheme.onPrimary, fontWeight: FontWeight.bold),),
+              Text("${productDetails.priceString}/${CoreS.current.perYear}", style: context.textTheme.bodyLarge?.copyWith(color: _colorScheme.onSurface, fontWeight: FontWeight.bold),),
             ],
           ),
         ),

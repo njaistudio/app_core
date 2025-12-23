@@ -95,7 +95,7 @@ class _QuestionButtonState extends State<QuestionButton> {
     return tween;
   }
 
-  double get _randomOffset => Random().nextDouble() * -20 + 10;
+  double get _randomOffset => - Random().nextInt(20).toDouble();
 
   ColorScheme get _colorScheme => ColorScheme.of(context);
 
@@ -109,7 +109,7 @@ class _QuestionButtonState extends State<QuestionButton> {
     widget.onAnimationEnd?.call();
   }
 
-  List<Widget> _buildCorrectCorners(Control currentControl) {
+  List<Widget> _buildCorrectCorners(Control currentControl, BoxConstraints parentSize) {
     final positions = [
       {'top': - _randomOffset, 'left': - _randomOffset},
       {'top': - _randomOffset, 'right': - _randomOffset},
@@ -118,44 +118,40 @@ class _QuestionButtonState extends State<QuestionButton> {
     ];
 
     return positions.map((pos) {
-      return LayoutBuilder(
-        builder: (context, size) {
-          return Positioned(
-            top: pos['top'],
-            bottom: pos['bottom'],
-            left: pos['left'],
-            right: pos['right'],
-            child: CustomAnimationBuilder<Movie>(
-              control: currentControl,
-              tween: _correctShakeTween,
-              duration: _correctShakeTween.duration,
-              builder: (context, value, child) {
-                return Transform.scale(
-                  scale: value.get('scale'),
-                  alignment: Alignment.center,
-                  child: Transform.rotate(
-                    angle: value.get('rotation') ?? 0.0,
-                    alignment: Alignment.center,
-                    child: Blob.random(
-                      size: size.maxHeight / 4,
-                      edgesCount: 5,
-                      minGrowth: 9,
-                      styles: BlobStyles(
-                        color: Colors.green.shade300,
-                      ),
-                      child: Icon(Icons.check_rounded, size: size.maxHeight / 8, color: Colors.white, fontWeight: FontWeight.bold,),
-                    ),
+      return Positioned(
+        top: pos['top'],
+        bottom: pos['bottom'],
+        left: pos['left'],
+        right: pos['right'],
+        child: CustomAnimationBuilder<Movie>(
+          control: currentControl,
+          tween: _correctShakeTween,
+          duration: _correctShakeTween.duration,
+          builder: (context, value, child) {
+            return Transform.scale(
+              scale: value.get('scale'),
+              alignment: Alignment.center,
+              child: Transform.rotate(
+                angle: value.get('rotation') ?? 0.0,
+                alignment: Alignment.center,
+                child: Blob.random(
+                  size: parentSize.maxHeight / 4,
+                  edgesCount: 5,
+                  minGrowth: 9,
+                  styles: BlobStyles(
+                    color: Colors.green.shade300,
                   ),
-                );
-              },
-            ),
-          );
-        }
+                  child: Icon(Icons.check_rounded, size: parentSize.maxHeight / 8, color: Colors.white, fontWeight: FontWeight.bold,),
+                ),
+              ),
+            );
+          },
+        ),
       );
     }).toList();
   }
 
-  List<Widget> _buildWrongCorners(Control currentControl) {
+  List<Widget> _buildWrongCorners(Control currentControl, BoxConstraints parentSize) {
     final positions = [
       {'top': - _randomOffset, 'left': - _randomOffset},
       {'top': - _randomOffset, 'right': - _randomOffset},
@@ -164,40 +160,36 @@ class _QuestionButtonState extends State<QuestionButton> {
     ];
 
     return positions.map((pos) {
-      return LayoutBuilder(
-        builder: (context, size) {
-          return Positioned(
-            top: pos['top'],
-            bottom: pos['bottom'],
-            left: pos['left'],
-            right: pos['right'],
-            child: CustomAnimationBuilder<Movie>(
-              key: ValueKey(currentControl),
-              control: currentControl,
-              tween: _wrongShakeTween,
-              duration: _wrongShakeTween.duration,
-              builder: (context, value, child) {
-                final double scale = value.get('scale');
-                final double translateX = value.get('translateX') ?? 0.0;
-                return Transform.scale(
-                  scale: scale,
-                  child: Transform.translate(
-                    offset: Offset(translateX, 0.0),
-                    child: Blob.random(
-                      size: size.maxHeight / 4,
-                      edgesCount: 5,
-                      minGrowth: 9,
-                      styles: BlobStyles(
-                        color: Colors.red.shade300,
-                      ),
-                      child: Icon(Icons.clear_rounded, size: size.maxHeight / 8, color: Colors.white, fontWeight: FontWeight.bold,),
-                    ),
+      return Positioned(
+        top: pos['top'],
+        bottom: pos['bottom'],
+        left: pos['left'],
+        right: pos['right'],
+        child: CustomAnimationBuilder<Movie>(
+          key: ValueKey(currentControl),
+          control: currentControl,
+          tween: _wrongShakeTween,
+          duration: _wrongShakeTween.duration,
+          builder: (context, value, child) {
+            final double scale = value.get('scale');
+            final double translateX = value.get('translateX') ?? 0.0;
+            return Transform.scale(
+              scale: scale,
+              child: Transform.translate(
+                offset: Offset(translateX, 0.0),
+                child: Blob.random(
+                  size: parentSize.maxHeight / 4,
+                  edgesCount: 5,
+                  minGrowth: 9,
+                  styles: BlobStyles(
+                    color: Colors.red.shade300,
                   ),
-                );
-              },
-            ),
-          );
-        }
+                  child: Icon(Icons.clear_rounded, size: parentSize.maxHeight / 8, color: Colors.white, fontWeight: FontWeight.bold,),
+                ),
+              ),
+            );
+          },
+        ),
       );
     }).toList();
   }
@@ -235,7 +227,7 @@ class _QuestionButtonState extends State<QuestionButton> {
                 _trigger();
               },
             ),
-            ... _state == _QuestionButtonStatus.correct ? _buildCorrectCorners(_animationControl) : _buildWrongCorners(_animationControl),
+            ... _state == _QuestionButtonStatus.correct ? _buildCorrectCorners(_animationControl, size) : _buildWrongCorners(_animationControl, size),
           ],
         );
       }

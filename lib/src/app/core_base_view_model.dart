@@ -14,6 +14,10 @@ enum MessageType {
 
 class ShowLoadingEvent extends BaseUiEvent {}
 class HideLoadingEvent extends BaseUiEvent {}
+class PopBackEvent extends BaseUiEvent {
+  dynamic result;
+  PopBackEvent({this.result});
+}
 
 class ShowMessageEvent extends BaseUiEvent {
   final String message;
@@ -21,6 +25,14 @@ class ShowMessageEvent extends BaseUiEvent {
   final MessageType type;
   final IconData? iconData;
   ShowMessageEvent({required this.message, this.type = MessageType.notice, this.iconData, this.description});
+}
+
+class ShowConfirmEvent extends BaseUiEvent {
+  final String message;
+  final String? description;
+  final IconData? iconData;
+  final VoidCallback onAgree;
+  ShowConfirmEvent({required this.message, this.iconData, this.description, required this.onAgree});
 }
 
 class CoreBaseViewModel extends ChangeNotifier {

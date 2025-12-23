@@ -16,8 +16,7 @@ class IncreaseTargetScore implements UseCase<Unit, int> {
       return itemsResult.fold((l) => left(l), (items) async {
         final item = items.firstWhere((element) => element.weekDay == weekday);
         item.score += params;
-        final getCurrentTargetResult = await _targetRepository.getCurrentTarget();
-        item.target = getCurrentTargetResult.fold((l) => 0, (r) => r);
+        item.target = 30;
         if(item.completedPercent >= 1) {
           await _updateStreak(target);
         }

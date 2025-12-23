@@ -29,10 +29,12 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
 
   bool get needSafeArea => false;
 
-  AppBar get appBar => AppBar(
+  AppBar? get appBar => AppBar(
     automaticallyImplyLeading: false,
     elevation: 0,
     toolbarHeight: 0,
+    backgroundColor: colorScheme.surface,
+    scrolledUnderElevation: 0.0,
   );
 
   Widget get body => Container();
@@ -57,12 +59,21 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
       _showLoading();
     } else if (event is HideLoadingEvent) {
       _hideLoading();
+    }  else if (event is PopBackEvent) {
+      Navigator.of(context, rootNavigator: true).pop(event.result);
     } else if (event is ShowMessageEvent) {
       _showMessageDialog(
         message: event.message,
         type: event.type,
         iconData: event.iconData,
         description: event.description,
+      );
+    } else if (event is ShowConfirmEvent) {
+      showConfirmBottomSheet(
+        event.message,
+        description: event.description,
+        iconData: event.iconData,
+        onAgree: event.onAgree,
       );
     } else {
       onEvent(event);
@@ -125,7 +136,7 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
     );
   }
 
-  Future<dynamic> showConfirmBottomSheet(String title, {String? description, IconData? iconData, Color? color, VoidCallback? onAgree,}) async {
+  Future<dynamic> showConfirmBottomSheet(String message, {String? description, IconData? iconData, Color? color, required VoidCallback onAgree,}) async {
     return showCoreBottomSheet(
       widgetBuilder: (context) {
         return Column(
@@ -138,17 +149,12 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
                 SizedBox(
                   height: 56.r,
                   width: 56.r,
-                  child: CupertinoCard(
-                    elevation: 0,
-                    color: color ?? Colors.white,
-                    radius: BorderRadius.circular(24.r),
-                    child: Icon(iconData, size: 36.r, color: Colors.white,),
-                  ),
+                  child: Icon(iconData, size: 36.r, color: context.colorScheme.onSurface,),
                 ),
                 SizedBox(width: 8.r,),
                 Expanded(
                   child: AutoSizeText(
-                    title,
+                    message,
                     maxLines: 2,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
@@ -174,9 +180,9 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
                   Expanded(
                     child: PrimaryTextIconButton(
                       color: Colors.grey.shade600,
-                      shadowColor: Colors.grey.shade700,
+                      shadowColor: Colors.grey.shade800,
                       onPressed: () {
-                        _hideLoading();
+                        Navigator.of(context, rootNavigator: true).pop();
                       },
                       height: 36.r,
                       iconData: Icons.close_rounded,
@@ -187,11 +193,11 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
                   Expanded(
                     child: PrimaryTextIconButton(
                       color: Colors.green.shade300,
-                      shadowColor: Colors.green.shade300,
+                      shadowColor: Colors.green.shade500,
                       onPressed: () async {
-                        _hideLoading();
-                        await Future.delayed(Duration(milliseconds: 100),);
-                        onAgree?.call();
+                        Navigator.of(context, rootNavigator: true).pop();
+                        await Future.delayed(Duration(milliseconds: 200),);
+                        onAgree.call();
                       },
                       height: 36.r,
                       iconData: Icons.check_rounded,

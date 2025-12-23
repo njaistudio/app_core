@@ -19,24 +19,6 @@ class TargetRepositoryImpl implements TargetRepository {
   final FirebaseHelper firebaseHelper;
 
   @override
-  Future<Either<Failure, List<int>>> getAvailableTargets() async {
-    return Either.right([30, 40, 50]);
-  }
-
-  @override
-  Future<Either<Failure, int>> getCurrentTarget() async {
-    var getAvailableTargetsResult = await getAvailableTargets();
-    return getAvailableTargetsResult.fold((l) => left(l), (targets) async {
-      var target = await sharedPreferencesHelper.getTarget();
-      if(target.currentTarget == 0) {
-        target.currentTarget = targets.first;
-        await saveStorageTarget(target);
-      }
-      return Either.right(target.currentTarget);
-    });
-  }
-
-  @override
   Future<Either<Failure, StorageTarget>> getStorageTarget({bool fromCloud = false}) async {
     if(fromCloud) {
       var currentUser = firebaseHelper.currentUser;
