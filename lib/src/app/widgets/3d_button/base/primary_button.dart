@@ -48,6 +48,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
       badgeColor: widget.badgeColor ?? Colors.red,
       enabled: widget.enabled,
       shape: widget.shape,
+      shadowHeight: widget.shape == AnimatedButtonShape.circle ? 4 : 6,
       child: widget.child,
     );
   }
