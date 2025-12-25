@@ -8,6 +8,7 @@ class CoreSharedPreferencesHelper {
   static const targetKey = "targetKey_v1";
   static const removeAdStartTimeKey = "removeAdStartTimeKey_v1";
   static const showAdsLimitKey = "showAdsLimitKey_v1";
+  static const reviewCountKey = "reviewCountKey";
 
   Future<int> getShowAdsLimit() async {
     final prefs = await SharedPreferences.getInstance();
@@ -59,9 +60,20 @@ class CoreSharedPreferencesHelper {
     prefs.setString(targetKey, jsonEncode(target.toJson()));
   }
 
+  Future<int> reviewCount() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(reviewCountKey) ?? 0;
+  }
+
+  Future setReviewCount(int value) async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.setInt(reviewCountKey, value);
+  }
+
   Future clearData() async {
     final prefs = await SharedPreferences.getInstance();
     prefs.remove(adsCount);
     prefs.remove(targetKey);
+    prefs.remove(reviewCountKey);
   }
 }

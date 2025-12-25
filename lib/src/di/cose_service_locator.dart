@@ -1,7 +1,12 @@
 import 'package:app_core/app_core.dart';
+import 'package:app_core/src/data/inapp_review_repository_impl.dart';
 import 'package:app_core/src/data/services/auth_service.dart';
 import 'package:app_core/src/data/user_repository_impl.dart';
+import 'package:app_core/src/domain/repositories/inapp_review_repository.dart';
 import 'package:app_core/src/domain/use_cases/admob/sync_show_ads_limit.dart';
+import 'package:app_core/src/domain/use_cases/inapp_review/can_show_review.dart';
+import 'package:app_core/src/domain/use_cases/inapp_review/disable_review_function.dart';
+import 'package:app_core/src/domain/use_cases/inapp_review/increase_review_count.dart';
 import 'package:app_core/src/domain/use_cases/target/get_longest_streak_number.dart';
 import 'package:app_core/src/domain/use_cases/target/get_streak_number.dart';
 import 'package:app_core/src/domain/use_cases/target/get_week_target_data.dart';
@@ -47,6 +52,7 @@ class CoreServiceLocator {
     coreGetIt.registerLazySingleton<FirebaseHelper>(() => FirebaseHelper());
     coreGetIt.registerLazySingleton<UserRepository>(() => UserRepositoryImpl(authService: coreGetIt()));
     coreGetIt.registerLazySingleton<TargetRepository>(() => TargetRepositoryImpl(sharedPreferencesHelper: coreGetIt(), firebaseHelper: coreGetIt()));
+    coreGetIt.registerLazySingleton<InAppReviewRepository>(() => InAppReviewRepositoryImpl(sharedPreferencesHelper: coreGetIt()));
     coreGetIt.registerLazySingleton<PurchaseHelper>(() => PurchaseHelper(appleApiKey: appleApiKey, googleApiKey: googleApiKey, oneYearId: oneYearId, lifeTimeId: lifeTimeId));
     coreGetIt.registerLazySingleton<AdInterstitial>(() => AdInterstitial(coreSharedPreferencesHelper: coreGetIt(), purchaseHelper: coreGetIt(), interstitialAdAndroidUnitId: interstitialAdAndroidUnitId, interstitialAdIOSUnitId: interstitialAdIOSUnitId));
     coreGetIt.registerLazySingleton<AdRewarded>(() => AdRewarded(coreSharedPreferencesHelper: coreGetIt(), rewardedAdAndroidUnitId: rewardedAdAndroidUnitId, rewardedAdIOSUnitId: rewardedAdIOSUnitId));
@@ -76,6 +82,15 @@ class CoreServiceLocator {
       syncShowAdsLimit: coreGetIt(),
     ));
 
+    coreGetIt.registerLazySingleton<CanShowReview>(() => CanShowReview(inAppReviewRepository: coreGetIt(), adInterstitial: coreGetIt()));
+    coreGetIt.registerLazySingleton<DisableReviewFunction>(() => DisableReviewFunction(inAppReviewRepository: coreGetIt()));
+    coreGetIt.registerLazySingleton<IncreaseReviewCount>(() => IncreaseReviewCount(inAppReviewRepository: coreGetIt()));
+
+    coreGetIt.registerLazySingleton<InAppReviewUseCases>(() => InAppReviewUseCases(
+      canShowReview: coreGetIt(),
+      disableReviewFunction: coreGetIt(),
+      increaseReviewCount: coreGetIt(),
+    ));
 
     coreGetIt.registerLazySingleton<GetStreakNumber>(() => GetStreakNumber(targetRepository: coreGetIt()));
     coreGetIt.registerLazySingleton<GetWeekTargetData>(() => GetWeekTargetData(targetRepository: coreGetIt()));
