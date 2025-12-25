@@ -1,13 +1,16 @@
-import 'package:app_core/src/extensions/exts.dart';
+import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../cupertino_rounded_corners.dart';
 
 /// Using [ShadowDegree] with values [ShadowDegree.dark] or [ShadowDegree.light]
 /// to get a darker version of the used color.
 /// [duration] in milliseconds
 ///
+
+enum AnimatedButtonShape {
+  rectangle,
+  circle,
+}
+
 class AnimatedButton extends StatefulWidget {
   final Color color;
   final Color shadowColor;
@@ -22,6 +25,7 @@ class AnimatedButton extends StatefulWidget {
   final VoidCallback onPressed;
   final int badge;
   final Color badgeColor;
+  final AnimatedButtonShape shape;
 
   const AnimatedButton({
     super.key,
@@ -38,6 +42,7 @@ class AnimatedButton extends StatefulWidget {
     required this.disabledShadowColor,
     this.badge = 0,
     this.badgeColor = Colors.red,
+    this.shape = AnimatedButtonShape.rectangle,
   });
 
   @override
@@ -160,13 +165,13 @@ class _AnimatedButtonState extends State<AnimatedButton> {
     widget.onPressed();
   }
 
-  SquircleBorder _getBorderRadius() {
-    return SquircleBorder(
+  ShapeBorder _getBorderRadius() {
+    return widget.shape == AnimatedButtonShape.rectangle ? SquircleBorder(
       radius: BorderRadius.all(
         Radius.circular(
           widget.height / 2.2,
         ),
       ),
-    );
+    ) : CircleBorder();
   }
 }

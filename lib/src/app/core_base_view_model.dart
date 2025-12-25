@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
-import 'package:fpdart/fpdart.dart';
 
 abstract class BaseUiEvent {}
 

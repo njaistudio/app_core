@@ -1,8 +1,6 @@
 import 'package:app_core/app_core.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LearnStatusView extends StatelessWidget {
   const LearnStatusView({super.key, required this.learnProgress, this.margin = EdgeInsets.zero});

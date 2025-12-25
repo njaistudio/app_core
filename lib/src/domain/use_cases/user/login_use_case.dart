@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class LoginUseCase extends UseCase<CoreUser, AuthType> {
   final UserRepository userRepository;

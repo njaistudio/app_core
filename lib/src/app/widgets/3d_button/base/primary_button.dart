@@ -1,9 +1,20 @@
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrimaryButton extends StatefulWidget {
-  const PrimaryButton({super.key, required this.onPressed, this.maxLines = 1, this.color, this.shadowColor, required this.child, this.height, this.badge, this.badgeColor, this.enabled = true});
+  const PrimaryButton({
+    super.key,
+    required this.onPressed,
+    this.maxLines = 1,
+    this.color,
+    this.shadowColor,
+    required this.child,
+    this.height,
+    this.badge,
+    this.badgeColor,
+    this.enabled = true,
+    this.shape = AnimatedButtonShape.rectangle,
+  });
   final VoidCallback onPressed;
   final int maxLines;
   final Color? color;
@@ -13,6 +24,7 @@ class PrimaryButton extends StatefulWidget {
   final int? badge;
   final bool enabled;
   final Color? badgeColor;
+  final AnimatedButtonShape shape;
 
   @override
   State<PrimaryButton> createState() {
@@ -35,6 +47,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
       badge: widget.badge ?? 0,
       badgeColor: widget.badgeColor ?? Colors.red,
       enabled: widget.enabled,
+      shape: widget.shape,
       child: widget.child,
     );
   }

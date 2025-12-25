@@ -1,6 +1,5 @@
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SelectableButton extends StatefulWidget {
   const SelectableButton({

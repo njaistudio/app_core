@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:app_core/app_core.dart'; // Giữ nguyên import của bạn
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // -----------------------------------------------------------------------------
 // ENUM
@@ -34,6 +33,7 @@ class TreeGrowthView extends StatefulWidget {
   final ImageProvider petalImage;
   final double? size;
   final bool showNumber;
+  final bool showProgress;
   final Color? progressBackgroundColor;
 
   const TreeGrowthView({
@@ -48,6 +48,7 @@ class TreeGrowthView extends StatefulWidget {
     this.petalImage = const AssetImage('assets/images/sakura_petal.png', package: "app_core"),
     this.size,
     this.showNumber = true,
+    this.showProgress = true,
     this.progressBackgroundColor,
   });
 
@@ -175,7 +176,7 @@ class _TreeGrowthViewState extends State<TreeGrowthView> with TickerProviderStat
         clipBehavior: Clip.none,
         children: [
           // LAYER 0: PROGRESS BAR
-          TweenAnimationBuilder<double>(
+          if(widget.showProgress) TweenAnimationBuilder<double>(
             tween: Tween<double>(begin: 0, end: widget.petalCount.toDouble()),
             duration: const Duration(milliseconds: 800),
             curve: Curves.easeOutCubic,
@@ -192,7 +193,7 @@ class _TreeGrowthViewState extends State<TreeGrowthView> with TickerProviderStat
 
           // LAYER 1: CÂY
           Padding(
-            padding: EdgeInsets.all(_size / 6),
+            padding: EdgeInsets.all(_size / (widget.showProgress ? 7 : 15)),
             child: ScaleTransition(
               scale: _treeScaleAnimation,
               child: AnimatedSwitcher(
@@ -213,7 +214,7 @@ class _TreeGrowthViewState extends State<TreeGrowthView> with TickerProviderStat
           ),
 
           // LAYER 2: HOA TUNG LÊN
-          AnimatedBuilder(
+          if(widget.showProgress) AnimatedBuilder(
             animation: _petalController,
             builder: (context, child) {
               if (!_petalController.isAnimating) return const SizedBox();

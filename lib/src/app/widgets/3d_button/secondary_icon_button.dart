@@ -1,14 +1,14 @@
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
 
-class PrimaryIconButton extends StatelessWidget {
-  const PrimaryIconButton({
+class SecondaryIconButton extends StatelessWidget {
+  const SecondaryIconButton({
     super.key,
     required this.onPressed,
     this.color,
-    this.iconColor,
     this.shadowColor,
     this.size,
+    this.iconColor,
     required this.iconData,
     this.isActive = true,
     this.shape = AnimatedButtonShape.circle,
@@ -16,23 +16,23 @@ class PrimaryIconButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color? color;
   final Color? shadowColor;
-  final double? size;
   final Color? iconColor;
+  final double? size;
   final IconData iconData;
-  final bool isActive;
   final AnimatedButtonShape shape;
+  final bool isActive;
 
   @override
   Widget build(BuildContext context) {
     final notNullSize = size ?? 56.r;
-    final realIconColor = isActive ? (iconColor ?? context.colorScheme.onPrimary) : context.colorScheme.surfaceContainer;
+    final realIconColor = isActive ? (iconColor ?? context.colorScheme.onSurface) : context.colorScheme.surfaceContainerHigh;
     return SizedBox(
       width: notNullSize,
       height: notNullSize,
-      child: PrimaryButton(
+      child: SecondaryButton(
         onPressed: onPressed,
-        color: isActive ? color : context.colorScheme.surfaceContainerHighest,
-        shadowColor: isActive ? shadowColor : context.colorScheme.surfaceContainer,
+        color: isActive ? color : context.colorScheme.surface,
+        shadowColor: isActive ? shadowColor : context.colorScheme.surfaceContainerHigh,
         height: notNullSize,
         shape: shape,
         child: Icon(iconData, color: realIconColor, size: notNullSize / 1.7),

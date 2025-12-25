@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class IsAnonymousUseCase extends UseCase<bool, NoParams> {
   final UserRepository userRepository;

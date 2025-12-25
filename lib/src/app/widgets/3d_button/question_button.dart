@@ -1,10 +1,7 @@
 import 'dart:math';
 
 import 'package:app_core/app_core.dart';
-import 'package:blobs/blobs.dart';
 import 'package:flutter/material.dart';
-import 'package:simple_animations/animation_builder/custom_animation_builder.dart';
-import 'package:simple_animations/movie_tween/movie_tween.dart';
 
 class _ShakeTween extends Tween<double> {
   final double intensity;

@@ -1,13 +1,6 @@
 import 'dart:convert';
 
-import 'package:app_core/src/clean/error/failures.dart';
-import 'package:app_core/src/data/services/firebase_helper.dart';
-import 'package:app_core/src/data/storage/core_shared_preferences_helper.dart';
-import 'package:app_core/src/data/storage/storage_target.dart';
-import 'package:app_core/src/domain/entities/target_item.dart';
-import 'package:app_core/src/domain/repositories/target_repository.dart';
-import 'package:fpdart/fpdart.dart';
-import 'package:isoweek/isoweek.dart';
+import 'package:app_core/app_core.dart';
 
 class TargetRepositoryImpl implements TargetRepository {
   TargetRepositoryImpl({

@@ -1,6 +1,5 @@
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SecondaryButton extends StatefulWidget {
   const SecondaryButton({
@@ -13,6 +12,7 @@ class SecondaryButton extends StatefulWidget {
     this.disabledShadowColor,
     this.color,
     this.shadowColor,
+    this.shape = AnimatedButtonShape.rectangle,
   });
 
   final VoidCallback onPressed;
@@ -23,6 +23,7 @@ class SecondaryButton extends StatefulWidget {
   final Color? disabledShadowColor;
   final Color? color;
   final Color? shadowColor;
+  final AnimatedButtonShape shape;
 
   @override
   State<SecondaryButton> createState() {
@@ -45,6 +46,7 @@ class _SecondaryButtonState extends State<SecondaryButton> {
       disabledColor: widget.disableColor ?? _colorScheme.surface,
       disabledShadowColor: widget.disabledShadowColor ?? _colorScheme.surfaceContainerHighest,
       onPressed: widget.onPressed,
+      shape: widget.shape,
       child: widget.child,
     );
   }

@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 abstract class TargetRepository {
   Future<Either<Failure, StorageTarget>> getStorageTarget({bool fromCloud = false});

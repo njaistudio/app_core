@@ -1,7 +1,6 @@
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TargetView extends StatelessWidget {
   const TargetView({

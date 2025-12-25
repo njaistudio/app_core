@@ -42,6 +42,7 @@ dependencies:
   json_annotation: ^4.9.0
   url_launcher: ^6.3.2
   isoweek: ^1.1.4
+  flutter_calendar_carousel: ^2.5.4
   flutter_bounceable:
     git:
       url: https://github.com/njaistudio/flutter_bounceable.git

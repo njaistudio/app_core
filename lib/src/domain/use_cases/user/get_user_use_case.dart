@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class GetUserUseCase extends UseCase<CoreUser, NoParams> {
   final UserRepository userRepository;
