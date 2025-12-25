@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class GetWeekTargetData implements UseCase<List<TargetItem>, NoParams> {
   GetWeekTargetData({required TargetRepository targetRepository}) : _targetRepository = targetRepository;

@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class GetLongestStreakNumber implements UseCase<int, NoParams> {
   GetLongestStreakNumber({required TargetRepository targetRepository}) : _targetRepository = targetRepository;

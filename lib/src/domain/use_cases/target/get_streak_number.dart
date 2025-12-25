@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class GetStreakNumber implements UseCase<int, NoParams> {
   GetStreakNumber({required TargetRepository targetRepository}) : _targetRepository = targetRepository;

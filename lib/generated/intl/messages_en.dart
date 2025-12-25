@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bestValue": MessageLookupByLibrary.simpleMessage("Best value"),
     "burmese": MessageLookupByLibrary.simpleMessage("မြန်မာစာ"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-    "check_done": MessageLookupByLibrary.simpleMessage(
+    "checkDone": MessageLookupByLibrary.simpleMessage(
       "Done, please check again.",
     ),
     "chinese": MessageLookupByLibrary.simpleMessage("中文"),
@@ -71,28 +71,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "malay": MessageLookupByLibrary.simpleMessage("Bahasa Melayu"),
     "markAsKnown": MessageLookupByLibrary.simpleMessage("Mark as known"),
     "mastered": MessageLookupByLibrary.simpleMessage("Mastered"),
-    "microphone_error": MessageLookupByLibrary.simpleMessage(
+    "microphoneError": MessageLookupByLibrary.simpleMessage(
       "Microphone error?",
     ),
-    "microphone_open_settings": MessageLookupByLibrary.simpleMessage(
+    "microphoneOpenSettings": MessageLookupByLibrary.simpleMessage(
       "Please tap here to open settings and grant microphone permission.",
     ),
-    "microphone_permission_granted": MessageLookupByLibrary.simpleMessage(
+    "microphonePermissionGranted": MessageLookupByLibrary.simpleMessage(
       "Microphone permission granted.",
     ),
-    "microphone_permission_required": MessageLookupByLibrary.simpleMessage(
+    "microphonePermissionRequired": MessageLookupByLibrary.simpleMessage(
       "The app requires microphone permission to function.",
     ),
     "mongolian": MessageLookupByLibrary.simpleMessage("Монгол"),
     "mostPopular": MessageLookupByLibrary.simpleMessage("Most popular"),
     "needsReview": MessageLookupByLibrary.simpleMessage("Needs Review"),
     "nepali": MessageLookupByLibrary.simpleMessage("नेपाली"),
+    "netWorkError": MessageLookupByLibrary.simpleMessage("NetWork Error"),
     "nextReviewIn": m0,
+    "noInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "No internet connection",
+    ),
     "ok": MessageLookupByLibrary.simpleMessage("Continue"),
     "oneDay": MessageLookupByLibrary.simpleMessage("One day (24h)"),
     "oneYear": MessageLookupByLibrary.simpleMessage("Yearly subscription"),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "perYear": MessageLookupByLibrary.simpleMessage("Year"),
+    "pleaseCheckYourInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "Please check your internet connection",
+    ),
     "pleaseWaitASecond": MessageLookupByLibrary.simpleMessage(
       "Please wait a second!",
     ),
@@ -106,6 +113,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select your language!",
     ),
     "sinhala": MessageLookupByLibrary.simpleMessage("සිංහල"),
+    "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
+      "Something went wrong",
+    ),
     "spanish": MessageLookupByLibrary.simpleMessage("Español"),
     "t2": MessageLookupByLibrary.simpleMessage("Mon"),
     "t3": MessageLookupByLibrary.simpleMessage("Tue"),
@@ -114,13 +124,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "t6": MessageLookupByLibrary.simpleMessage("Fri"),
     "t7": MessageLookupByLibrary.simpleMessage("Sat"),
     "thai": MessageLookupByLibrary.simpleMessage("ไทย"),
-    "tts_open_settings": MessageLookupByLibrary.simpleMessage(
+    "ttsOpenSettings": MessageLookupByLibrary.simpleMessage(
       "Please tap here to open Speech Services by Google settings.",
     ),
-    "tts_service_granted": MessageLookupByLibrary.simpleMessage(
+    "ttsServiceGranted": MessageLookupByLibrary.simpleMessage(
       "Speech Services by Google permission granted.",
     ),
-    "tts_service_required": MessageLookupByLibrary.simpleMessage(
+    "ttsServiceRequired": MessageLookupByLibrary.simpleMessage(
       "The app uses Speech Services by Google to convert text to speech.",
     ),
     "turkish": MessageLookupByLibrary.simpleMessage("Türkçe"),

@@ -59,8 +59,8 @@ class CoreBaseViewModel extends ChangeNotifier {
       final isOffline = await DeviceHelper.isOffline();
       if(isOffline) {
         sendEvent(ShowMessageEvent(
-          message: "No internet connection",
-          description: "Please check your internet connection",
+          message: CoreS.current.noInternetConnection,
+          description: CoreS.current.pleaseCheckYourInternetConnection,
           type: MessageType.error,
           iconData: Icons.signal_wifi_connected_no_internet_4_rounded,
         ));

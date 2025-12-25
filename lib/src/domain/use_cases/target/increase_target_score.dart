@@ -1,6 +1,5 @@
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
-import 'package:fpdart/fpdart.dart';
 
 class IncreaseTargetScore implements UseCase<Unit, int> {
   IncreaseTargetScore({required TargetRepository targetRepository}) : _targetRepository = targetRepository;

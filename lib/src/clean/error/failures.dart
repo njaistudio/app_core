@@ -1,3 +1,4 @@
+import 'package:app_core/generated/l10n.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class Failure extends Equatable {
@@ -10,9 +11,9 @@ abstract class Failure extends Equatable {
 }
 
 class UnknownError extends Failure {
-  const UnknownError() : super("Something went wrong.");
+   UnknownError() : super(CoreS.current.somethingWentWrong);
 }
 
 class NetWorkError extends Failure {
-  const NetWorkError() : super("NetWork Error.");
+  NetWorkError() : super(CoreS.current.netWorkError);
 }

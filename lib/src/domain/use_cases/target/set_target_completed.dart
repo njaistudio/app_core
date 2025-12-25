@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class SetTargetCompleted implements UseCase<Unit, NoParams> {
   SetTargetCompleted({required TargetRepository targetRepository}) : _targetRepository = targetRepository;

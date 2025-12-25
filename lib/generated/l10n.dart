@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -416,80 +415,80 @@ class CoreS {
   }
 
   /// `The app requires microphone permission to function.`
-  String get microphone_permission_required {
+  String get microphonePermissionRequired {
     return Intl.message(
       'The app requires microphone permission to function.',
-      name: 'microphone_permission_required',
+      name: 'microphonePermissionRequired',
       desc: '',
       args: [],
     );
   }
 
   /// `Microphone permission granted.`
-  String get microphone_permission_granted {
+  String get microphonePermissionGranted {
     return Intl.message(
       'Microphone permission granted.',
-      name: 'microphone_permission_granted',
+      name: 'microphonePermissionGranted',
       desc: '',
       args: [],
     );
   }
 
   /// `Please tap here to open settings and grant microphone permission.`
-  String get microphone_open_settings {
+  String get microphoneOpenSettings {
     return Intl.message(
       'Please tap here to open settings and grant microphone permission.',
-      name: 'microphone_open_settings',
+      name: 'microphoneOpenSettings',
       desc: '',
       args: [],
     );
   }
 
   /// `The app uses Speech Services by Google to convert text to speech.`
-  String get tts_service_required {
+  String get ttsServiceRequired {
     return Intl.message(
       'The app uses Speech Services by Google to convert text to speech.',
-      name: 'tts_service_required',
+      name: 'ttsServiceRequired',
       desc: '',
       args: [],
     );
   }
 
   /// `Speech Services by Google permission granted.`
-  String get tts_service_granted {
+  String get ttsServiceGranted {
     return Intl.message(
       'Speech Services by Google permission granted.',
-      name: 'tts_service_granted',
+      name: 'ttsServiceGranted',
       desc: '',
       args: [],
     );
   }
 
   /// `Please tap here to open Speech Services by Google settings.`
-  String get tts_open_settings {
+  String get ttsOpenSettings {
     return Intl.message(
       'Please tap here to open Speech Services by Google settings.',
-      name: 'tts_open_settings',
+      name: 'ttsOpenSettings',
       desc: '',
       args: [],
     );
   }
 
   /// `Done, please check again.`
-  String get check_done {
+  String get checkDone {
     return Intl.message(
       'Done, please check again.',
-      name: 'check_done',
+      name: 'checkDone',
       desc: '',
       args: [],
     );
   }
 
   /// `Microphone error?`
-  String get microphone_error {
+  String get microphoneError {
     return Intl.message(
       'Microphone error?',
-      name: 'microphone_error',
+      name: 'microphoneError',
       desc: '',
       args: [],
     );
@@ -563,6 +562,46 @@ class CoreS {
   /// `Best value`
   String get bestValue {
     return Intl.message('Best value', name: 'bestValue', desc: '', args: []);
+  }
+
+  /// `No internet connection`
+  String get noInternetConnection {
+    return Intl.message(
+      'No internet connection',
+      name: 'noInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet connection`
+  String get pleaseCheckYourInternetConnection {
+    return Intl.message(
+      'Please check your internet connection',
+      name: 'pleaseCheckYourInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get somethingWentWrong {
+    return Intl.message(
+      'Something went wrong',
+      name: 'somethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NetWork Error`
+  String get netWorkError {
+    return Intl.message(
+      'NetWork Error',
+      name: 'netWorkError',
+      desc: '',
+      args: [],
+    );
   }
 }
 

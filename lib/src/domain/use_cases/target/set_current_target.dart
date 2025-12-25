@@ -1,5 +1,4 @@
 import 'package:app_core/app_core.dart';
-import 'package:fpdart/fpdart.dart';
 
 class SetCurrentTarget implements UseCase<Unit, int> {
   SetCurrentTarget({required TargetRepository targetRepository}) : _targetRepository = targetRepository;

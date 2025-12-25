@@ -24,14 +24,124 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "alreadyKnown": MessageLookupByLibrary.simpleMessage("รู้จักแล้ว"),
-    "continueLearning": MessageLookupByLibrary.simpleMessage("เรียนต่อ"),
-    "hardWord": MessageLookupByLibrary.simpleMessage("คำที่ยาก"),
-    "markAsKnown": MessageLookupByLibrary.simpleMessage(
-      "ทำเครื่องหมายว่าเป็นที่รู้จัก",
+    "adsOr": MessageLookupByLibrary.simpleMessage("หรือ"),
+    "alreadyKnown": MessageLookupByLibrary.simpleMessage("รู้แล้ว"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+    "bengali": MessageLookupByLibrary.simpleMessage("বাংলা"),
+    "bestValue": MessageLookupByLibrary.simpleMessage("คุ้มค่าที่สุด"),
+    "burmese": MessageLookupByLibrary.simpleMessage("မြန်မာစာ"),
+    "cancel": MessageLookupByLibrary.simpleMessage("ยกเลิก"),
+    "checkDone": MessageLookupByLibrary.simpleMessage(
+      "เสร็จแล้ว กรุณาตรวจสอบอีกครั้ง",
     ),
-    "mastered": MessageLookupByLibrary.simpleMessage("ชำนาญแล้ว"),
+    "chinese": MessageLookupByLibrary.simpleMessage("中文"),
+    "cn": MessageLookupByLibrary.simpleMessage("อา"),
+    "continueLearning": MessageLookupByLibrary.simpleMessage("เรียนต่อ"),
+    "currentStreak": MessageLookupByLibrary.simpleMessage(
+      "สถิติต่อเนื่องปัจจุบัน",
+    ),
+    "dailyGoals": MessageLookupByLibrary.simpleMessage("เป้าหมายรายวัน"),
+    "deleteAccount": MessageLookupByLibrary.simpleMessage("ลบบัญชี"),
+    "deleteAccountDescription": MessageLookupByLibrary.simpleMessage(
+      "คุณต้องเข้าสู่ระบบอีกครั้งเพื่อดำเนินการนี้!",
+    ),
+    "deleteAccountQuestion": MessageLookupByLibrary.simpleMessage(
+      "คุณต้องการลบข้อมูลทั้งหมดหรือไม่?",
+    ),
+    "done": MessageLookupByLibrary.simpleMessage("เสร็จสิ้น"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
+    "french": MessageLookupByLibrary.simpleMessage("Français"),
+    "german": MessageLookupByLibrary.simpleMessage("Deutsch"),
+    "hardWord": MessageLookupByLibrary.simpleMessage("คำยาก"),
+    "hello": MessageLookupByLibrary.simpleMessage("สวัสดี!"),
+    "hindi": MessageLookupByLibrary.simpleMessage("हिन्दी"),
+    "indonesian": MessageLookupByLibrary.simpleMessage("Bahasa Indonesia"),
+    "initializingData": MessageLookupByLibrary.simpleMessage(
+      "กำลังเริ่มต้นข้อมูล",
+    ),
+    "italian": MessageLookupByLibrary.simpleMessage("Italiano"),
+    "korean": MessageLookupByLibrary.simpleMessage("한국어"),
+    "lifetime": MessageLookupByLibrary.simpleMessage("ตลอดชีพ"),
+    "linkAccount": MessageLookupByLibrary.simpleMessage("เชื่อมโยงบัญชี"),
+    "linkAccountToGetMore": MessageLookupByLibrary.simpleMessage(
+      "เข้าสู่ระบบหรือเชื่อมโยงบัญชีเพื่อซื้อแพ็กเกจพรีเมียม!",
+    ),
+    "login": MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
+    "longestStreak": MessageLookupByLibrary.simpleMessage(
+      "สถิติต่อเนื่องยาวที่สุด",
+    ),
+    "malay": MessageLookupByLibrary.simpleMessage("Bahasa Melayu"),
+    "markAsKnown": MessageLookupByLibrary.simpleMessage(
+      "ทำเครื่องหมายว่ารู้แล้ว",
+    ),
+    "mastered": MessageLookupByLibrary.simpleMessage("เชี่ยวชาญแล้ว"),
+    "microphoneError": MessageLookupByLibrary.simpleMessage("ไมโครโฟนมีปัญหา?"),
+    "microphoneOpenSettings": MessageLookupByLibrary.simpleMessage(
+      "กรุณาแตะที่นี่เพื่อเปิดการตั้งค่าและอนุญาตไมโครโฟน",
+    ),
+    "microphonePermissionGranted": MessageLookupByLibrary.simpleMessage(
+      "อนุญาตการใช้ไมโครโฟนแล้ว",
+    ),
+    "microphonePermissionRequired": MessageLookupByLibrary.simpleMessage(
+      "แอปต้องการสิทธิ์การใช้ไมโครโฟนเพื่อทำงาน",
+    ),
+    "mongolian": MessageLookupByLibrary.simpleMessage("Монгол"),
+    "mostPopular": MessageLookupByLibrary.simpleMessage("ยอดนิยมที่สุด"),
     "needsReview": MessageLookupByLibrary.simpleMessage("ต้องทบทวน"),
+    "nepali": MessageLookupByLibrary.simpleMessage("नेपाली"),
+    "netWorkError": MessageLookupByLibrary.simpleMessage(
+      "ข้อผิดพลาดของเครือข่าย",
+    ),
     "nextReviewIn": m0,
+    "noInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "ไม่มีการเชื่อมต่ออินเทอร์เน็ต",
+    ),
+    "ok": MessageLookupByLibrary.simpleMessage("ดำเนินการต่อ"),
+    "oneDay": MessageLookupByLibrary.simpleMessage("1 วัน (24 ชม.)"),
+    "oneYear": MessageLookupByLibrary.simpleMessage("สมัครสมาชิกรายปี"),
+    "or": MessageLookupByLibrary.simpleMessage("หรือ"),
+    "perYear": MessageLookupByLibrary.simpleMessage("ต่อปี"),
+    "pleaseCheckYourInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ต",
+    ),
+    "pleaseWaitASecond": MessageLookupByLibrary.simpleMessage(
+      "กรุณารอสักครู่!",
+    ),
+    "polish": MessageLookupByLibrary.simpleMessage("Polski"),
+    "portuguese": MessageLookupByLibrary.simpleMessage("Português"),
+    "removeAds": MessageLookupByLibrary.simpleMessage(
+      "อัปเกรดเป็นพรีเมียมเพื่อลบโฆษณาทั้งหมด",
+    ),
+    "russian": MessageLookupByLibrary.simpleMessage("Русский"),
+    "selectLanguageTitle": MessageLookupByLibrary.simpleMessage(
+      "กรุณาเลือกภาษา!",
+    ),
+    "sinhala": MessageLookupByLibrary.simpleMessage("සිංහල"),
+    "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
+      "เกิดข้อผิดพลาด",
+    ),
+    "spanish": MessageLookupByLibrary.simpleMessage("Español"),
+    "t2": MessageLookupByLibrary.simpleMessage("จ"),
+    "t3": MessageLookupByLibrary.simpleMessage("อ"),
+    "t4": MessageLookupByLibrary.simpleMessage("พ"),
+    "t5": MessageLookupByLibrary.simpleMessage("พฤ"),
+    "t6": MessageLookupByLibrary.simpleMessage("ศ"),
+    "t7": MessageLookupByLibrary.simpleMessage("ส"),
+    "thai": MessageLookupByLibrary.simpleMessage("ไทย"),
+    "ttsOpenSettings": MessageLookupByLibrary.simpleMessage(
+      "กรุณาแตะที่นี่เพื่อเปิดการตั้งค่าบริการแปลงข้อความเป็นเสียงของ Google",
+    ),
+    "ttsServiceGranted": MessageLookupByLibrary.simpleMessage(
+      "อนุญาตบริการแปลงข้อความเป็นเสียงของ Google แล้ว",
+    ),
+    "ttsServiceRequired": MessageLookupByLibrary.simpleMessage(
+      "แอปใช้บริการแปลงข้อความเป็นเสียงของ Google",
+    ),
+    "turkish": MessageLookupByLibrary.simpleMessage("Türkçe"),
+    "updateData": MessageLookupByLibrary.simpleMessage("อัปเดตข้อมูล"),
+    "updatingData": MessageLookupByLibrary.simpleMessage("กำลังอัปเดตข้อมูล"),
+    "vietnamese": MessageLookupByLibrary.simpleMessage("Tiếng Việt"),
+    "watchVideo": MessageLookupByLibrary.simpleMessage("ดูวิดีโอโฆษณา"),
+    "wordsPerDay": MessageLookupByLibrary.simpleMessage("คำ/วัน"),
   };
 }
