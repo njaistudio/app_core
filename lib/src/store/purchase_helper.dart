@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:app_core/app_core.dart';
 import 'package:app_core/generated/l10n.dart';
+import 'package:app_core/src/domain/entities/errors.dart';
 import 'package:app_core/src/store/store_config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -85,29 +87,35 @@ class PurchaseHelper {
     return products;
   }
 
-  Future buyProduct(StoreProduct storeProduct) async {
+  Future<Either<Failure, String>> buyProduct(StoreProduct storeProduct) async {
     try {
-      await Purchases.purchaseStoreProduct(storeProduct);
-    } on PlatformException {}
+      await Purchases.purchase(PurchaseParams.storeProduct(storeProduct));
+    } on PlatformException {
+      return Either.left(BuyProductError());
+    }
+    final isPremium = await isPremiumUser();
+    if(!isPremium) {
+      return Either.left(BuyProductError());
+    }
+    return Either.right("Purchase Success!");
   }
 
   void listenCustomerInfoUpdate(CustomerInfoUpdateListener listener) {
     Purchases.addCustomerInfoUpdateListener(listener);
   }
 
-  Future<String> restorePurchase() async {
-    const errorMessage = "Your Account ID does not match. Please log in with the correct account to do this!";
+  Future<Either<Failure, String>> restorePurchase() async {
     try {
       await Purchases.restorePurchases();
     } on PlatformException catch (_) {
-      return errorMessage;
+      return Either.left(RestorePurchaseError());
     }
 
     final isPremium = await isPremiumUser();
     if(!isPremium) {
-      return errorMessage;
+      return Either.left(RestorePurchaseError());
     }
-    return "Success!";
+    return Either.right("Restore Purchase Success!");
   }
 
   Future<String> getPremiumType() async {

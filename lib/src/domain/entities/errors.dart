@@ -15,3 +15,11 @@ class DeleteAccountError extends Failure {
 class LinkAccountError extends Failure {
   const LinkAccountError({String? message}) : super(message ?? "Link account failed.");
 }
+
+class BuyProductError extends Failure {
+  const BuyProductError({String? message}) : super(message ?? "Something wrong! Unable to process payment!");
+}
+
+class RestorePurchaseError extends Failure {
+  const RestorePurchaseError({String? message}) : super(message ?? "Your Account ID does not match. Please log in with the correct account to do this!");
+}
