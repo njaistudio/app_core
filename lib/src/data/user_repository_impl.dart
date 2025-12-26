@@ -96,14 +96,12 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   Future<Map> _allUserData() async {
-    var currentUser = _firebaseHelper.currentUser;
-    var userDataSnapShoot = await _firebaseHelper.getDatabaseSnapshot("users/${currentUser?.uid}");
+    var userDataSnapShoot = await _firebaseHelper.getDatabaseSnapshot("");
     return userDataSnapShoot.value as Map? ?? {};
   }
 
   Future _saveAllUserData(Map data) async {
-    var currentUser = _firebaseHelper.currentUser;
-    await _firebaseHelper.setDatabaseValue("users/${currentUser?.uid}", data);
+    await _firebaseHelper.setDatabaseValue("", data);
   }
 
   Future _saveBackupLinkAccount(String anonymousId, Map<dynamic, dynamic> anonymousData, String socialId, String socialEmail, Map<dynamic, dynamic> socialData,) async {

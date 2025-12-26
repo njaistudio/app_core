@@ -124,7 +124,7 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
       isDismissible: isDismissible,
       enableDrag: isDismissible,
       backgroundColor: Colors.transparent,
-      barrierColor: Colors.black87,
+      barrierColor: Colors.black.withAlpha(180),
       builder: (dlContext) {
         return _buildBottomDialogContainer(
           child: widgetBuilder(dlContext),

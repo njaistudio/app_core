@@ -14,8 +14,7 @@ class TargetRepositoryImpl implements TargetRepository {
   @override
   Future<Either<Failure, StorageTarget>> getStorageTarget({bool fromCloud = false}) async {
     if(fromCloud) {
-      var currentUser = firebaseHelper.currentUser;
-      var userDataSnapShoot = await firebaseHelper.getDatabaseSnapshot("users/${currentUser?.uid}");
+      var userDataSnapShoot = await firebaseHelper.getDatabaseSnapshot("");
       String targetString = (userDataSnapShoot.value as Map?)?["target"] ?? "";
       if(targetString.isEmpty) {
         return Either.right(StorageTarget());
@@ -48,8 +47,7 @@ class TargetRepositoryImpl implements TargetRepository {
 
   @override
   Future<Either<Failure, Unit>> saveStorageTarget(StorageTarget target) async {
-    var currentUser = firebaseHelper.currentUser;
-    firebaseHelper.updateDatabaseValue("users/${currentUser?.uid}", {
+    firebaseHelper.updateDatabaseValue("", {
       "target": json.encode(target.toJson()),
     });
     sharedPreferencesHelper.setTarget(target);
