@@ -157,3 +157,70 @@ extension LearnStatusExtension on LearnStatus {
     }
   }
 }
+
+abstract class LearnProgressOwner<T> {
+  LearnProgress learnProgress(T type);
+}
+
+abstract class LearnProgressContainer<T> {
+  List<LearnProgressOwner> learnProgressOwners(T type);
+
+  List<LearnProgressOwner> needLearnItems(T type) => learnProgressOwners(type).where((e) {
+    final learnStatus = e.learnProgress(type).learnStatus;
+    switch(learnStatus) {
+      case LearnStatus.notLearned:
+        return true;
+      case LearnStatus.learnAndWaitingReview:
+      case LearnStatus.needReviewNow:
+      case LearnStatus.master:
+      case LearnStatus.skipped:
+        return false;
+    }
+  }).toList();
+  // Show learn button
+  bool hasNeedLearnItems(T type) => needLearnItems(type).isNotEmpty;
+
+  List<LearnProgressOwner> _needReviewNowItems(T type) => learnProgressOwners(type).where((e) => e.learnProgress(type).learnStatus == LearnStatus.needReviewNow).toList();
+  int needReviewNowNumber(T type) => _needReviewNowItems(type).length;
+  bool _hasNeedReviewNowItems(T type) => _needReviewNowItems(type).isNotEmpty;
+
+  List<LearnProgressOwner> _reviewAnytimeItems(T type) => learnProgressOwners(type).where((e) {
+    final learnStatus = e.learnProgress(type).learnStatus;
+    switch(learnStatus) {
+      case LearnStatus.notLearned:
+      case LearnStatus.skipped:
+        return false;
+      case LearnStatus.learnAndWaitingReview:
+      case LearnStatus.needReviewNow:
+      case LearnStatus.master:
+        return true;
+    }
+  }).toList();
+  bool _hasReviewAnytimeItems(T type) => _reviewAnytimeItems(type).isNotEmpty;
+
+  // Show review button
+  bool canReview(T type) => _hasNeedReviewNowItems(type) || _hasReviewAnytimeItems(type);
+  List<LearnProgressOwner> getReviewItems(T type) {
+    if(_hasNeedReviewNowItems(type)) {
+      return _needReviewNowItems(type);
+    }
+    return _reviewAnytimeItems(type);
+  }
+
+  List<LearnProgressOwner> canUseToMakeAnswerItems(T type) => learnProgressOwners(type).where((e) {
+    final learnStatus = e.learnProgress(type).learnStatus;
+    switch(learnStatus) {
+      case LearnStatus.notLearned:
+        return false;
+      case LearnStatus.skipped:
+      case LearnStatus.learnAndWaitingReview:
+      case LearnStatus.needReviewNow:
+      case LearnStatus.master:
+        return true;
+    }
+  }).toList();
+
+  int total(T type) => learnProgressOwners(type).length;
+  int learnProgress(T type) => learnProgressOwners(type).where((element) => element.learnProgress(type).correctTimes > 0).length;
+  double completedPercent(T type) => learnProgress(type)/total(type);
+}
