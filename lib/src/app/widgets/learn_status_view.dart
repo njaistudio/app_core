@@ -1,6 +1,4 @@
-import 'package:app_core/src/cupertino_rounded_corners.dart';
-import 'package:app_core/src/exts.dart';
-import 'package:app_core/src/learn_progress.dart';
+import 'package:app_core/app_core.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -40,14 +38,14 @@ class LearnStatusView extends StatelessWidget {
         children: [
           Icon(
             CupertinoIcons.tornado,
-            color: context.colorScheme.onSecondary,
+            color: context.colorScheme.onPrimary,
             size: 8.sp,
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
             learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
-                color: context.colorScheme.onSecondary,
+                color: context.colorScheme.onPrimary,
                 fontWeight: FontWeight.bold,
                 fontSize: 8.r
             ),
@@ -71,14 +69,14 @@ class LearnStatusView extends StatelessWidget {
         children: [
           Icon(
             CupertinoIcons.flame_fill,
-            color: context.colorScheme.onSecondary,
+            color: context.colorScheme.onPrimary,
             size: 8.sp,
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
             learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
-                color: context.colorScheme.onSecondary,
+                color: context.colorScheme.onPrimary,
                 fontWeight: FontWeight.bold,
                 fontSize: 8.r
             ),
@@ -102,14 +100,14 @@ class LearnStatusView extends StatelessWidget {
         children: [
           Icon(
             CupertinoIcons.flame_fill,
-            color: context.colorScheme.onSecondary,
+            color: context.colorScheme.onPrimary,
             size: 8.sp,
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
             learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
-              color: context.colorScheme.onSecondary,
+              color: context.colorScheme.onPrimary,
               fontWeight: FontWeight.bold,
               fontSize: 8.r
             ),
@@ -133,14 +131,14 @@ class LearnStatusView extends StatelessWidget {
         children: [
           Icon(
             Icons.fitness_center_rounded,
-            color: context.colorScheme.onSecondary,
+            color: context.colorScheme.onPrimary,
             size: 8.sp,
           ),
           SizedBox(width: 1.r,),
           AutoSizeText(
             learnProgress.learnStatusString,
             style: context.textTheme.labelSmall?.copyWith(
-              color: context.colorScheme.onSecondary,
+              color: context.colorScheme.onPrimary,
               fontWeight: FontWeight.bold,
               fontSize: 8.r
             ),
