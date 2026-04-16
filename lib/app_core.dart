@@ -66,3 +66,4 @@ export 'src/domain/use_cases/inapp_review_use_cases.dart';
 export 'src/extensions/exts.dart';
 export 'src/store/purchase_helper.dart';
 export 'src/store/remove_ads_view.dart';
+export 'src/app/widgets/result_content_widget.dart';
