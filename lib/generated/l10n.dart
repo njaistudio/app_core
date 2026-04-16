@@ -18,10 +18,8 @@ class CoreS {
   static CoreS? _current;
 
   static CoreS get current {
-    assert(
-      _current != null,
-      'No instance of CoreS was loaded. Try to initialize the CoreS delegate before accessing CoreS.current.',
-    );
+    assert(_current != null,
+        'No instance of CoreS was loaded. Try to initialize the CoreS delegate before accessing CoreS.current.');
     return _current!;
   }
 
@@ -43,10 +41,8 @@ class CoreS {
 
   static CoreS of(BuildContext context) {
     final instance = CoreS.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of CoreS present in the widget tree. Did you add CoreS.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of CoreS present in the widget tree. Did you add CoreS.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -56,7 +52,12 @@ class CoreS {
 
   /// `Hard word`
   String get hardWord {
-    return Intl.message('Hard word', name: 'hardWord', desc: '', args: []);
+    return Intl.message(
+      'Hard word',
+      name: 'hardWord',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Continue learning`
@@ -91,7 +92,12 @@ class CoreS {
 
   /// `Mastered`
   String get mastered {
-    return Intl.message('Mastered', name: 'mastered', desc: '', args: []);
+    return Intl.message(
+      'Mastered',
+      name: 'mastered',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Already Known`
@@ -116,47 +122,92 @@ class CoreS {
 
   /// `Lifetime`
   String get lifetime {
-    return Intl.message('Lifetime', name: 'lifetime', desc: '', args: []);
+    return Intl.message(
+      'Lifetime',
+      name: 'lifetime',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Mon`
   String get t2 {
-    return Intl.message('Mon', name: 't2', desc: '', args: []);
+    return Intl.message(
+      'Mon',
+      name: 't2',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Tue`
   String get t3 {
-    return Intl.message('Tue', name: 't3', desc: '', args: []);
+    return Intl.message(
+      'Tue',
+      name: 't3',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Wed`
   String get t4 {
-    return Intl.message('Wed', name: 't4', desc: '', args: []);
+    return Intl.message(
+      'Wed',
+      name: 't4',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Thu`
   String get t5 {
-    return Intl.message('Thu', name: 't5', desc: '', args: []);
+    return Intl.message(
+      'Thu',
+      name: 't5',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Fri`
   String get t6 {
-    return Intl.message('Fri', name: 't6', desc: '', args: []);
+    return Intl.message(
+      'Fri',
+      name: 't6',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Sat`
   String get t7 {
-    return Intl.message('Sat', name: 't7', desc: '', args: []);
+    return Intl.message(
+      'Sat',
+      name: 't7',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Sun`
   String get cn {
-    return Intl.message('Sun', name: 'cn', desc: '', args: []);
+    return Intl.message(
+      'Sun',
+      name: 'cn',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Login`
   String get login {
-    return Intl.message('Login', name: 'login', desc: '', args: []);
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Delete Account`
@@ -171,12 +222,22 @@ class CoreS {
 
   /// `Cancel`
   String get cancel {
-    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Continue`
   String get ok {
-    return Intl.message('Continue', name: 'ok', desc: '', args: []);
+    return Intl.message(
+      'Continue',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Do you want to delete all data?`
@@ -201,7 +262,12 @@ class CoreS {
 
   /// `or`
   String get or {
-    return Intl.message('or', name: 'or', desc: '', args: []);
+    return Intl.message(
+      'or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Please select your language!`
@@ -236,7 +302,12 @@ class CoreS {
 
   /// `Update data`
   String get updateData {
-    return Intl.message('Update data', name: 'updateData', desc: '', args: []);
+    return Intl.message(
+      'Update data',
+      name: 'updateData',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Updating data`
@@ -251,27 +322,52 @@ class CoreS {
 
   /// `Done`
   String get done {
-    return Intl.message('Done', name: 'done', desc: '', args: []);
+    return Intl.message(
+      'Done',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `English`
   String get english {
-    return Intl.message('English', name: 'english', desc: '', args: []);
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Tiếng Việt`
   String get vietnamese {
-    return Intl.message('Tiếng Việt', name: 'vietnamese', desc: '', args: []);
+    return Intl.message(
+      'Tiếng Việt',
+      name: 'vietnamese',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `नेपाली`
   String get nepali {
-    return Intl.message('नेपाली', name: 'nepali', desc: '', args: []);
+    return Intl.message(
+      'नेपाली',
+      name: 'nepali',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `မြန်မာစာ`
   String get burmese {
-    return Intl.message('မြန်မာစာ', name: 'burmese', desc: '', args: []);
+    return Intl.message(
+      'မြန်မာစာ',
+      name: 'burmese',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Bahasa Indonesia`
@@ -286,92 +382,182 @@ class CoreS {
 
   /// `ไทย`
   String get thai {
-    return Intl.message('ไทย', name: 'thai', desc: '', args: []);
+    return Intl.message(
+      'ไทย',
+      name: 'thai',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `한국어`
   String get korean {
-    return Intl.message('한국어', name: 'korean', desc: '', args: []);
+    return Intl.message(
+      '한국어',
+      name: 'korean',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Français`
   String get french {
-    return Intl.message('Français', name: 'french', desc: '', args: []);
+    return Intl.message(
+      'Français',
+      name: 'french',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Italiano`
   String get italian {
-    return Intl.message('Italiano', name: 'italian', desc: '', args: []);
+    return Intl.message(
+      'Italiano',
+      name: 'italian',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Deutsch`
   String get german {
-    return Intl.message('Deutsch', name: 'german', desc: '', args: []);
+    return Intl.message(
+      'Deutsch',
+      name: 'german',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Русский`
   String get russian {
-    return Intl.message('Русский', name: 'russian', desc: '', args: []);
+    return Intl.message(
+      'Русский',
+      name: 'russian',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `中文`
   String get chinese {
-    return Intl.message('中文', name: 'chinese', desc: '', args: []);
+    return Intl.message(
+      '中文',
+      name: 'chinese',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Bahasa Melayu`
   String get malay {
-    return Intl.message('Bahasa Melayu', name: 'malay', desc: '', args: []);
+    return Intl.message(
+      'Bahasa Melayu',
+      name: 'malay',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Português`
   String get portuguese {
-    return Intl.message('Português', name: 'portuguese', desc: '', args: []);
+    return Intl.message(
+      'Português',
+      name: 'portuguese',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Монгол`
   String get mongolian {
-    return Intl.message('Монгол', name: 'mongolian', desc: '', args: []);
+    return Intl.message(
+      'Монгол',
+      name: 'mongolian',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Español`
   String get spanish {
-    return Intl.message('Español', name: 'spanish', desc: '', args: []);
+    return Intl.message(
+      'Español',
+      name: 'spanish',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `සිංහල`
   String get sinhala {
-    return Intl.message('සිංහල', name: 'sinhala', desc: '', args: []);
+    return Intl.message(
+      'සිංහල',
+      name: 'sinhala',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Türkçe`
   String get turkish {
-    return Intl.message('Türkçe', name: 'turkish', desc: '', args: []);
+    return Intl.message(
+      'Türkçe',
+      name: 'turkish',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Polski`
   String get polish {
-    return Intl.message('Polski', name: 'polish', desc: '', args: []);
+    return Intl.message(
+      'Polski',
+      name: 'polish',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `العربية`
   String get arabic {
-    return Intl.message('العربية', name: 'arabic', desc: '', args: []);
+    return Intl.message(
+      'العربية',
+      name: 'arabic',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `हिन्दी`
   String get hindi {
-    return Intl.message('हिन्दी', name: 'hindi', desc: '', args: []);
+    return Intl.message(
+      'हिन्दी',
+      name: 'hindi',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `বাংলা`
   String get bengali {
-    return Intl.message('বাংলা', name: 'bengali', desc: '', args: []);
+    return Intl.message(
+      'বাংলা',
+      name: 'bengali',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Hello!`
   String get hello {
-    return Intl.message('Hello!', name: 'hello', desc: '', args: []);
+    return Intl.message(
+      'Hello!',
+      name: 'hello',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Login or link your account to buy premium package!`
@@ -396,7 +582,12 @@ class CoreS {
 
   /// `Or`
   String get adsOr {
-    return Intl.message('Or', name: 'adsOr', desc: '', args: []);
+    return Intl.message(
+      'Or',
+      name: 'adsOr',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Link accounts`
@@ -411,7 +602,12 @@ class CoreS {
 
   /// `Year`
   String get perYear {
-    return Intl.message('Year', name: 'perYear', desc: '', args: []);
+    return Intl.message(
+      'Year',
+      name: 'perYear',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `The app requires microphone permission to function.`
@@ -516,17 +712,32 @@ class CoreS {
 
   /// `Daily goals`
   String get dailyGoals {
-    return Intl.message('Daily goals', name: 'dailyGoals', desc: '', args: []);
+    return Intl.message(
+      'Daily goals',
+      name: 'dailyGoals',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `words/day`
   String get wordsPerDay {
-    return Intl.message('words/day', name: 'wordsPerDay', desc: '', args: []);
+    return Intl.message(
+      'words/day',
+      name: 'wordsPerDay',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `One day (24h)`
   String get oneDay {
-    return Intl.message('One day (24h)', name: 'oneDay', desc: '', args: []);
+    return Intl.message(
+      'One day (24h)',
+      name: 'oneDay',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Watch a ads video`
@@ -561,7 +772,12 @@ class CoreS {
 
   /// `Best value`
   String get bestValue {
-    return Intl.message('Best value', name: 'bestValue', desc: '', args: []);
+    return Intl.message(
+      'Best value',
+      name: 'bestValue',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `No internet connection`
@@ -599,6 +815,86 @@ class CoreS {
     return Intl.message(
       'NetWork Error',
       name: 'netWorkError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your little tree is growing`
+  String get progress_less_30_title {
+    return Intl.message(
+      'Your little tree is growing',
+      name: 'progress_less_30_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} more questions to finish today.`
+  String progress_less_30_message(int count) {
+    return Intl.message(
+      '$count more questions to finish today.',
+      name: 'progress_less_30_message',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `You did great today`
+  String get progress_30_title {
+    return Intl.message(
+      'You did great today',
+      name: 'progress_30_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do {count} more questions to make the tree bloom.`
+  String progress_30_message(int count) {
+    return Intl.message(
+      'Do $count more questions to make the tree bloom.',
+      name: 'progress_30_message',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your tree is blooming beautifully`
+  String get progress_45_title {
+    return Intl.message(
+      'Your tree is blooming beautifully',
+      name: 'progress_45_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Only {count} more questions, keep it up!`
+  String progress_45_message(int count) {
+    return Intl.message(
+      'Only $count more questions, keep it up!',
+      name: 'progress_45_message',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your tree has bloomed brilliantly`
+  String get progress_60_plus_title {
+    return Intl.message(
+      'Your tree has bloomed brilliantly',
+      name: 'progress_60_plus_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try some more if you'd like!`
+  String get progress_60_plus_message {
+    return Intl.message(
+      'Try some more if you\'d like!',
+      name: 'progress_60_plus_message',
       desc: '',
       args: [],
     );

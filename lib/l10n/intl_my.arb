@@ -79,5 +79,34 @@
   "noInternetConnection": "No internet connection",
   "pleaseCheckYourInternetConnection": "Please check your internet connection",
   "somethingWentWrong": "Something went wrong",
-  "netWorkError": "NetWork Error"
+  "netWorkError": "NetWork Error",
+  "progress_less_30_title": "သင်၏အပင်လေး ကြီးထွားလာနေပြီ",
+  "progress_less_30_message": "ယနေ့အတွက် ပြီးမြောက်ရန် {count} ပုဒ် လိုပါသေးတယ်။",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "ယနေ့ သင်အတော်လေး ကြိုးစားနိုင်ခဲ့ပါတယ်",
+  "progress_30_message": "ပန်းများထပ်ပွင့်ရန် နောက်ထပ် {count} ပုဒ် ထပ်လုပ်လိုက်ရအောင်။",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "သင်၏အပင်လေး လှပစွာ ပွင့်လန်းနေပြီ",
+  "progress_45_message": "{count} ပုဒ်ပဲ လိုတော့တယ်၊ ဆက်ပြီး ကြိုးစားလိုက်ရအောင်။",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "သင်၏အပင်လေး တောက်ပစွာ ပွင့်လန်းနေပြီ",
+  "progress_60_plus_message": "ဆန္ဒရှိရင် နောက်ထပ်လည်း ထပ်လုပ်ကြည့်နိုင်ပါတယ်နော်။"
 }

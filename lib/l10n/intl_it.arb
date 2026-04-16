@@ -87,5 +87,34 @@
   "noInternetConnection": "Nessuna connessione Internet",
   "pleaseCheckYourInternetConnection": "Controlla la tua connessione Internet",
   "somethingWentWrong": "Qualcosa è andato storto",
-  "netWorkError": "Errore di rete"
+  "netWorkError": "Errore di rete",
+  "progress_less_30_title": "La tua piantina sta crescendo",
+  "progress_less_30_message": "Mancano {count} frasi per completare la giornata.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "Ottimo lavoro oggi!",
+  "progress_30_message": "Completa altre {count} frasi per far fiorire l'albero.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Il tuo albero sta fiorendo magnificamente",
+  "progress_45_message": "Solo altre {count} frasi, continua così!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Il tuo albero è in pieno fiore",
+  "progress_60_plus_message": "Se vuoi, puoi continuare ad esercitarti ancora un po'."
 }

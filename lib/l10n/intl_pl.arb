@@ -87,5 +87,34 @@
   "noInternetConnection": "Brak połączenia z internetem",
   "pleaseCheckYourInternetConnection": "Sprawdź połączenie z internetem",
   "somethingWentWrong": "Coś poszło nie tak",
-  "netWorkError": "Błąd sieci"
+  "netWorkError": "Błąd sieci",
+  "progress_less_30_title": "Twoje drzewko rośnie",
+  "progress_less_30_message": "Zostało jeszcze {count} pytań na dziś.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "Świetnie ci dziś idzie",
+  "progress_30_message": "Rozwiąż jeszcze {count} pytań, aby drzewko zakwitło.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Twoje drzewko pięknie kwitnie",
+  "progress_45_message": "Tylko {count} pytań do końca, dasz radę!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Twoje drzewko rozkwitło w pełni",
+  "progress_60_plus_message": "Jeśli chcesz, możesz poćwiczyć jeszcze trochę."
 }

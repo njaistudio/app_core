@@ -87,5 +87,34 @@
   "noInternetConnection": "Sin conexión a Internet",
   "pleaseCheckYourInternetConnection": "Por favor revisa tu conexión a Internet",
   "somethingWentWrong": "Algo salió mal",
-  "netWorkError": "Error de red"
+  "netWorkError": "Error de red",
+  "progress_less_30_title": "Tu pequeño árbol está creciendo",
+  "progress_less_30_message": "Faltan {count} ejercicios más para terminar hoy.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "Lo has hecho muy bien hoy",
+  "progress_30_message": "Haz {count} ejercicios más para que el árbol florezca.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Tu árbol está floreciendo hermoso",
+  "progress_45_message": "Solo faltan {count} ejercicios, ¡sigue así!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Tu árbol ha florecido radiante",
+  "progress_60_plus_message": "Si quieres, puedes intentar hacer algunos más."
 }

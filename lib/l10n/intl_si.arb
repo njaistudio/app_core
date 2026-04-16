@@ -87,5 +87,34 @@
   "noInternetConnection": "අන්තර්ජාල සම්බන්ධතාවයක් නොමැත",
   "pleaseCheckYourInternetConnection": "කරුණාකර ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න",
   "somethingWentWrong": "කිසියම් දෝෂයක් සිදුවිය",
-  "netWorkError": "ජාල දෝෂය"
+  "netWorkError": "ජාල දෝෂය",
+  "progress_less_30_title": "ඔබේ කුඩා පැළය වැඩෙමින් පවතී",
+  "progress_less_30_message": "අද දවස අවසන් කිරීමට තව ප්‍රශ්න {count} ක් ඉතිරිව ඇත.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "අද ඔබ ඉතා හොඳින් කටයුතු කළා",
+  "progress_30_message": "මල් පිපීමට තව ප්‍රශ්න {count} ක් කරන්න.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "ඔබේ ගස ලස්සනට මල් පිපී ඇත",
+  "progress_45_message": "තව ප්‍රශ්න {count} යි, දිගටම උත්සාහ කරන්න.",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "ඔබේ ගස ඉතා දීප්තිමත්ව මල් පිපී ඇත",
+  "progress_60_plus_message": "ඔබට අවශ්‍ය නම්, තවත් උත්සාහ කර බලන්න."
 }

@@ -87,5 +87,34 @@
   "noInternetConnection": "Keine Internetverbindung",
   "pleaseCheckYourInternetConnection": "Bitte überprüfen Sie Ihre Internetverbindung",
   "somethingWentWrong": "Etwas ist schiefgelaufen",
-  "netWorkError": "Netzwerkfehler"
+  "netWorkError": "Netzwerkfehler",
+  "progress_less_30_title": "Dein Bäumchen wächst",
+  "progress_less_30_message": "Noch {count} Aufgaben für heute.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "Gut gemacht für heute!",
+  "progress_30_message": "Noch {count} Aufgaben, damit der Baum blüht.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Dein Baum blüht wunderschön",
+  "progress_45_message": "Nur noch {count} Aufgaben, bleib dran!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Dein Baum steht in voller Blüte",
+  "progress_60_plus_message": "Wenn du möchtest, kannst du gerne noch mehr machen."
 }

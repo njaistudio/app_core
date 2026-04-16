@@ -87,5 +87,34 @@
   "noInternetConnection": "इन्टरनेट जडान छैन",
   "pleaseCheckYourInternetConnection": "कृपया आफ्नो इन्टरनेट जडान जाँच गर्नुहोस्",
   "somethingWentWrong": "केही समस्या आयो",
-  "netWorkError": "नेटवर्क त्रुटि"
+  "netWorkError": "नेटवर्क त्रुटि",
+  "progress_less_30_title": "तपाईंको सानो बिरुवा बढ्दैछ",
+  "progress_less_30_message": "आजको लागि अझै {count} प्रश्नहरू बाँकी छन्।",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "तपाईंले आज धेरै राम्रो गर्नुभयो",
+  "progress_30_message": "बिरुवामा फूल फुलाउन अझै {count} प्रश्नहरू गर्नुहोस्।",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "तपाईंको बिरुवा सुन्दर देखिँदैछ",
+  "progress_45_message": "मात्र {count} प्रश्नहरू बाँकी छन्, जारी राख्नुहोस्!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "तपाईंको बिरुवा पूर्ण रूपमा फुलेको छ",
+  "progress_60_plus_message": "यदि तपाईं चाहनुहुन्छ भने, अझै थप अभ्यास गर्नुहोस्।"
 }

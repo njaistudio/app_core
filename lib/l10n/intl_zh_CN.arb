@@ -87,5 +87,34 @@
   "noInternetConnection": "没有网络连接",
   "pleaseCheckYourInternetConnection": "请检查你的网络连接",
   "somethingWentWrong": "出现了一些问题",
-  "netWorkError": "网络错误"
+  "netWorkError": "网络错误",
+  "progress_less_30_title": "你的小树正在成长",
+  "progress_less_30_message": "今天还剩 {count} 题就要完成了。",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "今天你表现得非常棒",
+  "progress_30_message": "再做 {count} 题就能让小树开花了。",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "你的小树花开得很漂亮",
+  "progress_45_message": "只剩 {count} 题了，加油！",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "你的小树已经繁花似锦",
+  "progress_60_plus_message": "如果你愿意，可以再多练习一些。"
 }
