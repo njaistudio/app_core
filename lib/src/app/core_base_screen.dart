@@ -82,7 +82,7 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
       _isLoadingDialogShowing = true;
       showCoreBottomSheet(
         isDismissible: false,
-        widgetBuilder: (context) => SizedBox(
+        widgetBuilder: (context, viewModel) => SizedBox(
           height: 50.r,
           child: Center(
             child: LoadingAnimationWidget.staggeredDotsWave(
@@ -118,16 +118,23 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
     );
   }
 
-  Future<dynamic> showCoreBottomSheet({required WidgetBuilder widgetBuilder, bool isDismissible = true}) async {
+  Future<dynamic> showCoreBottomSheet({required Widget Function(BuildContext context, T) widgetBuilder, bool isDismissible = true, bool enableDrag = true}) async {
     return showMaterialModalBottomSheet(
       context: context,
       isDismissible: isDismissible,
-      enableDrag: isDismissible,
+      enableDrag: enableDrag,
       backgroundColor: Colors.transparent,
       barrierColor: Colors.black.withAlpha(180),
       builder: (dlContext) {
-        return _buildBottomDialogContainer(
-          child: widgetBuilder(dlContext),
+        return ChangeNotifierProvider<T>.value(
+          value: readBaseViewModel,
+          child: Consumer<T>(
+              builder: (context, viewModel, child) {
+                return _buildBottomDialogContainer(
+                  child: widgetBuilder(dlContext, viewModel),
+                );
+              }
+          ),
         );
       },
     );
@@ -135,7 +142,7 @@ class CoreBaseScreenState<W extends CoreBaseScreen<T>, T extends CoreBaseViewMod
 
   Future<dynamic> showConfirmBottomSheet(String message, {String? description, IconData? iconData, Color? color, required VoidCallback onAgree,}) async {
     return showCoreBottomSheet(
-      widgetBuilder: (context) {
+      widgetBuilder: (context, viewModel) {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
