@@ -22,128 +22,131 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(time) => "Prossimo ripasso tra ${time}";
 
+  static String m1(count) =>
+      "Completa altre ${count} frasi per far fiorire l\'albero.";
+
+  static String m2(count) => "Solo altre ${count} frasi, continua così!";
+
+  static String m3(count) =>
+      "Mancano ${count} frasi per completare la giornata.";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "adsOr": MessageLookupByLibrary.simpleMessage("oppure"),
-    "alreadyKnown": MessageLookupByLibrary.simpleMessage("Già conosciuta"),
-    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
-    "bengali": MessageLookupByLibrary.simpleMessage("বাংলা"),
-    "bestValue": MessageLookupByLibrary.simpleMessage("Miglior valore"),
-    "burmese": MessageLookupByLibrary.simpleMessage("မြန်မာစာ"),
-    "cancel": MessageLookupByLibrary.simpleMessage("Annulla"),
-    "checkDone": MessageLookupByLibrary.simpleMessage(
-      "Completato, controlla di nuovo.",
-    ),
-    "chinese": MessageLookupByLibrary.simpleMessage("中文"),
-    "cn": MessageLookupByLibrary.simpleMessage("Dom"),
-    "continueLearning": MessageLookupByLibrary.simpleMessage(
-      "Continua a studiare",
-    ),
-    "currentStreak": MessageLookupByLibrary.simpleMessage("Serie attuale"),
-    "dailyGoals": MessageLookupByLibrary.simpleMessage("Obiettivi giornalieri"),
-    "deleteAccount": MessageLookupByLibrary.simpleMessage("Elimina account"),
-    "deleteAccountDescription": MessageLookupByLibrary.simpleMessage(
-      "Dovrai accedere di nuovo!",
-    ),
-    "deleteAccountQuestion": MessageLookupByLibrary.simpleMessage(
-      "Vuoi eliminare tutti i dati?",
-    ),
-    "done": MessageLookupByLibrary.simpleMessage("Fatto"),
-    "english": MessageLookupByLibrary.simpleMessage("English"),
-    "french": MessageLookupByLibrary.simpleMessage("Français"),
-    "german": MessageLookupByLibrary.simpleMessage("Deutsch"),
-    "hardWord": MessageLookupByLibrary.simpleMessage("Parola difficile"),
-    "hello": MessageLookupByLibrary.simpleMessage("Ciao!"),
-    "hindi": MessageLookupByLibrary.simpleMessage("हिन्दी"),
-    "indonesian": MessageLookupByLibrary.simpleMessage("Bahasa Indonesia"),
-    "initializingData": MessageLookupByLibrary.simpleMessage(
-      "Inizializzazione dati",
-    ),
-    "italian": MessageLookupByLibrary.simpleMessage("Italiano"),
-    "korean": MessageLookupByLibrary.simpleMessage("한국어"),
-    "lifetime": MessageLookupByLibrary.simpleMessage("A vita"),
-    "linkAccount": MessageLookupByLibrary.simpleMessage("Collega account"),
-    "linkAccountToGetMore": MessageLookupByLibrary.simpleMessage(
-      "Accedi o collega il tuo account per acquistare il pacchetto premium!",
-    ),
-    "login": MessageLookupByLibrary.simpleMessage("Accedi"),
-    "longestStreak": MessageLookupByLibrary.simpleMessage("Serie più lunga"),
-    "malay": MessageLookupByLibrary.simpleMessage("Bahasa Melayu"),
-    "markAsKnown": MessageLookupByLibrary.simpleMessage(
-      "Segna come conosciuta",
-    ),
-    "mastered": MessageLookupByLibrary.simpleMessage("Padroneggiata"),
-    "microphoneError": MessageLookupByLibrary.simpleMessage(
-      "Errore del microfono?",
-    ),
-    "microphoneOpenSettings": MessageLookupByLibrary.simpleMessage(
-      "Tocca qui per aprire le impostazioni e concedere il permesso del microfono.",
-    ),
-    "microphonePermissionGranted": MessageLookupByLibrary.simpleMessage(
-      "Permesso del microfono concesso.",
-    ),
-    "microphonePermissionRequired": MessageLookupByLibrary.simpleMessage(
-      "L\'app richiede il permesso del microfono per funzionare.",
-    ),
-    "mongolian": MessageLookupByLibrary.simpleMessage("Монгол"),
-    "mostPopular": MessageLookupByLibrary.simpleMessage("Il più popolare"),
-    "needsReview": MessageLookupByLibrary.simpleMessage("Da ripassare"),
-    "nepali": MessageLookupByLibrary.simpleMessage("नेपाली"),
-    "netWorkError": MessageLookupByLibrary.simpleMessage("Errore di rete"),
-    "nextReviewIn": m0,
-    "noInternetConnection": MessageLookupByLibrary.simpleMessage(
-      "Nessuna connessione Internet",
-    ),
-    "ok": MessageLookupByLibrary.simpleMessage("Continua"),
-    "oneDay": MessageLookupByLibrary.simpleMessage("1 giorno (24 ore)"),
-    "oneYear": MessageLookupByLibrary.simpleMessage("Abbonamento annuale"),
-    "or": MessageLookupByLibrary.simpleMessage("oppure"),
-    "perYear": MessageLookupByLibrary.simpleMessage("anno"),
-    "pleaseCheckYourInternetConnection": MessageLookupByLibrary.simpleMessage(
-      "Controlla la tua connessione Internet",
-    ),
-    "pleaseWaitASecond": MessageLookupByLibrary.simpleMessage(
-      "Attendi un attimo!",
-    ),
-    "polish": MessageLookupByLibrary.simpleMessage("Polski"),
-    "portuguese": MessageLookupByLibrary.simpleMessage("Português"),
-    "removeAds": MessageLookupByLibrary.simpleMessage(
-      "Passa a Premium per rimuovere tutte le pubblicità",
-    ),
-    "russian": MessageLookupByLibrary.simpleMessage("Русский"),
-    "selectLanguageTitle": MessageLookupByLibrary.simpleMessage(
-      "Seleziona la tua lingua!",
-    ),
-    "sinhala": MessageLookupByLibrary.simpleMessage("සිංහල"),
-    "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
-      "Qualcosa è andato storto",
-    ),
-    "spanish": MessageLookupByLibrary.simpleMessage("Español"),
-    "t2": MessageLookupByLibrary.simpleMessage("Lun"),
-    "t3": MessageLookupByLibrary.simpleMessage("Mar"),
-    "t4": MessageLookupByLibrary.simpleMessage("Mer"),
-    "t5": MessageLookupByLibrary.simpleMessage("Gio"),
-    "t6": MessageLookupByLibrary.simpleMessage("Ven"),
-    "t7": MessageLookupByLibrary.simpleMessage("Sab"),
-    "thai": MessageLookupByLibrary.simpleMessage("ไทย"),
-    "ttsOpenSettings": MessageLookupByLibrary.simpleMessage(
-      "Tocca qui per aprire le impostazioni di Google Speech Services.",
-    ),
-    "ttsServiceGranted": MessageLookupByLibrary.simpleMessage(
-      "Permesso di Google Speech Services concesso.",
-    ),
-    "ttsServiceRequired": MessageLookupByLibrary.simpleMessage(
-      "L\'app utilizza Google Speech Services per convertire il testo in voce.",
-    ),
-    "turkish": MessageLookupByLibrary.simpleMessage("Türkçe"),
-    "updateData": MessageLookupByLibrary.simpleMessage("Aggiorna dati"),
-    "updatingData": MessageLookupByLibrary.simpleMessage(
-      "Aggiornamento dati in corso",
-    ),
-    "vietnamese": MessageLookupByLibrary.simpleMessage("Tiếng Việt"),
-    "watchVideo": MessageLookupByLibrary.simpleMessage(
-      "Guarda un video pubblicitario",
-    ),
-    "wordsPerDay": MessageLookupByLibrary.simpleMessage("parole/giorno"),
-  };
+        "adsOr": MessageLookupByLibrary.simpleMessage("oppure"),
+        "alreadyKnown": MessageLookupByLibrary.simpleMessage("Già conosciuta"),
+        "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "bengali": MessageLookupByLibrary.simpleMessage("বাংলা"),
+        "bestValue": MessageLookupByLibrary.simpleMessage("Miglior valore"),
+        "burmese": MessageLookupByLibrary.simpleMessage("မြန်မာစာ"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Annulla"),
+        "checkDone": MessageLookupByLibrary.simpleMessage(
+            "Completato, controlla di nuovo."),
+        "chinese": MessageLookupByLibrary.simpleMessage("中文"),
+        "cn": MessageLookupByLibrary.simpleMessage("Dom"),
+        "continueLearning":
+            MessageLookupByLibrary.simpleMessage("Continua a studiare"),
+        "currentStreak": MessageLookupByLibrary.simpleMessage("Serie attuale"),
+        "dailyGoals":
+            MessageLookupByLibrary.simpleMessage("Obiettivi giornalieri"),
+        "deleteAccount":
+            MessageLookupByLibrary.simpleMessage("Elimina account"),
+        "deleteAccountDescription":
+            MessageLookupByLibrary.simpleMessage("Dovrai accedere di nuovo!"),
+        "deleteAccountQuestion": MessageLookupByLibrary.simpleMessage(
+            "Vuoi eliminare tutti i dati?"),
+        "done": MessageLookupByLibrary.simpleMessage("Fatto"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
+        "french": MessageLookupByLibrary.simpleMessage("Français"),
+        "german": MessageLookupByLibrary.simpleMessage("Deutsch"),
+        "hardWord": MessageLookupByLibrary.simpleMessage("Parola difficile"),
+        "hello": MessageLookupByLibrary.simpleMessage("Ciao!"),
+        "hindi": MessageLookupByLibrary.simpleMessage("हिन्दी"),
+        "indonesian": MessageLookupByLibrary.simpleMessage("Bahasa Indonesia"),
+        "initializingData":
+            MessageLookupByLibrary.simpleMessage("Inizializzazione dati"),
+        "italian": MessageLookupByLibrary.simpleMessage("Italiano"),
+        "korean": MessageLookupByLibrary.simpleMessage("한국어"),
+        "lifetime": MessageLookupByLibrary.simpleMessage("A vita"),
+        "linkAccount": MessageLookupByLibrary.simpleMessage("Collega account"),
+        "linkAccountToGetMore": MessageLookupByLibrary.simpleMessage(
+            "Accedi o collega il tuo account per acquistare il pacchetto premium!"),
+        "login": MessageLookupByLibrary.simpleMessage("Accedi"),
+        "longestStreak":
+            MessageLookupByLibrary.simpleMessage("Serie più lunga"),
+        "malay": MessageLookupByLibrary.simpleMessage("Bahasa Melayu"),
+        "markAsKnown":
+            MessageLookupByLibrary.simpleMessage("Segna come conosciuta"),
+        "mastered": MessageLookupByLibrary.simpleMessage("Padroneggiata"),
+        "microphoneError":
+            MessageLookupByLibrary.simpleMessage("Errore del microfono?"),
+        "microphoneOpenSettings": MessageLookupByLibrary.simpleMessage(
+            "Tocca qui per aprire le impostazioni e concedere il permesso del microfono."),
+        "microphonePermissionGranted": MessageLookupByLibrary.simpleMessage(
+            "Permesso del microfono concesso."),
+        "microphonePermissionRequired": MessageLookupByLibrary.simpleMessage(
+            "L\'app richiede il permesso del microfono per funzionare."),
+        "mongolian": MessageLookupByLibrary.simpleMessage("Монгол"),
+        "mostPopular": MessageLookupByLibrary.simpleMessage("Il più popolare"),
+        "needsReview": MessageLookupByLibrary.simpleMessage("Da ripassare"),
+        "nepali": MessageLookupByLibrary.simpleMessage("नेपाली"),
+        "netWorkError": MessageLookupByLibrary.simpleMessage("Errore di rete"),
+        "nextReviewIn": m0,
+        "noInternetConnection": MessageLookupByLibrary.simpleMessage(
+            "Nessuna connessione Internet"),
+        "ok": MessageLookupByLibrary.simpleMessage("Continua"),
+        "oneDay": MessageLookupByLibrary.simpleMessage("1 giorno (24 ore)"),
+        "oneYear": MessageLookupByLibrary.simpleMessage("Abbonamento annuale"),
+        "or": MessageLookupByLibrary.simpleMessage("oppure"),
+        "perYear": MessageLookupByLibrary.simpleMessage("anno"),
+        "pleaseCheckYourInternetConnection":
+            MessageLookupByLibrary.simpleMessage(
+                "Controlla la tua connessione Internet"),
+        "pleaseWaitASecond":
+            MessageLookupByLibrary.simpleMessage("Attendi un attimo!"),
+        "polish": MessageLookupByLibrary.simpleMessage("Polski"),
+        "portuguese": MessageLookupByLibrary.simpleMessage("Português"),
+        "progress_30_message": m1,
+        "progress_30_title":
+            MessageLookupByLibrary.simpleMessage("Ottimo lavoro oggi!"),
+        "progress_45_message": m2,
+        "progress_45_title": MessageLookupByLibrary.simpleMessage(
+            "Il tuo albero sta fiorendo magnificamente"),
+        "progress_60_plus_message": MessageLookupByLibrary.simpleMessage(
+            "Se vuoi, puoi continuare ad esercitarti ancora un po\'."),
+        "progress_60_plus_title": MessageLookupByLibrary.simpleMessage(
+            "Il tuo albero è in pieno fiore"),
+        "progress_less_30_message": m3,
+        "progress_less_30_title": MessageLookupByLibrary.simpleMessage(
+            "La tua piantina sta crescendo"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Passa a Premium per rimuovere tutte le pubblicità"),
+        "russian": MessageLookupByLibrary.simpleMessage("Русский"),
+        "selectLanguageTitle":
+            MessageLookupByLibrary.simpleMessage("Seleziona la tua lingua!"),
+        "sinhala": MessageLookupByLibrary.simpleMessage("සිංහල"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Qualcosa è andato storto"),
+        "spanish": MessageLookupByLibrary.simpleMessage("Español"),
+        "t2": MessageLookupByLibrary.simpleMessage("Lun"),
+        "t3": MessageLookupByLibrary.simpleMessage("Mar"),
+        "t4": MessageLookupByLibrary.simpleMessage("Mer"),
+        "t5": MessageLookupByLibrary.simpleMessage("Gio"),
+        "t6": MessageLookupByLibrary.simpleMessage("Ven"),
+        "t7": MessageLookupByLibrary.simpleMessage("Sab"),
+        "thai": MessageLookupByLibrary.simpleMessage("ไทย"),
+        "ttsOpenSettings": MessageLookupByLibrary.simpleMessage(
+            "Tocca qui per aprire le impostazioni di Google Speech Services."),
+        "ttsServiceGranted": MessageLookupByLibrary.simpleMessage(
+            "Permesso di Google Speech Services concesso."),
+        "ttsServiceRequired": MessageLookupByLibrary.simpleMessage(
+            "L\'app utilizza Google Speech Services per convertire il testo in voce."),
+        "turkish": MessageLookupByLibrary.simpleMessage("Türkçe"),
+        "updateData": MessageLookupByLibrary.simpleMessage("Aggiorna dati"),
+        "updatingData":
+            MessageLookupByLibrary.simpleMessage("Aggiornamento dati in corso"),
+        "vietnamese": MessageLookupByLibrary.simpleMessage("Tiếng Việt"),
+        "watchVideo": MessageLookupByLibrary.simpleMessage(
+            "Guarda un video pubblicitario"),
+        "wordsPerDay": MessageLookupByLibrary.simpleMessage("parole/giorno")
+      };
 }

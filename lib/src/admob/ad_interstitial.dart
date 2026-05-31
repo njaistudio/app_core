@@ -21,8 +21,7 @@ class AdInterstitial {
     return coreSharedPreferencesHelper.currentAdsCount();
   }
 
-  Future<bool> canShowAds() async {
-    final isPremium = await purchaseHelper.isPremiumUser();
+  Future<bool> canShowAds(bool isPremium) async {
     if(isPremium) {
       return false;
     }
@@ -43,9 +42,9 @@ class AdInterstitial {
     return currentAdsCount == 0;
   }
 
-  Future<void> increaseAdsCountWithNumber(number) async {
+  Future<void> increaseAdsCountWithNumber(number, bool isPremium) async {
     coreSharedPreferencesHelper.increaseAdsCountWithNumber(number);
-    var canShow = await canShowAds();
+    var canShow = await canShowAds(isPremium);
     if (canShow) {
       _createAd();
       await coreSharedPreferencesHelper.resetIncreaseAdsCount();

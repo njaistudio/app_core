@@ -87,5 +87,34 @@
   "noInternetConnection": "इंटरनेट कनेक्शन नहीं है",
   "pleaseCheckYourInternetConnection": "कृपया अपना इंटरनेट कनेक्शन जाँचें",
   "somethingWentWrong": "कुछ गलत हो गया",
-  "netWorkError": "नेटवर्क त्रुटि"
+  "netWorkError": "नेटवर्क त्रुटि",
+  "progress_less_30_title": "आपका छोटा पौधा बढ़ रहा है",
+  "progress_less_30_message": "आज पूरा करने के लिए {count} प्रश्न शेष हैं।",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "आज आपने बहुत अच्छा काम किया",
+  "progress_30_message": "पौधे पर और फूल खिलाने के लिए {count} और प्रश्न करें।",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "आपका पेड़ बहुत सुंदर खिल रहा है",
+  "progress_45_message": "बस {count} और प्रश्न, कोशिश जारी रखें।",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "आपका पेड़ शानदार ढंग से खिल गया है",
+  "progress_60_plus_message": "यदि आप चाहें, तो कुछ और अभ्यास करने का प्रयास करें।"
 }

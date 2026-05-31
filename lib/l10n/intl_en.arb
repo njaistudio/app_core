@@ -79,5 +79,34 @@
   "noInternetConnection": "No internet connection",
   "pleaseCheckYourInternetConnection": "Please check your internet connection",
   "somethingWentWrong": "Something went wrong",
-  "netWorkError": "NetWork Error"
+  "netWorkError": "NetWork Error",
+  "progress_less_30_title": "Your little tree is growing",
+  "progress_less_30_message": "{count} more questions to finish today.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "You did great today",
+  "progress_30_message": "Do {count} more questions to make the tree bloom.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Your tree is blooming beautifully",
+  "progress_45_message": "Only {count} more questions, keep it up!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Your tree has bloomed brilliantly",
+  "progress_60_plus_message": "Try some more if you'd like!"
 }

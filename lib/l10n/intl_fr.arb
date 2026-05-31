@@ -87,5 +87,34 @@
   "noInternetConnection": "Aucune connexion Internet",
   "pleaseCheckYourInternetConnection": "Veuillez vérifier votre connexion Internet",
   "somethingWentWrong": "Une erreur est survenue",
-  "netWorkError": "Erreur réseau"
+  "netWorkError": "Erreur réseau",
+  "progress_less_30_title": "Votre petite plante grandit",
+  "progress_less_30_message": "Encore {count} questions pour terminer aujourd'hui.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "Bravo, vous avez bien avancé aujourd'hui",
+  "progress_30_message": "Faites {count} questions de plus pour faire fleurir la plante.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Votre plante fleurit magnifiquement",
+  "progress_45_message": "Plus que {count} questions, continuez vos efforts !",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Votre plante est resplendissante",
+  "progress_60_plus_message": "Si vous le souhaitez, vous pouvez continuer encore un peu."
 }

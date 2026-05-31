@@ -12,7 +12,7 @@ class TargetRepositoryImpl implements TargetRepository {
   final FirebaseHelper firebaseHelper;
 
   @override
-  Future<Either<Failure, StorageTarget>> getStorageTarget({bool fromCloud = false}) async {
+  Future<Either<Failure, StorageTarget>> getStorageTarget({bool fromCloud = false, String version = ""}) async {
     if(fromCloud) {
       var userDataSnapShoot = await firebaseHelper.getDatabaseSnapshot("");
       String targetString = (userDataSnapShoot.value as Map?)?["target"] ?? "";
@@ -22,7 +22,7 @@ class TargetRepositoryImpl implements TargetRepository {
       return Either.right(StorageTarget.fromJson(jsonDecode(targetString)));
     }
 
-    final target = await sharedPreferencesHelper.getTarget();
+    final target = await sharedPreferencesHelper.getTarget(version: version);
     return Either.right(target);
   }
 
@@ -51,6 +51,12 @@ class TargetRepositoryImpl implements TargetRepository {
       "target": json.encode(target.toJson()),
     });
     sharedPreferencesHelper.setTarget(target);
+    return Either.right(unit);
+  }
+
+  @override
+  Future<Either<Failure, Unit>> removeOldTarget(String versionError) async {
+    await sharedPreferencesHelper.removeKey(versionError);
     return Either.right(unit);
   }
 }

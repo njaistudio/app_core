@@ -1,6 +1,6 @@
 name: app_core
 description: "A new Flutter project."
-version: 0.1.4
+version: 0.1.7
 homepage:
 
 environment:
@@ -41,6 +41,7 @@ dependencies:
   percent_indicator: ^4.2.5
   json_annotation: ^4.9.0
   url_launcher: ^6.3.2
+  lottie: ^3.3.2
   isoweek: ^1.1.4
   flutter_calendar_carousel: ^2.5.4
   flutter_bounceable:
@@ -65,6 +66,7 @@ flutter:
   # To add assets to your package, add an assets section, like this:
    assets:
      - assets/images/
+     - assets/
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/to/asset-from-package

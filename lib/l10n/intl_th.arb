@@ -87,5 +87,34 @@
   "noInternetConnection": "ไม่มีการเชื่อมต่ออินเทอร์เน็ต",
   "pleaseCheckYourInternetConnection": "กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ต",
   "somethingWentWrong": "เกิดข้อผิดพลาด",
-  "netWorkError": "ข้อผิดพลาดของเครือข่าย"
+  "netWorkError": "ข้อผิดพลาดของเครือข่าย",
+  "progress_less_30_title": "ต้นไม้ต้นเล็กๆ ของคุณกำลังเติบโต",
+  "progress_less_30_message": "อีก {count} ข้อจะเสร็จสิ้นสำหรับวันนี้",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "วันนี้คุณทำได้ดีมาก",
+  "progress_30_message": "ทำอีก {count} ข้อเพื่อให้ดอกไม้บานสะพรั่ง",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "ต้นไม้ของคุณบานสะพรั่งอย่างสวยงาม",
+  "progress_45_message": "เหลืออีกเพียง {count} ข้อเท่านั้น พยายามเข้านะ",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "ต้นไม้ของคุณบานสะพรั่งอย่างสดใส",
+  "progress_60_plus_message": "หากคุณต้องการ ลองทำเพิ่มอีกนิดนะ"
 }

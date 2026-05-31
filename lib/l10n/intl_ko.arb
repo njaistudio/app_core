@@ -87,5 +87,34 @@
   "noInternetConnection": "인터넷 연결 없음",
   "pleaseCheckYourInternetConnection": "인터넷 연결을 확인해주세요",
   "somethingWentWrong": "문제가 발생했습니다",
-  "netWorkError": "네트워크 오류"
+  "netWorkError": "네트워크 오류",
+  "progress_less_30_title": "작은 나무가 자라고 있어요",
+  "progress_less_30_message": "오늘 목표까지 {count}문제 남았습니다.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "오늘 정말 잘하고 계시네요",
+  "progress_30_message": "{count}문제를 더 풀면 나무에 꽃이 필 거예요.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "나무에 꽃이 예쁘게 피고 있어요",
+  "progress_45_message": "{count}문제만 더 힘내세요!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "나무가 활짝 만개했습니다",
+  "progress_60_plus_message": "원하신다면 조금 더 연습해 보세요."
 }

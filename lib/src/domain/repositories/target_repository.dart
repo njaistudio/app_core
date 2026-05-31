@@ -1,7 +1,8 @@
 import 'package:app_core/app_core.dart';
 
 abstract class TargetRepository {
-  Future<Either<Failure, StorageTarget>> getStorageTarget({bool fromCloud = false});
+  Future<Either<Failure, StorageTarget>> getStorageTarget({bool fromCloud = false, String version = ""});
   Future<Either<Failure, Unit>> saveStorageTarget(StorageTarget target);
+  Future<Either<Failure, Unit>> removeOldTarget(String versionError);
   Future<Either<Failure, List<TargetItem>>> getWeekTargetData();
 }

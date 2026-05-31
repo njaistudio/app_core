@@ -87,5 +87,34 @@
   "noInternetConnection": "Tidak ada koneksi internet",
   "pleaseCheckYourInternetConnection": "Silakan periksa koneksi internet Anda",
   "somethingWentWrong": "Terjadi kesalahan",
-  "netWorkError": "Kesalahan jaringan"
+  "netWorkError": "Kesalahan jaringan",
+  "progress_less_30_title": "Pohon kecilmu mulai tumbuh",
+  "progress_less_30_message": "{count} soal lagi untuk diselesaikan hari ini.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "Pekerjaan yang bagus hari ini",
+  "progress_30_message": "Kerjakan {count} soal lagi agar pohonmu berbunga.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Pohonmu berbunga dengan indah",
+  "progress_45_message": "Hanya {count} soal lagi, ayo semangat!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Pohonmu sudah mekar dengan cerah",
+  "progress_60_plus_message": "Jika mau, kamu bisa mencoba lebih banyak lagi."
 }

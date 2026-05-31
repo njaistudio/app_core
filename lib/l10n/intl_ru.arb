@@ -87,5 +87,34 @@
   "noInternetConnection": "Нет подключения к интернету",
   "pleaseCheckYourInternetConnection": "Пожалуйста, проверьте подключение к интернету",
   "somethingWentWrong": "Что-то пошло не так",
-  "netWorkError": "Ошибка сети"
+  "netWorkError": "Ошибка сети",
+  "progress_less_30_title": "Ваше деревце растет",
+  "progress_less_30_message": "Осталось {count} упражнений на сегодня.",
+  "@progress_less_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_30_title": "Отличная работа сегодня!",
+  "progress_30_message": "Выполни еще {count}, чтобы дерево зацвело.",
+  "@progress_30_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_45_title": "Ваше дерево красиво цветет",
+  "progress_45_message": "Еще всего {count} до цели, поднажми!",
+  "@progress_45_message": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progress_60_plus_title": "Ваше дерево ярко расцвело",
+  "progress_60_plus_message": "Если есть желание, можешь продолжить."
 }

@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class CoreSharedPreferencesHelper {
   static const adsCount = "adsCount_v1";
-  static const targetKey = "targetKey_v1";
+  static const targetKey = "targetKey";
   static const removeAdStartTimeKey = "removeAdStartTimeKey_v1";
   static const showAdsLimitKey = "showAdsLimitKey_v1";
   static const reviewCountKey = "reviewCountKey";
@@ -46,9 +46,9 @@ class CoreSharedPreferencesHelper {
     prefs.setInt(removeAdStartTimeKey, timeStamp);
   }
 
-  Future<StorageTarget> getTarget() async {
+  Future<StorageTarget> getTarget({String version = ""}) async {
     final prefs = await SharedPreferences.getInstance();
-    final string = prefs.getString(targetKey) ?? "";
+    final string = prefs.getString(targetKey + version) ?? "";
     if(string.isEmpty) {
       return StorageTarget();
     }
@@ -68,6 +68,11 @@ class CoreSharedPreferencesHelper {
   Future setReviewCount(int value) async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.setInt(reviewCountKey, value);
+  }
+
+  Future removeKey(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove(key);
   }
 
   Future clearData() async {
