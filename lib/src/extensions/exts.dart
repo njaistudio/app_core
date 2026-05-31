@@ -1,9 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension GetTheme on BuildContext {
-  TextTheme get textTheme => Theme.of(this).textTheme;
+  TextTheme get baseTextTheme => Theme.of(this).textTheme;
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
+
+  TextTheme get textTheme {
+
+    return baseTextTheme.copyWith(
+      displayLarge: baseTextTheme.displayLarge?.adaptive,
+      displayMedium: baseTextTheme.displayMedium?.adaptive,
+      displaySmall: baseTextTheme.displaySmall?.adaptive,
+
+      headlineLarge: baseTextTheme.headlineLarge?.adaptive,
+      headlineMedium: baseTextTheme.headlineMedium?.adaptive,
+      headlineSmall: baseTextTheme.headlineSmall?.adaptive,
+
+      titleLarge: baseTextTheme.titleLarge?.adaptive,
+      titleMedium: baseTextTheme.titleMedium?.adaptive,
+      titleSmall: baseTextTheme.titleSmall?.adaptive,
+
+      bodyLarge: baseTextTheme.bodyLarge?.adaptive,
+      bodyMedium: baseTextTheme.bodyMedium?.adaptive,
+      bodySmall: baseTextTheme.bodySmall?.adaptive,
+
+      labelLarge: baseTextTheme.labelLarge?.adaptive,
+      labelMedium: baseTextTheme.labelMedium?.adaptive,
+      labelSmall: baseTextTheme.labelSmall?.adaptive,
+    );
+  }
 }
+
+extension AdaptiveTextStyle on TextStyle? {
+  TextStyle? get adaptive {
+    if (this == null || this!.fontSize == null) return this;
+
+    final double shortestSide = ScreenUtil().screenWidth < ScreenUtil().screenHeight
+        ? ScreenUtil().screenWidth
+        : ScreenUtil().screenHeight;
+
+    final bool isTablet = shortestSide >= 600;
+    return isTablet ? this!.copyWith(fontSize: this!.fontSize!.sp) : this;
+  }
+}
+
 
 extension ColorExt on Color {
   MaterialColor get materialColor {
