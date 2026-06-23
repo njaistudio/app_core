@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
 
 import 'package:app_core/app_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,8 +9,8 @@ import 'package:purchases_flutter/models/store_product_wrapper.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RemoveAdsView extends StatefulWidget {
-  const RemoveAdsView({super.key, required this.onWatchVideoButtonClicked, required this.onProductDetailsButtonClicked, required this.onLinkAccountButtonClicked, required this.onRestoreButtonClicked, required this.onSubscriptionDetailsClicked, required this.privacyPolicyLink});
-  final VoidCallback onWatchVideoButtonClicked;
+  const RemoveAdsView({super.key, this.onWatchVideoButtonClicked, required this.onProductDetailsButtonClicked, required this.onLinkAccountButtonClicked, required this.onRestoreButtonClicked, required this.onSubscriptionDetailsClicked, required this.privacyPolicyLink});
+  final VoidCallback? onWatchVideoButtonClicked;
   final VoidCallback onLinkAccountButtonClicked;
   final VoidCallback onRestoreButtonClicked;
   final Function(StoreProduct) onProductDetailsButtonClicked;
@@ -62,7 +63,7 @@ class _RemoveAdsViewState extends State<RemoveAdsView> {
           ),
         ),
         SizedBox(height: 16.r,),
-        _buildRemoveAdsOneDayButton,
+        if(widget.onWatchVideoButtonClicked != null) _buildRemoveAdsOneDayButton,
         ..._productDetailsItems,
         _buildTermOfUse,
         _buildCancelButton,
@@ -75,7 +76,7 @@ class _RemoveAdsViewState extends State<RemoveAdsView> {
     return SecondaryButton(
       onPressed: () {
         Navigator.pop(context);
-        widget.onWatchVideoButtonClicked();
+        widget.onWatchVideoButtonClicked?.call();
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0).r,
@@ -119,7 +120,7 @@ class _RemoveAdsViewState extends State<RemoveAdsView> {
     _adsProducts.sort((a, b) {
       return a.price.compareTo(b.price);
     });
-    List<Widget> widgets = [
+    List<Widget> widgets = widget.onWatchVideoButtonClicked == null ? [] :  [
       SizedBox(height: 16.r,),
       Center(
         child: Text(
