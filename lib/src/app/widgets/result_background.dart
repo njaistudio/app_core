@@ -28,6 +28,7 @@ class _ResultBackgroundState extends State<ResultBackground> with AnimationMixin
 
   @override
   void initState() {
+    super.initState();
     _opacity = Tween<double>(begin: 1.0, end: 0.0).animate(controller);
     widget.controller?.start = (status) {
       setState(() {
@@ -36,7 +37,6 @@ class _ResultBackgroundState extends State<ResultBackground> with AnimationMixin
       controller.reset();
       controller.play(duration: const Duration(milliseconds: 500));
     };
-    super.initState();
   }
 
   Color get _backgroundColor {
@@ -51,14 +51,6 @@ class _ResultBackgroundState extends State<ResultBackground> with AnimationMixin
   }
 
   @override
-  void dispose() {
-    if(!controller.isCompleted) {
-      controller.dispose();
-    }
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -66,15 +58,20 @@ class _ResultBackgroundState extends State<ResultBackground> with AnimationMixin
           opacity: _opacity.value,
           child: Container(
             decoration: BoxDecoration(
-              gradient: RadialGradient(
-                colors: [_backgroundColor.withValues(alpha: 0.3), _backgroundColor.withValues(alpha: 0.2)],
+              gradient: _status == ResultBackgroundStatus.none
+                  ? null
+                  : RadialGradient(
+                colors: [
+                  _backgroundColor.withValues(alpha: 0.3),
+                  _backgroundColor.withValues(alpha: 0.2)
+                ],
                 stops: const [0, 1],
                 center: Alignment.bottomCenter,
               ),
             ),
           ),
         ),
-        widget.child ?? Container(),
+        widget.child ?? const SizedBox.shrink(),
       ],
     );
   }
