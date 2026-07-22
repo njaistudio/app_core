@@ -1,6 +1,6 @@
 name: app_core
 description: "A new Flutter project."
-version: 0.1.13
+version: 0.1.14
 homepage:
 
 environment:
@@ -19,7 +19,7 @@ dependencies:
   firebase_database: ^12.1.0
   firebase_analytics: ^12.0.4
   firebase_remote_config: ^6.1.2
-  google_mobile_ads: ^9.0.0
+  google_mobile_ads: ^6.0.0
   sign_in_with_apple: ^7.0.1
   flutter_screenutil: ^5.9.3
   dotted_border: ^3.1.0
