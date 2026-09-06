@@ -11,6 +11,7 @@ class AuthService {
   Future<bool> googleLogin() async {
     try {
       final authCredential = await _getGoogleAuthCredential();
+      if (authCredential == null) return false;
       final credential = GoogleAuthProvider.credential(
         accessToken: authCredential.accessToken,
         idToken: authCredential.idToken,
@@ -107,14 +108,14 @@ class AuthService {
     return true;
   }
 
-  Future<OAuthCredential> _getGoogleAuthCredential() async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-    final authCredential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
+  Future<OAuthCredential?> _getGoogleAuthCredential() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn.instance;
+    await googleSignIn.initialize();
+    final GoogleSignInAccount googleUser = await googleSignIn.authenticate();
+    final GoogleSignInAuthentication googleAuth = googleUser.authentication;
+    return GoogleAuthProvider.credential(
+      idToken: googleAuth.idToken,
     );
-    return authCredential;
   }
 
   Future<AuthorizationCredentialAppleID> _getAppleIDCredential() async {

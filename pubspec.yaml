@@ -10,38 +10,38 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.20.2
-  google_fonts: ^6.3.3
-  firebase_core: ^4.2.1
-  firebase_auth: ^6.1.2
-  google_sign_in: ^6.3.0
-  firebase_storage: ^13.0.4
-  firebase_database: ^12.1.0
-  firebase_analytics: ^12.0.4
-  firebase_remote_config: ^6.1.2
-  google_mobile_ads: ^6.0.0
-  sign_in_with_apple: ^7.0.1
+  intl: ^0.20.3
+  google_fonts: ^8.2.1
+  firebase_core: ^4.14.0
+  firebase_auth: ^6.6.1
+  google_sign_in: ^7.2.0
+  firebase_storage: ^13.5.0
+  firebase_database: ^12.5.0
+  firebase_analytics: ^12.5.0
+  firebase_remote_config: ^6.6.0
+  google_mobile_ads: ^9.1.0
+  sign_in_with_apple: ^8.2.0
   flutter_screenutil: ^5.9.3
   dotted_border: ^3.1.0
   auto_size_text: ^3.0.0
   fpdart: ^1.2.0
-  equatable: ^2.0.7
-  copy_with_extension: ^11.0.0
+  equatable: ^2.1.0
+  copy_with_extension: ^17.1.0
   provider: ^6.1.5+1
-  get_it: ^9.2.0
+  get_it: ^9.2.1
   blobs: ^2.0.0
-  simple_animations: ^5.2.0
+  simple_animations: ^5.3.0
   modal_bottom_sheet: ^3.0.0
   loading_animation_widget: ^1.3.0
-  connectivity_plus: ^7.0.0
+  connectivity_plus: ^7.3.1
   flutter_animate: ^4.5.2
   http: ^1.6.0
-  shared_preferences: ^2.5.4
-  purchases_flutter: ^10.4.2
+  shared_preferences: ^2.5.5
+  purchases_flutter: ^10.11.0
   percent_indicator: ^4.2.5
-  json_annotation: ^4.9.0
+  json_annotation: ^4.12.0
   url_launcher: ^6.3.2
-  lottie: ^3.3.2
+  lottie: ^3.5.1
   isoweek: ^1.1.4
   flutter_calendar_carousel: ^2.5.4
   flutter_bounceable:
@@ -54,8 +54,8 @@ dev_dependencies:
     sdk: flutter
   intl: any
   flutter_lints: ^6.0.0
-  build_runner: ^2.10.4
-  copy_with_extension_gen: ^11.0.0
+  build_runner: ^2.16.1
+  copy_with_extension_gen: ^17.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
