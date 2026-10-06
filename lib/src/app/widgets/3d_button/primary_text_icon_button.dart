@@ -2,7 +2,7 @@ import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryTextIconButton extends StatefulWidget {
-  const PrimaryTextIconButton({super.key, required this.onPressed, required this.text, this.textStyle, this.maxLines = 1, this.height, required this.iconData, this.color, this.shadowColor, this.badge, this.badgeColor, this.enabled = true});
+  const PrimaryTextIconButton({super.key, required this.onPressed, required this.text, this.textStyle, this.maxLines = 1, this.height, required this.iconData, this.color, this.shadowColor, this.badge, this.badgeColor, this.enabled = true, this.contentColor});
   final VoidCallback onPressed;
   final String text;
   final TextStyle? textStyle;
@@ -14,6 +14,7 @@ class PrimaryTextIconButton extends StatefulWidget {
   final int? badge;
   final Color? badgeColor;
   final bool enabled;
+  final Color? contentColor;
 
   @override
   State<PrimaryTextIconButton> createState() {
@@ -40,7 +41,7 @@ class _PrimaryTextIconButtonState extends State<PrimaryTextIconButton> {
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(widget.iconData, size: size.maxHeight / 1.7, color: _colorScheme.onPrimary),
+              Icon(widget.iconData, size: size.maxHeight / 1.7, color: widget.contentColor ?? _colorScheme.onPrimary),
               SizedBox(width: size.maxHeight / 15,),
               ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: size.maxWidth - size.maxHeight),
@@ -48,7 +49,7 @@ class _PrimaryTextIconButtonState extends State<PrimaryTextIconButton> {
                   widget.text,
                   maxLines: widget.maxLines,
                   style: widget.textStyle ?? _textTheme.titleLarge?.copyWith(
-                    color: _colorScheme.onPrimary,
+                    color: widget.contentColor ?? _colorScheme.onPrimary,
                     fontWeight: FontWeight.bold,
                     fontSize: size.maxHeight / 2.2,
                   ),
